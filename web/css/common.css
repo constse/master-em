@@ -1,0 +1,89 @@
+body {
+    background-color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #000;
+    line-height: 1.2;
+}
+
+a, a:active, a:hover, a:visited, a:focus {
+    color: #0688ec;
+    text-decoration: none;
+}
+
+.container {
+    padding: 0;
+    width: 1000px;
+}
+
+.me-header {
+    background: url('../img/logo.png') left 17px no-repeat transparent;
+    height: 98px;
+    position: relative;
+}
+
+.me-header .row {
+    height: 100%;
+    margin: 0;
+}
+
+.me-header .me-right {
+    padding: 12px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 178px;
+}
+
+.me-header .me-right .me-phone {
+    font-size: 23px;
+}
+
+.me-header .me-right .me-timetable {
+    font-size: 12px;
+    position: relative;
+    top: 1px;
+}
+
+.me-header .me-right .me-callback {
+    font-size: 12px;
+    position: relative;
+    top: 9px;
+}
+
+.me-header .me-right .me-callback a {
+    border-bottom: 1px dashed #0688ec;
+}
+
+.me-footer {
+    border-top: 1px solid #17b997;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 45px;
+    padding: 14px 3px 30px;
+    position: relative;
+}
+
+.me-footer .me-about {
+    width: 350px;
+}
+
+.me-footer .me-about a {
+    border-bottom: 1px solid #0688ec;
+}
+
+.me-footer .me-contacts {
+    position: absolute;
+    right: 0;
+    top: 14px;
+    width: 274px;
+}
+
+.me-footer .me-contacts p {
+    margin-bottom: 8px;
+}
+
+.me-footer .me-contacts .me-credit-cards {
+    background: url('../img/credit-cards.jpg') no-repeat transparent;
+    height: 20px;
+    width: 76px;
+}

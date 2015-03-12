@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{% block head_title %}Page{% endblock %} | Мастер эмоций</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/common.css') }}">
+    <script src="{{ asset('/js/jquery-1.11.2.min.js') }}"></script>
+    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+    {% block head_additions %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="me-header">
+            <div class="me-right">
+                <div class="me-phone">8 800 775-12-57</div>
+                <div class="me-timetable">пн-пт, с 9:00 до 21:00</div>
+                <div class="me-callback"><a href="javascript:void(0);">Обратный звонок</a></div>
+            </div>
+        </div>
+        {% block body_content %}Content{% endblock %}
+        <div class="me-footer">
+            <div class="me-about">
+                <p>
+                    Вот это текст о компании, он нужен для поисковиков.
+                    Вынесенная цитата заметна, если ее выделить крупным кеглем, кавычками и добавить фотографию автора высказывания
+                </p>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+            <div class="me-contacts">
+                <p>
+                    ул. Мало-Тобольская, д. 19, оф. 105<br>
+                    г. Барнаул, Алтайский край, Россия, 656056
+                </p>
+                <p>Макеты сайта &mdash; <a href="#">студия Dise</a></p>
+                <div class="me-credit-cards"></div>
+            </div>
+        </div>
+    </div>
+    {% block body_additions %}{% endblock %}
+</body>
+</html>
