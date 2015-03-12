@@ -62,7 +62,7 @@
         </a>
     </div>
     <div class="me-heading">
-        <h1>Галлерея туров</h1>
+        <h1>Галерея туров</h1>
         <ul class="list-inline me-filter-type">
             {% spaceless %}
                 <li class="active"><a href="javascript:void(0);">Новые</a></li>
@@ -83,66 +83,27 @@
         {% spaceless %}
             <li>
                 <img src="{{ asset('/test/tour.jpg') }}" alt="...">
+                <div class="me-caption me-left-top-first">Мальта</div>
+                <div class="me-days me-left-top-second">4 дня</div>
+                <div class="me-city me-left-bottom">Москва</div>
+                <div class="me-price me-right">28 700 ₽</div>
+                <a href="javascript:void(0);" class="text-center me-button">Купить</a>
+            </li>
+            <li>
+                <img src="{{ asset('/test/tour1.jpg') }}" alt="...">
+                <div class="me-caption me-left-top-first">Таиланд</div>
+                <div class="me-days me-left-top-second">6 дней</div>
+                <div class="me-city me-left-bottom">Новосибирск</div>
+                <div class="me-price me-right"></div>
+                <a href="javascript:void(0);" class="text-center me-button">28 500 ₽</a>
             </li>
             <li>
                 <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-            </li>
-            <li>
-                <img src="{{ asset('/test/tour.jpg') }}" alt="...">
+                <div class="me-caption me-left-top-second">Италия</div>
+                <div class="me-days me-left-bottom">4 дня</div>
+                <div class="me-city me-left-top-first">Москва</div>
+                <div class="me-price me-right">14 500 ₽</div>
+                <a href="javascript:void(0);" class="text-center me-button">Купить</a>
             </li>
         {% endspaceless %}
     </ul>
@@ -178,10 +139,10 @@
         </div>
     </div>
     <ul class="text-center me-share">
-        <li class="me-vk">Поделиться</li>
-        <li class="me-fb">Поделиться</li>
-        <li class="me-ok">Поделиться</li>
-        <li class="me-instagram">Инстаграм</li>
+        <li class="me-vk"><div class="me-icon"></div>Поделиться</li>
+        <li class="me-fb"><div class="me-icon"></div>Поделиться</li>
+        <li class="me-ok"><div class="me-icon"></div>Поделиться</li>
+        <li class="me-instagram"><div class="me-icon"></div>Инстаграм</li>
     </ul>
 {% endblock %}
 

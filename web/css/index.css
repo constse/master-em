@@ -171,14 +171,89 @@
 }
 
 .me-tours li {
+    color: #fff;
     display: inline-block;
     height: 202px;
     margin: 0 22px 19px 0;
+    position: relative;
+    text-shadow: 1px 1px 1px #000;
     width: 314px;
 }
 
 .me-tours li:nth-of-type(3n) {
     margin-right: 0;
+}
+
+.me-tours .me-caption {
+    font-size: 27px;
+    position: absolute;
+}
+
+.me-tours .me-caption.me-left-top-first {
+    left: 17px;
+    top: 10px;
+}
+
+.me-tours .me-caption.me-left-top-second {
+    left: 17px;
+    top: 29px;
+}
+
+.me-tours .me-days {
+    font-size: 17px;
+    position: absolute;
+}
+
+.me-tours .me-days.me-left-top-second {
+    left: 17px;
+    top: 44px;
+}
+
+.me-tours .me-days.me-left-bottom {
+    bottom: 11px;
+    left: 17px;
+}
+
+.me-tours .me-city {
+    background: url('../img/tour-airplaine.png') right center no-repeat transparent;
+    display: inline-block;
+    font-size: 15px;
+    height: 17px;
+    padding-right: 24px;
+    position: absolute;
+}
+
+.me-tours .me-city.me-left-bottom {
+    bottom: 14px;
+    left: 17px;
+}
+
+.me-tours .me-city.me-left-top-first {
+    left: 17px;
+    top: 9px;
+}
+
+.me-tours .me-price {
+    font-size: 21px;
+    position: absolute;
+}
+
+.me-tours .me-price.me-right {
+    right: 8px;
+    top: 9px;
+}
+
+.me-tours a.me-button {
+    background: url('../img/tour-button.jpg') repeat-x #31cbb3;
+    border-radius: 3px;
+    bottom: 9px;
+    color: #fff;
+    font-size: 18px;
+    height: 31px;
+    padding-top: 5px;
+    position: absolute;
+    right: 9px;
+    width: 87px;
 }
 
 .me-shadow {
@@ -238,6 +313,10 @@
     padding: 10px 40px 0;
 }
 
+.me-order:active, .me-order:hover, .me-order:visited, .me-order:focus {
+    color: #fff;
+}
+
 .me-order-tour {
     font-size: 27px;
     font-weight: bold;
@@ -273,6 +352,7 @@
     height: 33px;
     margin-right: 26px;
     padding: 9px 0 0 38px;
+    position: relative;
     width: 147px;
 }
 
@@ -280,18 +360,46 @@
     margin-right: 0;
 }
 
+.me-share .me-icon {
+    height: 33px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 34px;
+}
+
 .me-share .me-vk {
     background: #59789a;
+}
+
+.me-share .me-vk .me-icon {
+    background: url('../img/share-vk.png') center center no-repeat transparent;
+    border-right: 1px solid #4e6c8c;
 }
 
 .me-share .me-fb {
     background: #375aa3;
 }
 
+.me-share .me-fb .me-icon {
+    background: url('../img/share-fb.png') center center no-repeat transparent;
+    border-right: 1px solid #325294;
+}
+
 .me-share .me-ok {
     background: #ee7400;
 }
 
+.me-share .me-ok .me-icon {
+    background: url('../img/share-ok.png') center center no-repeat transparent;
+    border-right: 1px solid #d26600;
+}
+
 .me-share .me-instagram {
     background: #2a5b83;
+}
+
+.me-share .me-instagram .me-icon {
+    background: url('../img/share-instagram.png') center center no-repeat transparent;
+    border-right: 1px solid #265175;
 }
