@@ -1,0 +1,22 @@
+<div class="me-header">
+    <ul class="text-center me-menu">
+        {% spaceless %}
+            <li{% if menu_active == 'index' %} class="active"{% endif %}>
+                <a href="{{ url('site_general_index') }}">Туры</a>
+                {% if menu_active == 'index' %}<div class="active"></div>{% endif %}
+            </li>
+            <li><a href="#">Визы</a></li>
+            <li><a href="#">Авиабилеты</a></li>
+            <li><a href="#">Онлайн-бронь</a></li>
+            <li{% if menu_active == 'contacts' %} class="active"{% endif %}>
+                <a href="{{ url('site_general_contacts') }}">Контакты</a>
+                {% if menu_active == 'contacts' %}<div class="active"></div>{% endif %}
+            </li>
+        {% endspaceless %}
+    </ul>
+    <div class="me-right">
+        <div class="me-phone"><a href="tel:+78007751257">8 800 775-12-57</a></div>
+        <div class="me-timetable">пн-пт, с 10:00 до 19:00</div>
+        <div class="me-callback"><a href="javascript:void(0);">Обратный звонок</a></div>
+    </div>
+</div>

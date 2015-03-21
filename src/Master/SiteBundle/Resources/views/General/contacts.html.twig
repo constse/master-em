@@ -1,0 +1,65 @@
+{% extends 'MasterSiteBundle::layout.html.twig' %}
+
+{% block head_title %}Контакты{% endblock %}
+
+{% block head_additions %}
+    <link rel="stylesheet" href="{{ asset('/css/contacts.css') }}">
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+{% endblock %}
+
+{% block body_content %}
+    <div class="me-header-separator"></div>
+    <div class="me-heading">
+        <h1>Контакты</h1>
+        <a href="#" class="me-callback">Заказать звонок</a>
+    </div>
+    <div id="map" class="me-map"></div>
+    <div class="me-about-company">
+        <h2>О компании</h2>
+        <p>
+            С момента создания компания специализировалась на крупнооптовых поставках.
+            Это позволило за достаточно короткое время получить статус дистрибьютора ведущих производителей машин &mdash;
+            Michelin, Yokohama, Noklan, Kieber, BF Goodrich, Goodyear, Continental, Gislaved, Dunlop, Tigar, Pirelli, Barum, Fulda, Cordiant, Tunga,
+            статус диллера Westa, Курского, Подольского, Саратовского аккумуляторного заводов, а также стать ведущим поставщиком колесных дисков.
+        </p>
+        <p>
+            Вобрав в себя самое лучшее, что за многие годы активной работы накопила компания ООО &laquo;Пауэр Интернэшнл-шины&raquo;,
+            интернет-магазин &laquo;4Точки&raquo; стремительно ворвался в число лидеров отечественного рынка интернет-торговли автопринадлежностями
+            и сформировал новые стандарты качества обслуживания.
+            На всех этапах &mdash; от заказа до доставки &mdash; наши покупатели получают только самые положительные эмоции.
+            А чтобы закрепить эти эмоции, каждый покупатель получает еще и приятные сувениры.
+        </p>
+        <div class="me-timetable">
+            <h3>Режим работы</h3>
+            <p>С понедельника по субботу<br>10:00&ndash;19:00</p>
+            <p>Оплата по картам:<br><img src="{{ asset('/img/contacts-cards.png') }}"></p>
+            <h3>Мы в соцсетях</h3>
+            <p>
+                <a href="#" class="me-contacts-vk"></a>
+                <a href="#" class="me-contacts-fb"></a>
+                <a href="#" class="me-contacts-instagram"></a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body_additions %}
+    <script>
+        $(document).ready(function() {
+            var map;
+            ymaps.ready(function() {
+                map = new ymaps.Map('map', {
+                    center: [53.3308, 83.7976],
+                    zoom: 17,
+                    controls: ['zoomControl', 'fullscreenControl']
+                });
+                map.geoObjects.add(new ymaps.Placemark([53.3308, 83.7976], {
+                    balloonContent: '<strong>Мастер Эмоций</strong><br>'
+                        + 'ул. Мало-Тобольская, д. 19, оф. 105<br>'
+                        + 'г. Барнаул, Алтайский край, Россия, 656056<br>'
+                        + 'тел.: 8 800 775-12-57'
+                }));
+            });
+        });
+    </script>
+{% endblock %}

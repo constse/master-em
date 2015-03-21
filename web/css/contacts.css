@@ -1,0 +1,93 @@
+.me-header-separator {
+    background: url('../img/header-separator.jpg') repeat-x;
+    height: 4px;
+}
+
+.me-heading {
+    margin: 26px 0 0;
+    position: relative;
+}
+
+.me-heading h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.me-heading .me-callback {
+    background: url('../img/contacts-callback.jpg') repeat-x;
+    border-radius: 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    height: 41px;
+    padding-top: 7px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    top: 17px;
+    width: 189px;
+}
+
+.me-map {
+    height: 350px;
+    margin-top: 10px;
+}
+
+.me-about-company {
+    margin: 34px 0 0;
+    position: relative;
+}
+
+.me-about-company h2 {
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+.me-about-company p {
+    line-height: 24px;
+    width: 738px;
+    margin-bottom: 12px;
+}
+
+.me-timetable {
+    position: absolute;
+    right: 0;
+    top: 14px;
+    width: 197px;
+}
+
+.me-timetable h3 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.me-timetable p {
+
+}
+
+.me-timetable .me-contacts-vk {
+    background: url('../img/contacts-vk.jpg') no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 4px;
+    width: 24px;
+}
+
+.me-timetable .me-contacts-fb {
+    background: url('../img/contacts-fb.jpg') no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 4px;
+    width: 24px;
+}
+
+.me-timetable .me-contacts-instagram {
+    background: url('../img/contacts-instagram.jpg') no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 4px;
+    width: 24px;
+}

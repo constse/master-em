@@ -1,3 +1,8 @@
+html {
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-backface-visibility: hidden;
+}
+
 body {
     background-color: #fff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -23,13 +28,12 @@ a, a:active, a:hover, a:visited, a:focus {
 
 .me-header .me-menu {
     font-size: 14px;
-    font-weight: bold;
     left: 50%;
-    margin-left: -180px;
+    margin-left: -200px;
     padding: 24px 0 0;
     position: absolute;
     top: 0;
-    width: 360px;
+    width: 460px;
 }
 
 .me-header .me-menu li {
@@ -37,7 +41,7 @@ a, a:active, a:hover, a:visited, a:focus {
     border-radius: 3px;
     display: inline-block;
     height: 36px;
-    padding: 8px 12px 0;
+    padding: 8px 8px 0;
     position: relative;
 }
 
@@ -47,6 +51,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 .me-header .me-menu li.active {
     border-color: #0e7f60;
+    padding: 8px 16px 0;
 }
 
 .me-header .me-menu li.active a {
@@ -74,6 +79,10 @@ a, a:active, a:hover, a:visited, a:focus {
 
 .me-header .me-right .me-phone {
     font-size: 23px;
+}
+
+.me-header .me-right .me-phone a {
+    color: #000;
 }
 
 .me-header .me-right .me-timetable {

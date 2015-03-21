@@ -1,5 +1,9 @@
 # 1
 
+site_general_contacts:
+  path: /contacts
+  defaults: { _controller: "MasterSiteBundle:General:contacts" }
+
 site_general_index:
   path: /
   defaults: { _controller: "MasterSiteBundle:General:index" }
