@@ -23,7 +23,7 @@ class Image extends AbstractEntity
 
     /**
      * @var string
-     * @ORM\Column(name = "path", type = "string"
+     * @ORM\Column(name = "path", type = "string")
      */
     protected $path;
 
