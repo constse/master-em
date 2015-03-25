@@ -26,6 +26,20 @@ a, a:active, a:hover, a:visited, a:focus {
     position: relative;
 }
 
+.me-header .me-logo {
+    color: #000;
+    display: block;
+    font-size: 12px;
+    height: 80px;
+    left: 0;
+    padding: 57px 0 0 8px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 16px;
+    width: 281px;
+}
+
 .me-header .me-menu {
     font-size: 14px;
     left: 50%;
@@ -106,7 +120,7 @@ a, a:active, a:hover, a:visited, a:focus {
     font-size: 12px;
     line-height: 1.6;
     margin-top: 45px;
-    padding: 14px 3px 30px;
+    padding: 14px 3px 60px;
     position: relative;
 }
 

@@ -8,9 +8,21 @@ site_general_contacts:
   path: /contacts
   defaults: { _controller: "MasterSiteBundle:General:contacts" }
 
+site_general_faq:
+  path: /faq
+  defaults: { _controller: "MasterSiteBundle:General:faq" }
+
 site_general_flights:
   path: /flights
   defaults: { _controller: "MasterSiteBundle:General:flights" }
+
+site_general_loyalty:
+  path: /loyalty
+  defaults: { _controller: "MasterSiteBundle:General:loyalty" }
+
+site_general_reviews:
+  path: /reviews
+  defaults: { _controller: "MasterSiteBundle:General:reviews" }
 
 site_general_visa:
   path: /visa

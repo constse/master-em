@@ -64,7 +64,7 @@
 .me-slider .carousel-inner .me-caption {
     color: #fff;
     font-size: 44px;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: 1px 1px 1px #666;
 }
 
 .me-slider .carousel-inner .me-details {
@@ -175,7 +175,7 @@
     height: 202px;
     margin: 0 22px 19px 0;
     position: relative;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: 1px 1px 1px #666;
     width: 314px;
 }
 
@@ -320,7 +320,7 @@
 .me-order-tour {
     font-size: 27px;
     font-weight: bold;
-    text-shadow: 1px 1px 1px #000;
+    text-shadow: 1px 1px 1px #666;
 }
 
 .me-order-by-phone {

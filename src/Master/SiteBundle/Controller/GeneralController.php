@@ -20,6 +20,13 @@ class GeneralController extends InitializableController
         ));
     }
 
+    public function faqAction()
+    {
+        return $this->render('MasterSiteBundle:General:faq.html.twig', array(
+            'menu_active' => null
+        ));
+    }
+
     public function flightsAction()
     {
         return $this->render('MasterSiteBundle:General:flights.html.twig', array(
@@ -31,6 +38,20 @@ class GeneralController extends InitializableController
     {
         return $this->render('MasterSiteBundle:General:index.html.twig', array(
             'menu_active' => 'index'
+        ));
+    }
+
+    public function loyaltyAction()
+    {
+        return $this->render('MasterSiteBundle:General:loyalty.html.twig', array(
+            'menu_active' => null
+        ));
+    }
+
+    public function reviewsAction()
+    {
+        return $this->render('MasterSiteBundle:General:reviews.html.twig', array(
+            'menu_active' => null
         ));
     }
 

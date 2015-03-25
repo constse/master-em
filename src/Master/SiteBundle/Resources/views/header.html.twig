@@ -1,4 +1,8 @@
 <div class="me-header">
+    {% set url = app.request.get('_route') != 'site_general_index' ? url('site_general_index') : 'javascript:void(0);' %}
+    <a href="{{ url }}" class="me-logo">
+        Туристическое агентство
+    </a>
     <ul class="text-center me-menu">
         {% spaceless %}
             <li{% if menu_active == 'index' %} class="active"{% endif %}>
