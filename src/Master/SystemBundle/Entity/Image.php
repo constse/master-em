@@ -6,6 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+/**
+ * Class Image
+ * @package Master\SystemBundle\Entity
+ * @ORM\Entity
+ * @ORM\Table(name = "images")
+ */
 class Image extends AbstractEntity
 {
     const PUBLIC_DIR = '/web';
