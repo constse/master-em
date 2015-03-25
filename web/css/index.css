@@ -349,10 +349,9 @@
     font-size: 14px;
     height: 33px;
     margin-right: 26px;
-    padding: 9px 0 0 34px;
+    padding: 9px 20px 0 40px;
     position: relative;
     text-align: center;
-    width: 147px;
 }
 
 .me-share li:last-child {
@@ -373,7 +372,6 @@
 
 .me-share .me-vk .me-icon {
     background: url('../img/share-vk.png') center center no-repeat transparent;
-    border-right: 1px solid #4e6c8c;
 }
 
 .me-share .me-fb {
@@ -382,7 +380,6 @@
 
 .me-share .me-fb .me-icon {
     background: url('../img/share-fb.png') center center no-repeat transparent;
-    border-right: 1px solid #325294;
 }
 
 .me-share .me-ok {
@@ -391,7 +388,6 @@
 
 .me-share .me-ok .me-icon {
     background: url('../img/share-ok.png') center center no-repeat transparent;
-    border-right: 1px solid #d26600;
 }
 
 .me-share .me-instagram {
@@ -400,5 +396,4 @@
 
 .me-share .me-instagram .me-icon {
     background: url('../img/share-instagram.png') center center no-repeat transparent;
-    border-right: 1px solid #265175;
 }
