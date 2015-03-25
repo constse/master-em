@@ -1,8 +1,20 @@
 # 1
 
+site_general_booking:
+  path: /booking
+  defaults: { _controller: "MasterSiteBundle:General:booking" }
+
 site_general_contacts:
   path: /contacts
   defaults: { _controller: "MasterSiteBundle:General:contacts" }
+
+site_general_flights:
+  path: /flights
+  defaults: { _controller: "MasterSiteBundle:General:flights" }
+
+site_general_visa:
+  path: /visa
+  defaults: { _controller: "MasterSiteBundle:General:visa" }
 
 site_general_index:
   path: /

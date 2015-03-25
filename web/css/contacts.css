@@ -64,10 +64,6 @@
     margin-bottom: 7px;
 }
 
-.me-timetable p {
-
-}
-
 .me-timetable .me-contacts-vk {
     background: url('../img/contacts-vk.jpg') no-repeat;
     display: inline-block;
@@ -90,4 +86,26 @@
     height: 24px;
     margin-right: 4px;
     width: 24px;
+}
+
+.me-certs {
+    margin-top: 41px;
+}
+
+.me-certs h2 {
+    font-size: 29px;
+}
+
+.me-details h2 {
+    font-size: 29px;
+    margin-bottom: 11px;
+}
+
+.me-details td {
+    line-height: 22px;
+    vertical-align: top;
+}
+
+.me-details .me-details-left {
+    width: 377px;
 }

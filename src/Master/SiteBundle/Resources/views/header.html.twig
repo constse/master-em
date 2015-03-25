@@ -5,9 +5,18 @@
                 <a href="{{ url('site_general_index') }}">Туры</a>
                 {% if menu_active == 'index' %}<div class="active"></div>{% endif %}
             </li>
-            <li><a href="#">Визы</a></li>
-            <li><a href="#">Авиабилеты</a></li>
-            <li><a href="#">Онлайн-бронь</a></li>
+            <li{% if menu_active == 'visa' %} class="active"{% endif %}>
+                <a href="{{ url('site_general_visa') }}">Визы</a>
+                {% if menu_active == 'visa' %}<div class="active"></div>{% endif %}
+            </li>
+            <li{% if menu_active == 'flights' %} class="active"{% endif %}>
+                <a href="{{ url('site_general_flights') }}">Авиабилеты</a>
+                {% if menu_active == 'flights' %}<div class="active"></div>{% endif %}
+            </li>
+            <li{% if menu_active == 'booking' %} class="active"{% endif %}>
+                <a href="{{ url('site_general_booking') }}">Онлайн-бронь</a>
+                {% if menu_active == 'booking' %}<div class="active"></div>{% endif %}
+            </li>
             <li{% if menu_active == 'contacts' %} class="active"{% endif %}>
                 <a href="{{ url('site_general_contacts') }}">Контакты</a>
                 {% if menu_active == 'contacts' %}<div class="active"></div>{% endif %}
