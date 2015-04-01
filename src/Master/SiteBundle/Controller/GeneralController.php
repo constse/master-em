@@ -36,9 +36,7 @@ class GeneralController extends InitializableController
 
     public function indexAction()
     {
-        return $this->render('MasterSiteBundle:General:index.html.twig', array(
-            'menu_active' => 'index'
-        ));
+        return $this->render('MasterSiteBundle:General:index.html.twig');
     }
 
     public function loyaltyAction()

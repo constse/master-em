@@ -1,0 +1,68 @@
+body {
+    background-color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #000;
+    line-height: 1.2;
+}
+
+a, a:active, a:hover, a:visited, a:focus {
+    color: #0688ec;
+    text-decoration: none;
+}
+
+.container {
+    padding: 0;
+    width: 1000px;
+}
+
+.me-header {
+    background: url('../img/logo.png') left 17px no-repeat transparent;
+    height: 98px;
+    position: relative;
+}
+
+.me-header .me-logo {
+    color: #000;
+    display: block;
+    font-size: 12px;
+    height: 80px;
+    left: 0;
+    padding: 57px 0 0 8px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 16px;
+    width: 281px;
+}
+
+.me-header .me-right {
+    padding: 12px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 178px;
+}
+
+.me-header .me-right .me-phone {
+    font-size: 23px;
+}
+
+.me-header .me-right .me-phone a {
+    color: #000;
+}
+
+.me-header .me-right .me-timetable {
+    font-size: 12px;
+    position: relative;
+    top: 1px;
+}
+
+.me-header .me-right .me-callback {
+    font-size: 12px;
+    position: relative;
+    top: 9px;
+}
+
+.me-header .me-right .me-callback a {
+    border-bottom: 1px dashed #0688ec;
+}

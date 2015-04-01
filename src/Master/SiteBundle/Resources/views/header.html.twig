@@ -1,9 +1,7 @@
-<div class="me-header">
+<div id="header">
     {% set url = app.request.get('_route') != 'site_general_index' ? url('site_general_index') : 'javascript:void(0);' %}
-    <a href="{{ url }}" class="me-logo">
-        Туристическое агентство
-    </a>
-    <ul class="text-center me-menu">
+    <a href="{{ url }}" class="logo">Туристическое агентство</a>
+    <ul id="menu" class="text-center">
         {% spaceless %}
             <li{% if menu_active == 'index' %} class="active"{% endif %}>
                 <a href="{{ url('site_general_index') }}">Туры</a>
@@ -27,9 +25,9 @@
             </li>
         {% endspaceless %}
     </ul>
-    <div class="me-right">
-        <div class="me-phone"><a href="tel:+78007751257">8 800 775-12-57</a></div>
-        <div class="me-timetable">пн-пт, с 10:00 до 19:00</div>
-        <div class="me-callback"><a href="javascript:void(0);">Обратный звонок</a></div>
+    <div class="contacts">
+        <div class="phone"><a href="tel:+78007751257">8 800 775-12-57</a></div>
+        <div class="timetable">пн-пт, с 10:00 до 19:00</div>
+        <div class="order"><a href="javascript:void(0);">Обратный звонок</a></div>
     </div>
 </div>

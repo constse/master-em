@@ -16,6 +16,26 @@ site_general_flights:
   path: /flights
   defaults: { _controller: "MasterSiteBundle:General:flights" }
 
+site_general_landing1:
+  path: /landing1
+  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+
+site_general_landing2:
+  path: /landing1
+  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+
+site_general_landing3:
+  path: /landing1
+  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+
+site_general_landing4:
+  path: /landing1
+  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+
+site_general_landing5:
+  path: /landing1
+  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+
 site_general_loyalty:
   path: /loyalty
   defaults: { _controller: "MasterSiteBundle:General:loyalty" }

@@ -4,24 +4,30 @@
     <title>{% block head_title %}Page{% endblock %} | Мастер эмоций</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="const-se.ru">
     <link rel="stylesheet" href="{{ asset('/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/bootstrap-theme.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/styles.css') }}">
     <script src="{{ asset('/js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
     {% block head_additions %}{% endblock %}
 </head>
 <body>
     <div class="container">
-        {% include 'MasterSiteBundle::header.html.twig' %}
         {% block body_content %}Content{% endblock %}
-        {% include 'MasterSiteBundle::footer.html.twig' %}
     </div>
     <!-- BEGIN JIVOSITE CODE {literal} -->
     <script type='text/javascript'>
-        (function(){ var widget_id = 'c6GoPK5tTS';
-            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();
+        (function() {
+            var widget_id = 'c6GoPK5tTS';
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//code.jivosite.com/script/widget/'+widget_id;
+            var ss = document.getElementsByTagName('script')[0];
+            ss.parentNode.insertBefore(s, ss);
+        })();
     </script>
     <!-- {/literal} END JIVOSITE CODE -->
     {% block body_additions %}{% endblock %}
