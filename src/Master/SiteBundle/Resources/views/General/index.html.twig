@@ -59,7 +59,7 @@
             <span class="sr-only">Следующий</span>
         </a>
     </div>
-    <div class="index-page">
+    <div id="index-page">
         <div class="heading">
             <h1>Галерея туров</h1>
             <ul class="list-inline filter-type">
@@ -82,7 +82,7 @@
             {% spaceless %}
                 {% for tour in tours %}
                     <li data-type="{{ tour.type|e }}" data-location="{{ tour.location|e }}">
-                        <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}">
+                        <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="314" height="202">
                         {% if tour.template == 0 %}
                             <div class="caption left-top-first">{{ tour.caption|e }}</div>
                             <div class="days left-top-second">{{ tour.days|e }}</div>

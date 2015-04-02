@@ -1,13 +1,11 @@
-{% block body_content %}
-    <div class="me-header">
-        {% set url = app.request.get('_route') != 'site_general_index' ? url('site_general_index') : 'javascript:void(0);' %}
-        <a href="{{ url }}" class="me-logo">
-            Туристическое агентство
-        </a>
-        <div class="me-right">
-            <div class="me-phone"><a href="tel:+78007751257">8 800 775-12-57</a></div>
-            <div class="me-timetable">пн-пт, с 10:00 до 19:00</div>
-            <div class="me-callback"><a href="javascript:void(0);">Обратный звонок</a></div>
-        </div>
-    </div>
-{% endblock %}
+{% extends 'MasterSiteBundle::landing.html.twig' %}
+
+{% block head_title %}Санаторно-курортный отдых в Белокурихе{% endblock %}
+
+{%  block body_h1 %}Санаторно-курортный<br>отдых в Белокурихе{% endblock %}
+
+{%  block body_h2 %}Забронируйте отдых и получите массаж в подарок{% endblock %}
+
+{%  block body_h3 %}Дарим 20% скидки на профессиональный<br>оздоровительный массаж{% endblock %}
+
+{% block body_present %}&laquo;10 секретов отдыха в Белокурихе&raquo;{% endblock %}

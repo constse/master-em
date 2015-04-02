@@ -210,12 +210,12 @@ a, a:active, a:hover, a:visited, a:focus {
     top: 4px;
 }
 
-.index-page .heading {
+#index-page .heading {
     margin: 39px 0 0;
     position: relative;
 }
 
-.index-page .heading h1 {
+#index-page .heading h1 {
     display: inline-block;
     font-size: 36px;
     font-weight: bold;
@@ -223,13 +223,13 @@ a, a:active, a:hover, a:visited, a:focus {
     padding: 0;
 }
 
-.index-page .filter-type {
+#index-page .filter-type {
     position: absolute;
     right: 7px;
     top: 7px;
 }
 
-.index-page .filter-type li {
+#index-page .filter-type li {
     background: url('../img/filter-type-button.jpg') repeat-x #f8f8f8;
     border: 1px solid #ddd;
     border-right: none;
@@ -237,60 +237,60 @@ a, a:active, a:hover, a:visited, a:focus {
     padding: 9px 12px 0;
 }
 
-.index-page .filter-type li.active {
+#index-page .filter-type li.active {
     background: url('../img/filter-type-button-active.jpg') repeat-x #f8f8f8;
 }
 
-.index-page .filter-type a {
+#index-page .filter-type a {
     color: #000;
     font-size: 14px;
     font-weight: bold;
 }
 
-.index-page .filter-type li:first-child {
+#index-page .filter-type li:first-child {
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
 }
 
-.index-page .filter-type li:last-child {
+#index-page .filter-type li:last-child {
     border-bottom-right-radius: 4px;
     border-right: 1px solid #ddd;
     border-top-right-radius: 4px;
 }
 
-.index-page .filter-location {
+#index-page .filter-location {
     margin: 12px 7px 0;
 }
 
-.index-page .filter-location li {
+#index-page .filter-location li {
     border: 1px solid transparent;
     height: 30px;
     padding: 6px 10px 0;
     margin-right: 5px;
 }
 
-.index-page .filter-location li.active {
+#index-page .filter-location li.active {
     background: url('../img/filter-location-button-active.jpg') repeat-x #aeafb4;
     border-color: #a3a3a3;
     border-radius: 4px;
 }
 
-.index-page .filter-location li a {
+#index-page .filter-location li a {
     border-bottom: 1px dashed #0688ec;
     font-size: 14px;
 }
 
-.index-page .filter-location li.active a {
+#index-page .filter-location li.active a {
     border: none;
     color: #fff;
 }
 
-.index-page .tours {
+#index-page .tours {
     margin: 34px -4px 0 -4px;
     padding: 0;
 }
 
-.index-page .tours li {
+#index-page .tours li {
     color: #fff;
     display: inline-block;
     height: 202px;
@@ -300,41 +300,37 @@ a, a:active, a:hover, a:visited, a:focus {
     width: 314px;
 }
 
-/*.index-page .tours li:nth-of-type(3n) {*/
-    /*margin-right: 0;*/
-/*}*/
-
-.index-page .tours .caption {
+#index-page .tours .caption {
     font-size: 27px;
     position: absolute;
 }
 
-.index-page .tours .caption.left-top-first {
+#index-page .tours .caption.left-top-first {
     left: 17px;
     top: 10px;
 }
 
-.index-page .tours .caption.left-top-second {
+#index-page .tours .caption.left-top-second {
     left: 17px;
     top: 29px;
 }
 
-.index-page .tours .days {
+#index-page .tours .days {
     font-size: 17px;
     position: absolute;
 }
 
-.index-page .tours .days.left-top-second {
+#index-page .tours .days.left-top-second {
     left: 17px;
     top: 44px;
 }
 
-.index-page .tours .days.left-bottom {
+#index-page .tours .days.left-bottom {
     bottom: 11px;
     left: 17px;
 }
 
-.index-page .tours .city {
+#index-page .tours .city {
     background: url('../img/tour-airplaine.png') right center no-repeat transparent;
     display: inline-block;
     font-size: 15px;
@@ -343,27 +339,27 @@ a, a:active, a:hover, a:visited, a:focus {
     position: absolute;
 }
 
-.index-page .tours .city.left-bottom {
+#index-page .tours .city.left-bottom {
     bottom: 14px;
     left: 17px;
 }
 
-.index-page .tours .city.left-top-first {
+#index-page .tours .city.left-top-first {
     left: 17px;
     top: 9px;
 }
 
-.index-page .tours .price {
+#index-page .tours .price {
     font-size: 21px;
     position: absolute;
 }
 
-.index-page .tours .price.right {
+#index-page .tours .price.right {
     right: 8px;
     top: 9px;
 }
 
-.index-page .tours a.button {
+#index-page .tours a.button {
     background: url('../img/tour-button.jpg') repeat-x #31cbb3;
     border-radius: 3px;
     bottom: 9px;
@@ -376,55 +372,55 @@ a, a:active, a:hover, a:visited, a:focus {
     width: 87px;
 }
 
-.index-page .shadow {
+#index-page .shadow {
     background: url('../img/hr-shadow.png') no-repeat transparent;
     height: 27px;
     margin-top: 44px;
 }
 
-.index-page .sections {
+#index-page .sections {
     padding: 0 30px;
 }
 
-.index-page .sections li {
+#index-page .sections li {
     display: inline-block;
     padding-right: 50px;
     vertical-align: top;
 }
 
-.index-page .sections li:nth-child(1) {
+#index-page .sections li:nth-child(1) {
     width: 218px;
 }
 
-.index-page .sections li:nth-child(2) {
+#index-page .sections li:nth-child(2) {
     width: 251px;
 }
 
-.index-page .sections li:nth-child(3) {
+#index-page .sections li:nth-child(3) {
     width: 283px;
 }
 
-.index-page .sections li:nth-child(4) {
+#index-page .sections li:nth-child(4) {
     padding: 0;
     width: 188px;
 }
 
-.index-page .sections h2 {
+#index-page .sections h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0 0 9px;
 }
 
-.index-page .sections a {
+#index-page .sections a {
     border-bottom: 1px solid #0688ec;
 }
 
-.index-page .sections p {
+#index-page .sections p {
     font-size: 13px;
     line-height: 1.4;
 }
 
-.index-page .order {
+#index-page .order {
     background: url('../img/order-button.jpg') repeat-x #31cb9b;
     border-radius: 35px;
     display: inline-block;
@@ -434,36 +430,36 @@ a, a:active, a:hover, a:visited, a:focus {
     padding: 10px 40px 0;
 }
 
-.index-page .order:active, .order:hover, .order:visited, .order:focus {
+#index-page .order:active, .order:hover, .order:visited, .order:focus {
     color: #fff;
 }
 
-.index-page .order-tour {
+#index-page .order-tour {
     font-size: 27px;
     font-weight: bold;
     text-shadow: 1px 1px 1px #666;
 }
 
-.index-page .order-by-phone {
+#index-page .order-by-phone {
     color: #00735e;
     font-size: 12px;
     margin-top: 2px;
 }
 
-.index-page .feedback {
+#index-page .feedback {
     font-size: 14px;
     margin-top: 22px;
 }
 
-.index-page .feedback a {
+#index-page .feedback a {
     border-bottom: 1px solid #0688ec;
 }
 
-.index-page .share {
+#index-page .share {
     margin-top: 31px;
 }
 
-.index-page .share li {
+#index-page .share li {
     border-radius: 4px;
     display: inline-block;
     height: 33px;
@@ -473,16 +469,16 @@ a, a:active, a:hover, a:visited, a:focus {
     text-align: center;
 }
 
-.index-page .share li a {
+#index-page .share li a {
     color: #fff;
     font-size: 14px;
 }
 
-.index-page .share li:last-child {
+#index-page .share li:last-child {
     margin-right: 0;
 }
 
-.index-page .share .icon {
+#index-page .share .icon {
     height: 33px;
     left: 0;
     position: absolute;
@@ -490,35 +486,35 @@ a, a:active, a:hover, a:visited, a:focus {
     width: 34px;
 }
 
-.index-page .share .vk {
+#index-page .share .vk {
     background: #59789a;
 }
 
-.index-page .share .vk .icon {
+#index-page .share .vk .icon {
     background: url('../img/share-vk.png') center center no-repeat transparent;
 }
 
-.index-page .share .fb {
+#index-page .share .fb {
     background: #375aa3;
 }
 
-.index-page .share .fb .icon {
+#index-page .share .fb .icon {
     background: url('../img/share-fb.png') center center no-repeat transparent;
 }
 
-.index-page .share .ok {
+#index-page .share .ok {
     background: #ee7400;
 }
 
-.index-page .share .ok .icon {
+#index-page .share .ok .icon {
     background: url('../img/share-ok.png') center center no-repeat transparent;
 }
 
-.index-page .share .instagram {
+#index-page .share .instagram {
     background: #2a5b83;
 }
 
-.index-page .share .instagram .icon {
+#index-page .share .instagram .icon {
     background: url('../img/share-instagram.png') center center no-repeat transparent;
 }
 

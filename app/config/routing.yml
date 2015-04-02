@@ -21,20 +21,20 @@ site_general_landing1:
   defaults: { _controller: "MasterSiteBundle:General:landing1" }
 
 site_general_landing2:
-  path: /landing1
-  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+  path: /landing2
+  defaults: { _controller: "MasterSiteBundle:General:landing2" }
 
 site_general_landing3:
-  path: /landing1
-  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+  path: /landing3
+  defaults: { _controller: "MasterSiteBundle:General:landing3" }
 
 site_general_landing4:
-  path: /landing1
-  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+  path: /landing4
+  defaults: { _controller: "MasterSiteBundle:General:landing4" }
 
 site_general_landing5:
-  path: /landing1
-  defaults: { _controller: "MasterSiteBundle:General:landing1" }
+  path: /landing5
+  defaults: { _controller: "MasterSiteBundle:General:landing5" }
 
 site_general_loyalty:
   path: /loyalty

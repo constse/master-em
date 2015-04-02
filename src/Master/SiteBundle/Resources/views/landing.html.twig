@@ -8,14 +8,112 @@
     <link rel="stylesheet" href="{{ asset('/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/bootstrap-theme.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/landing.css') }}">
     <script src="{{ asset('/js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
     {% block head_additions %}{% endblock %}
 </head>
 <body>
 <div class="container">
-    {% block body_content %}Content{% endblock %}
+    <div id="header" class="header{{ landing|e }}">
+        <a href="{{ url('site_general_index') }}" class="logo">Туристическое агентство</a>
+        <div class="contacts">
+            <div class="phone"><a href="tel:+78007751257">8 800 775-12-57</a></div>
+            <div class="timetable">пн-пт, с 10:00 до 19:00</div>
+            <div class="order"><a href="javascript:void(0);">Заказать братный звонок</a></div>
+        </div>
+        <h1>{% block body_h1 %}{% endblock %}</h1>
+        <h2>{% block body_h2 %}{% endblock %}</h2>
+        <h3>{% block body_h3 %}{% endblock %}</h3>
+        <a class="button text-shadow">Заказать расчёт тура</a>
+    </div>
+    <div class="tours">
+        <h2>Основные предложения</h2>
+        <p class="subheader">Работаем только с надежными и проверенными туроператорами &mdash;<br>лидерами по внутреннему туризму</p>
+        <ul id="tours">
+            {% spaceless %}
+                {% for tour in tours %}
+                    <li>
+                        <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="284" height="183">
+                        {% if tour.template == 0 %}
+                            <div class="caption left-top-first">{{ tour.caption|e }}</div>
+                            <div class="days left-top-second">{{ tour.days|e }}</div>
+                            <div class="city left-bottom">{{ tour.from|e }}</div>
+                            <div class="price right">{{ tour.price|e }} ₽</div>
+                            <a href="javascript:void(0);" class="text-center button">Купить</a>
+                        {% elseif tour.template == 1 %}
+                            <div class="caption left-top-first">{{ tour.caption|e }}</div>
+                            <div class="days left-top-second">{{ tour.days|e }}</div>
+                            <div class="city left-bottom">{{ tour.from|e }}</div>
+                            <div class="price right"></div>
+                            <a href="javascript:void(0);" class="text-center button">{{ tour.price|e }} ₽</a>
+                        {% else %}
+                            <div class="caption left-top-second">{{ tour.caption|e }}</div>
+                            <div class="days left-bottom">{{ tour.days|e }}</div>
+                            <div class="city left-top-first">{{ tour.from|e }}</div>
+                            <div class="price right">{{ tour.price|e }} ₽</div>
+                            <a href="javascript:void(0);" class="text-center button">Купить</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            {% endspaceless %}
+        </ul>
+    </div>
+    <div class="properties">
+        <h2>Профессиональная забота о ваших эмоциях</h2>
+        <p class="subheader">Доверьте отдых мастерам своего дела</p>
+        <div class="block block1">
+            <strong>Профессионализм</strong><br>
+            Наши менеджеры лично побывали<br>
+            на многих туристических базах и<br>
+            хорошо изучили инфраструктуру
+        </div>
+        <div class="block block2">
+            <strong>Максимум от отдыха</strong><br>
+            Предоставляем качественные и<br>
+            подробные консультации перед поездкой
+        </div>
+        <div class="block block3">
+            <strong>Порядочность</strong><br>
+            Выдаем все официальные документы,<br>
+            включая чеки и справки
+        </div>
+        <div class="block block4">
+            <strong>Надёжность</strong><br>
+            Работаем в туризме уже более 12 лет,<br>
+            85% &mdash; наши постоянные клиенты
+        </div>
+        <div class="block block5">
+            <strong>Лучшие предложения</strong><br>
+            Выбираем оптимальное соотношение<br>
+            цены и качества
+        </div>
+        <div class="block block6">
+            <strong>Забота</strong><br>
+            Мы закрепляем за Вами персонального<br>
+            менеджера на период поездки
+        </div>
+    </div>
+    <div class="reviews">
+        <h2>Отзывы</h2>
+        <a href="javascript:void(0);" class="order text-shadow">Оставить заявку на подбор тура</a>
+    </div>
+    <div class="certificates">
+        <h2>Дипломы и сертификаты</h2>
+    </div>
+    <div id="footer" class="footer{{ landing|e }}">
+        <h2>Подарок для Вас</h2>
+        <p class="subheader">
+            Подпишитесь на email-рассылку и получите подарок &mdash;<br>
+            {% block body_present %}{% endblock %}
+        </p>
+        <a href="javascript:void(0);" class="get-present">Получить подарок</a>
+        <p class="contacts">
+            Мало-Тобольская 19-105, Барнаул Алтайский край &bull; 8 3852 229-281 &bull;
+            <a href=mailto:manager-master-em@mail.ru">manager-master-em@mail.ru</a>
+        </p>
+        <a href="#" class="privacy">Политика конфиденциальности</a>
+    </div>
 </div>
 <!-- BEGIN JIVOSITE CODE {literal} -->
 <script type='text/javascript'>

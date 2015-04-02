@@ -1,3 +1,8 @@
+html {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-backface-visibility: hidden;
+}
+
 body {
     background-color: #fff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -10,59 +15,492 @@ a, a:active, a:hover, a:visited, a:focus {
     text-decoration: none;
 }
 
-.container {
-    padding: 0;
-    width: 1000px;
+.text-shadow {
+    text-shadow: 1px 1px 1px #666;
 }
 
-.me-header {
-    background: url('../img/logo.png') left 17px no-repeat transparent;
-    height: 98px;
+.container {
+    padding: 0;
+    width: 1280px;
+}
+
+#header {
+    height: 455px;
     position: relative;
 }
 
-.me-header .me-logo {
-    color: #000;
+#header.header1 {
+    background: url('../img/landing1.jpg') center top no-repeat;
+}
+
+#header.header2 {
+    background: url('../img/landing2.jpg') center top no-repeat;
+}
+
+#header.header3 {
+    background: url('../img/landing3.jpg') center top no-repeat;
+}
+
+#header.header4 {
+    background: url('../img/landing4.jpg') center top no-repeat;
+}
+
+#header.header5 {
+    background: url('../img/landing5.jpg') center top no-repeat;
+}
+
+#header .logo {
+    background: url('../img/logo1.png') left top no-repeat transparent;
+    color: #fff;
     display: block;
-    font-size: 12px;
+    font-size: 13px;
     height: 80px;
-    left: 0;
-    padding: 57px 0 0 8px;
+    left: 30px;
+    padding: 56px 0 0 0;
     position: absolute;
     text-align: center;
     text-decoration: none;
-    top: 16px;
-    width: 281px;
+    top: 30px;
+    width: 265px;
 }
 
-.me-header .me-right {
-    padding: 12px 0 0;
+#header .contacts {
+    color: #fff;
+    padding: 0;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 30px;
+    top: 30px;
     width: 178px;
 }
 
-.me-header .me-right .me-phone {
+#header .contacts .phone {
     font-size: 23px;
 }
 
-.me-header .me-right .me-phone a {
-    color: #000;
+#header .contacts .phone a {
+    color: #fff;
 }
 
-.me-header .me-right .me-timetable {
+#header .contacts .timetable {
     font-size: 12px;
     position: relative;
     top: 1px;
 }
 
-.me-header .me-right .me-callback {
+#header .contacts .order {
     font-size: 12px;
     position: relative;
     top: 9px;
 }
 
-.me-header .me-right .me-callback a {
-    border-bottom: 1px dashed #0688ec;
+#header .contacts .order a {
+    border-bottom: 1px dashed #fff;
+    color: #fff;
+}
+
+#header h1 {
+    color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 58px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+#header.header1 h1 {
+    top: 72px;
+    line-height: 61px !important;
+}
+
+#header.header2 h1 {
+    top: 88px;
+    line-height: 61px !important;
+}
+
+#header.header3 h1 {
+    top: 55px;
+}
+
+#header.header4 h1 {
+    top: 54px;
+}
+
+#header.header5 h1 {
+    top: 85px;
+}
+
+#header h2 {
+    color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+#header.header1 h2 {
+    top: 204px;
+}
+
+#header.header2 h2 {
+    top: 211px;
+}
+
+#header.header3 h2 {
+    top: 145px;
+}
+
+#header.header4 h2 {
+    top: 135px;
+}
+
+#header.header5 h2 {
+    top: 165px;
+}
+
+#header h3 {
+    color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+#header.header1 h3 {
+    top: 245px;
+}
+
+#header.header2 h3 {
+    top: 254px;
+}
+
+#header.header3 h3 {
+    top: 218px;
+}
+
+#header.header4 h3 {
+    top: 208px;
+}
+
+#header.header5 h3 {
+    top: 234px;
+}
+
+#header .button {
+    color: #fff;
+    font-size: 19px;
+    border-radius: 26px;
+    display: inline-block;
+    background: url('../img/landing-header-button.jpg') repeat-x;
+    height: 52px;
+    padding-top: 14px;
+    position: absolute;
+    width: 250px;
+    left: 50%;
+    margin-left: -125px;
+    text-align: center;
+}
+
+#header.header1 .button {
+    top: 354px;
+}
+
+#header.header2 .button {
+    top: 360px;
+}
+
+#header.header3 .button {
+    top: 339px;
+}
+
+#header.header4 .button {
+    top: 331px;
+}
+
+#header.header5 .button {
+    top: 323px;
+}
+
+.tours h2 {
+    font-weight: normal;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 31px;
+}
+
+.subheader {
+    text-align: center;
+    font-size: 18px;
+    margin-top: -1px;
+    line-height: 1.3;
+}
+
+.properties h2 {
+    font-weight: normal;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 31px;
+}
+
+.reviews h2 {
+    font-weight: normal;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 31px;
+}
+
+.certificates h2 {
+    font-weight: normal;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 31px;
+}
+
+#tours {
+    margin: 54px 44px 0;
+    padding: 0;
+}
+
+#tours li {
+    color: #fff;
+    display: inline-block;
+    height: 183px;
+    margin: 0 7px 12px;
+    position: relative;
+    text-shadow: 1px 1px 1px #666;
+    width: 284px;
+}
+
+#tours .caption {
+    font-size: 27px;
+    position: absolute;
+}
+
+#tours .caption.left-top-first {
+    left: 17px;
+    top: 10px;
+}
+
+#tours .caption.left-top-second {
+    left: 17px;
+    top: 29px;
+}
+
+#tours .days {
+    font-size: 17px;
+    position: absolute;
+}
+
+#tours .days.left-top-second {
+    left: 17px;
+    top: 44px;
+}
+
+#tours .days.left-bottom {
+    bottom: 11px;
+    left: 17px;
+}
+
+#tours .city {
+    background: url('../img/tour-airplaine.png') right center no-repeat transparent;
+    display: inline-block;
+    font-size: 15px;
+    height: 17px;
+    padding-right: 24px;
+    position: absolute;
+}
+
+#tours .city.left-bottom {
+    bottom: 14px;
+    left: 17px;
+}
+
+#tours .city.left-top-first {
+    left: 17px;
+    top: 9px;
+}
+
+#tours .price {
+    font-size: 21px;
+    position: absolute;
+}
+
+#tours .price.right {
+    right: 8px;
+    top: 9px;
+}
+
+#tours a.button {
+    background: url('../img/tour-button.jpg') repeat-x #31cbb3;
+    border-radius: 3px;
+    bottom: 9px;
+    color: #fff;
+    font-size: 18px;
+    height: 31px;
+    padding-top: 5px;
+    position: absolute;
+    right: 9px;
+    width: 87px;
+}
+
+.properties {
+    background: url('../img/landing-for-you.png') center bottom no-repeat;
+    margin-top: -1px;
+    height: 484px;
+    position: relative;
+}
+
+.properties .block {
+    font-size: 11px;
+    position: absolute;
+    line-height: 1.7;
+}
+
+.properties .block strong {
+    font-size: 12px;
+}
+
+.properties .block1 {
+    left: 192px;
+    top: 128px;
+}
+
+.properties .block2 {
+    left: 192px;
+    top: 271px;
+}
+
+.properties .block3 {
+    left: 192px;
+    top: 405px;
+}
+
+.properties .block4 {
+    right: 187px;
+    top: 141px;
+    text-align: right;
+}
+
+.properties .block5 {
+    right: 187px;
+    top: 268px;
+    text-align: right;
+}
+
+.properties .block6 {
+    right: 187px;
+    top: 399px;
+    text-align: right;
+}
+
+.reviews {
+    background-color: #f3f3f3;
+    margin-top: 69px;
+    padding-top: 33px;
+    height: 628px;
+    position: relative;
+}
+
+.reviews .order {
+    color: #fff;
+    font-size: 19px;
+    border-radius: 26px;
+    display: inline-block;
+    background: url('../img/landing-header-button.jpg') repeat-x;
+    height: 52px;
+    padding-top: 14px;
+    position: absolute;
+    width: 370px;
+    left: 50%;
+    margin-left: -185px;
+    text-align: center;
+    bottom: 54px;
+}
+
+.certificates {
+    height: 432px;
+}
+
+#footer {
+    height: 341px;
+    margin-top: -20px;
+    position: relative;
+}
+
+#footer.footer1 {
+    background: url('../img/landing-footer1.jpg') center top no-repeat;
+}
+
+#footer.footer2 {
+    background: url('../img/landing-footer2.jpg') center top no-repeat;
+}
+
+#footer.footer3 {
+    background: url('../img/landing-footer3.jpg') center top no-repeat;
+}
+
+#footer.footer4 {
+    background: url('../img/landing-footer4.jpg') center top no-repeat;
+}
+
+#footer.footer5 {
+    background: url('../img/landing-footer5.jpg') center top no-repeat;
+}
+
+#footer h2 {
+    font-weight: normal;
+    text-align: center;
+    font-size: 38px;
+    padding-top: 31px;
+    color: #fff;
+}
+
+#footer .subheader {
+    color: #fff;
+}
+
+#footer .get-present {
+    color: #fff;
+    width: 220px;
+    height: 59px;
+    background: url('../img/landing-get-present.png') no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 167px;
+    text-align: center;
+    padding-top: 19px;
+    font-size: 16px;
+    margin-left: -110px;
+    font-weight: bold;
+}
+
+#footer .contacts {
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 33px;
+    font-size: 12px;
+}
+
+#footer .contacts a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#footer .privacy {
+    display: block;
+    bottom: 14px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    text-decoration: underline;
 }
