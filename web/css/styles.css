@@ -827,3 +827,70 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #booking-page .online {
 }
+
+#reviews-page .header-separator {
+    background: url('../img/header-separator.jpg') repeat-x;
+    height: 4px;
+}
+
+#reviews-page .heading {
+    margin: 26px 0 20px;
+    position: relative;
+}
+
+#reviews-page .heading h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#reviews-page .reviews {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#reviews-page .reviews td {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+#reviews-page .reviews .image {
+    width: 170px;
+}
+
+#reviews-page .reviews .image img {
+    width: 170px;
+    border: 0;
+}
+
+#reviews-page .reviews .full {
+    color: #7b7b7b;
+    padding: 0 50px 0 25px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+#reviews-page .reviews .full strong {
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 7px;
+}
+
+#reviews-page .reviews .full p {
+    color: #000;
+    margin-top: 4px;
+}
+
+#reviews-page .reviews .short {
+    font-size: 16px;
+    width: 210px;
+    padding-top: 20px;
+}
+
+#reviews-page .thanks {
+    font-size: 29px;
+    padding: 70px 0 0 195px;
+}

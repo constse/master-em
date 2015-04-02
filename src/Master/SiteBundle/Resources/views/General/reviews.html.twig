@@ -3,9 +3,31 @@
 {% block head_title %}Отзывы{% endblock %}
 
 {% block head_additions %}
-    <link rel="stylesheet" href="{{ asset('/css/reviews.css') }}">
+
 {% endblock %}
 
 {% block body_content %}
-    <div class="me-header-separator"></div>
+    {% set menu_active = null %}
+    {% include 'MasterSiteBundle::header.html.twig' %}
+    <div id="reviews-page">
+        <div class="header-separator"></div>
+        <div class="heading"><h1>Отзывы</h1></div>
+        <table class="reviews">
+            <thead></thead>
+            <tbody>
+                {% for review in reviews %}
+                    <tr>
+                        <td class="image"><img src="{{ asset(review.image.path|e) }}"></td>
+                        <td class="full">
+                            <strong>{{ review.name|e }}</strong> {{ review.to|e }}
+                            <p>{{ review.full|e }}</p>
+                        </td>
+                        <td class="short">{{ review.short|e }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="thanks">Спасибо вам!</div>
+    </div>
+    {% include 'MasterSiteBundle::footer.html.twig' %}
 {% endblock %}

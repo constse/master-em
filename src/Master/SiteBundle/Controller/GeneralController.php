@@ -55,8 +55,13 @@ class GeneralController extends InitializableController
 
     public function reviewsAction()
     {
+        $reviews = $this->getRepository('Review')->createQueryBuilder('r')
+            ->leftJoin('r.image', 'i')
+            ->orderBy('r.created', 'DESC')
+            ->getQuery()->getResult();
+
         return $this->render('MasterSiteBundle:General:reviews.html.twig', array(
-            'menu_active' => null
+            'reviews' => $reviews
         ));
     }
 
