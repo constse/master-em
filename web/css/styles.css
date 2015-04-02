@@ -555,3 +555,244 @@ a, a:active, a:hover, a:visited, a:focus {
     height: 20px;
     width: 76px;
 }
+
+#visa-page .header-separator {
+    background: url('../img/header-separator.jpg') repeat-x;
+    height: 4px;
+}
+
+#visa-page .heading {
+    margin: 26px 0 0;
+    position: relative;
+}
+
+#visa-page .heading h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#visa-page .heading div {
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 17px;
+    width: 210px;
+}
+
+#visa-page .heading .callback {
+    background: url('../img/contacts-callback.jpg') repeat-x;
+    border-radius: 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    height: 41px;
+    padding-top: 7px;
+    /*position: absolute;*/
+    /*right: 0;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #666;
+    /*top: 17px;*/
+    width: 210px;
+}
+
+#visa-page .article {
+    line-height: 27px;
+    width: 776px;
+}
+
+#visa-page .article p {
+    margin-bottom: 27px;
+}
+
+#visa-page .article .star {
+    background: url('../img/visa-star.png') left 10px no-repeat transparent;
+    float: right;
+    height: 85px;
+    width: 151px;
+}
+
+#visa-page .article .smile {
+    background: url('../img/visa-smile.png') left top no-repeat transparent;
+    float: right;
+    height: 59px;
+    margin-top: 75px;
+    width: 118px;
+}
+
+#flights-page .header-separator {
+    background: url('../img/header-separator.jpg') repeat-x;
+    height: 4px;
+}
+
+#flights-page .heading {
+    margin: 26px 0 0;
+    position: relative;
+}
+
+#flights-page .heading h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#flights-page .heading .callback {
+    background: url('../img/contacts-callback.jpg') repeat-x;
+    border-radius: 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    height: 41px;
+    padding-top: 7px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-shadow: 1px 1px 1px #666;
+    top: 17px;
+    width: 189px;
+}
+
+#flights-page .article {
+    line-height: 25px;
+    list-style-position: inside;
+    margin: 10px 0 190px;
+    padding: 0;
+    width: 777px;
+}
+
+#flights-page .article .sun {
+    background: url('../img/flights-sun.png') left 6px no-repeat transparent;
+    float: right;
+    height: 78px;
+    width: 184px;
+}
+
+#flights-page .article .plane {
+    background: url('../img/flights-plane.png') no-repeat transparent;
+    float: right;
+    height: 72px;
+    margin-left: 24px;
+    width: 155px;
+}
+
+#contacts-page .header-separator {
+    background: url('../img/header-separator.jpg') repeat-x;
+    height: 4px;
+}
+
+#contacts-page .heading {
+    margin: 26px 0 0;
+    position: relative;
+}
+
+#contacts-page .heading h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#contacts-page .heading .callback {
+    background: url('../img/contacts-callback.jpg') repeat-x;
+    border-radius: 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    height: 41px;
+    padding-top: 7px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-shadow: 1px 1px 1px #666;
+    top: 17px;
+    width: 189px;
+}
+
+#contacts-page .map {
+    height: 350px;
+    margin-top: 40px;
+}
+
+#contacts-page .about-company {
+    margin: 34px 0 0;
+    position: relative;
+}
+
+#contacts-page .about-company h2 {
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+#contacts-page .about-company p {
+    line-height: 24px;
+    width: 738px;
+    margin-bottom: 12px;
+}
+
+#contacts-page .timetable {
+    position: absolute;
+    right: 0;
+    top: 14px;
+    width: 197px;
+}
+
+#contacts-page .timetable h3 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+#contacts-page .timetable .contacts-vk {
+    background: url('../img/contacts-vk.jpg') no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 4px;
+    width: 24px;
+}
+
+#contacts-page .timetable .contacts-fb {
+    background: url('../img/contacts-fb.jpg') no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 4px;
+    width: 24px;
+}
+
+#contacts-page .timetable .contacts-instagram {
+    background: url('../img/contacts-instagram.jpg') no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 4px;
+    width: 24px;
+}
+
+#contacts-page .certs {
+    margin-top: 41px;
+}
+
+#contacts-page .certs h2 {
+    font-size: 29px;
+}
+
+#contacts-page .details h2 {
+    font-size: 29px;
+    margin-bottom: 11px;
+}
+
+#contacts-page .details td {
+    line-height: 22px;
+    vertical-align: top;
+}
+
+#contacts-page .details .details-left {
+    width: 377px;
+}
+
+#contacts-page .photo {
+    background: url('../img/contacts.png') left bottom no-repeat transparent;
+    float: right;
+    height: 253px;
+    width: 540px;
+    margin-left: 18px;
+}

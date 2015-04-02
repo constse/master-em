@@ -62,8 +62,6 @@ class GeneralController extends InitializableController
 
     public function visaAction()
     {
-        return $this->render('MasterSiteBundle:General:visa.html.twig', array(
-            'menu_active' => 'visa'
-        ));
+        return $this->render('MasterSiteBundle:General:visa.html.twig');
     }
 } 
