@@ -707,7 +707,7 @@ a, a:active, a:hover, a:visited, a:focus {
     text-align: center;
     text-shadow: 1px 1px 1px #666;
     top: 17px;
-    width: 189px;
+    width: 197px;
 }
 
 #contacts-page .map {
@@ -795,4 +795,35 @@ a, a:active, a:hover, a:visited, a:focus {
     height: 253px;
     width: 540px;
     margin-left: 18px;
+}
+
+#booking-page .header-separator {
+    background: url('../img/header-separator.jpg') repeat-x;
+    height: 4px;
+}
+
+#booking-page .heading {
+    margin: 26px 0 0;
+    position: relative;
+}
+
+#booking-page .heading h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#booking-page .article {
+    line-height: 25px;
+    list-style-position: inside;
+    margin: 10px 0 40px;
+    padding: 0;
+}
+
+#booking-page .article p {
+    margin-bottom: 27px;
+}
+
+#booking-page .online {
 }

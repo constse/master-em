@@ -2,10 +2,23 @@
 
 {% block head_title %}Онлайн-бронь{% endblock %}
 
-{% block head_additions %}
-    <link rel="stylesheet" href="{{ asset('/css/booking.css') }}">
-{% endblock %}
-
 {% block body_content %}
-    <div class="me-header-separator"></div>
+    {% set menu_active = 'booking' %}
+    {% include 'MasterSiteBundle::header.html.twig' %}
+    <div id="booking-page">
+        <div class="header-separator"></div>
+        <div class="heading"><h1>Подбор авиабилета</h1></div>
+        <p>
+            С помощью данного сервиса Вы можете:
+        </p>
+        <ol class="article">
+            <li>Самостоятельно найти и рассчитать свой тур.</li>
+            <li>Выбрать необходимое количество дней, отель, категорию номера, тип питания и другие важные для Вас характеристики.</li>
+            <li>Ознакомиться с отзывами и рейтингами отельной базы.</li>
+            <li>Отслеживать стоимость тура в зависимости от дат и курса валют.</li>
+            <li>Забронировать выбранный тур в режиме реального времени.</li>
+        </ol>
+        <div class="online">Тут должен быть виджет</div>
+    </div>
+    {% include 'MasterSiteBundle::footer.html.twig' %}
 {% endblock %}
