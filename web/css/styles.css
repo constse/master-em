@@ -928,10 +928,15 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #faq-page .main .left a {
-    display: block;
+    border-bottom: 1px solid transparent;
+    display: inline-block;
     color: #000;
     text-decoration: none;
     margin-top: 10px;
+}
+
+#faq-page .main .left a:hover {
+    border-bottom: 1px dotted #000;
 }
 
 #faq-page .main .right {
@@ -960,4 +965,56 @@ a, a:active, a:hover, a:visited, a:focus {
     height: 100px;
     width: 194px;
     margin-left: 15px;
+}
+
+#loyalty-page .header-separator {
+    background: url('../img/header-separator.jpg') repeat-x;
+    height: 4px;
+}
+
+#loyalty-page .heading {
+    margin: 26px 0 0;
+    position: relative;
+}
+
+#loyalty-page .heading h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#loyalty-page .heading .callback {
+    background: url('../img/contacts-callback.jpg') repeat-x;
+    border-radius: 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    height: 41px;
+    padding-top: 7px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-shadow: 1px 1px 1px #666;
+    top: 17px;
+    width: 189px;
+}
+
+#loyalty-page .article {
+    line-height: 27px;
+    width: 770px;
+}
+
+#loyalty-page .article .sun {
+    background: url('../img/loyalty-sun.png') no-repeat transparent;
+    float: right;
+    height: 123px;
+    width: 270px;
+}
+
+#loyalty-page .article .smile {
+    background: url('../img/loyalty-smile.png') left bottom no-repeat transparent;
+    float: right;
+    height: 238px;
+    width: 175px;
 }

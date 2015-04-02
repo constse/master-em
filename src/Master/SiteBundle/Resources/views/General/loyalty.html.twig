@@ -2,10 +2,50 @@
 
 {% block head_title %}Программа лояльности{% endblock %}
 
-{% block head_additions %}
-    <link rel="stylesheet" href="{{ asset('/css/loyalty.css') }}">
-{% endblock %}
-
 {% block body_content %}
-    <div class="me-header-separator"></div>
+    {% set menu_active = null %}
+    {% include 'MasterSiteBundle::header.html.twig' %}
+    <div id="loyalty-page">
+        <div class="header-separator"></div>
+        <div class="heading">
+            <h1>Программа лояльности</h1>
+            <a href="#" class="callback">Получить карту</a>
+        </div>
+        <div class="article">
+            <p>
+                <strong>Описание</strong><br>
+                Заключается в предоставлении дополнительных сервисов, возможностей и специальных ценовых предложений для участников программы.
+            </p>
+            <div class="sun"></div>
+            <p>
+                <strong>Предназначение</strong><br>
+                Для всех владельцев карт лояльности.
+            </p>
+            <p>
+                <strong>Возможность участия</strong><br>
+                Карта лояльности выдается каждому клиенту агентства.
+            </p>
+            <p>
+                <strong>Реферальность</strong><br>
+                Карта не является именной и может быть передана третьим лицам.
+            </p>
+            <div class="smile"></div>
+            <p>
+                <strong>Выгоды</strong><br>
+                1. Предоставление специальной цены на все туры &mdash; &laquo;цена по карте&raquo;.<br>
+                2. Оповещение об эксклюзивных предложениях:<br>
+                &mdash; туры по очень выгодным ценам,<br>
+                &mdash; туры со специальными акциями,<br>
+                &mdash; туры с нестандартной комплектацией услуг.<br>
+                3. Приглашение на участие в интересных и полезных событиях клубного формата:<br>
+                &mdash; встречи,<br>
+                &mdash; конкурсы,<br>
+                &mdash; вебинары.<br>
+                4. Включение в онлайн-рассылку о туристических трендах и лайфхаках, что позволит более эффективно организовывать свои путешествия.<br>
+                5. Вручение подарков за каждого нового клиента, который обратился к нам по вашей рекомендации.
+            </p>
+        </div>
+        <div class="card">Здесь изображение карты</div>
+    </div>
+    {% include 'MasterSiteBundle::footer.html.twig' %}
 {% endblock %}
