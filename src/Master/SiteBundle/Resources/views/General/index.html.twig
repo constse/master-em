@@ -64,46 +64,46 @@
             <h1>Галерея туров</h1>
             <ul class="list-inline filter-type">
                 {% spaceless %}
-                    <li class="active"><a href="javascript:void(0);">Новые</a></li>
-                    <li><a href="javascript:void(0);">Горящие</a></li>
-                    <li><a href="javascript:void(0);">Акции</a></li>
+                    <li><a href="javascript:void(0);" data-type="0">Новые</a></li>
+                    <li><a href="javascript:void(0);" data-type="1">Горящие</a></li>
+                    <li><a href="javascript:void(0);" data-type="2">Акции</a></li>
                 {% endspaceless %}
             </ul>
             <ul class="list-inline filter-location">
                 {% spaceless %}
-                    <li class="active"><a href="javascript:void(0);">Все туры</a></li>
-                    <li><a href="javascript:void(0);">Зарубежные</a></li>
-                    <li><a href="javascript:void(0);">Алтай</a></li>
-                    <li><a href="javascript:void(0);">По России</a></li>
+                    <li class="active"><a href="javascript:void(0);" data-location="-1">Все туры</a></li>
+                    <li><a href="javascript:void(0);" data-location="0">Зарубежные</a></li>
+                    <li><a href="javascript:void(0);" data-location="1">Алтай</a></li>
+                    <li><a href="javascript:void(0);" data-location="2">По России</a></li>
                 {% endspaceless %}
             </ul>
         </div>
         <ul class="tours">
             {% spaceless %}
-                <li>
-                    <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-                    <div class="caption left-top-first">Мальта</div>
-                    <div class="days left-top-second">4 дня</div>
-                    <div class="city left-bottom">Москва</div>
-                    <div class="price right">28 700 ₽</div>
-                    <a href="javascript:void(0);" class="text-center button">Купить</a>
-                </li>
-                <li>
-                    <img src="{{ asset('/test/tour1.jpg') }}" alt="...">
-                    <div class="caption left-top-first">Таиланд</div>
-                    <div class="days left-top-second">6 дней</div>
-                    <div class="city left-bottom">Новосибирск</div>
-                    <div class="price right"></div>
-                    <a href="javascript:void(0);" class="text-center button">28 500 ₽</a>
-                </li>
-                <li>
-                    <img src="{{ asset('/test/tour.jpg') }}" alt="...">
-                    <div class="caption left-top-second">Италия</div>
-                    <div class="days left-bottom">4 дня</div>
-                    <div class="city left-top-first">Москва</div>
-                    <div class="price right">14 500 ₽</div>
-                    <a href="javascript:void(0);" class="text-center button">Купить</a>
-                </li>
+                {% for tour in tours %}
+                    <li data-type="{{ tour.type|e }}" data-location="{{ tour.location|e }}">
+                        <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}">
+                        {% if tour.template == 0 %}
+                            <div class="caption left-top-first">{{ tour.caption|e }}</div>
+                            <div class="days left-top-second">{{ tour.days|e }}</div>
+                            <div class="city left-bottom">{{ tour.from|e }}</div>
+                            <div class="price right">{{ tour.price|e }} ₽</div>
+                            <a href="javascript:void(0);" class="text-center button">Купить</a>
+                        {% elseif tour.template == 1 %}
+                            <div class="caption left-top-first">{{ tour.caption|e }}</div>
+                            <div class="days left-top-second">{{ tour.days|e }}</div>
+                            <div class="city left-bottom">{{ tour.from|e }}</div>
+                            <div class="price right"></div>
+                            <a href="javascript:void(0);" class="text-center button">{{ tour.price|e }} ₽</a>
+                        {% else %}
+                            <div class="caption left-top-second">{{ tour.caption|e }}</div>
+                            <div class="days left-bottom">{{ tour.days|e }}</div>
+                            <div class="city left-top-first">{{ tour.from|e }}</div>
+                            <div class="price right">{{ tour.price|e }} ₽</div>
+                            <a href="javascript:void(0);" class="text-center button">Купить</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
             {% endspaceless %}
         </ul>
         <div class="shadow"></div>
@@ -153,9 +153,28 @@
         $(document).ready(function() {
             $('.filter-type a').click(function() {
                 $(this).parent().addClass('active').siblings().removeClass('active');
+                var ul = $('ul.tours');
+                var type = $(this).attr('data-type');
+                var location = $('.filter-location li.active a').attr('data-location');
+                ul.children('li').stop(true, true).hide();
+                if (location > -1) ul.children('li[data-type="' + type + '"][data-location="' + location + '"]').stop(true, true).fadeIn(250);
+                else ul.children('li[data-type="' + type + '"]').stop(true, true).fadeIn(250);
             });
-            $('.filter-location li a').click(function() {
+            $('.filter-location a').click(function() {
                 $(this).parent().addClass('active').siblings().removeClass('active');
+                var ul = $('ul.tours');
+                var location = $(this).attr('data-location');
+                if (location == -1) {
+                    $('.filter-type a').parent().removeClass('active');
+                    ul.children('li').stop(true, true).fadeIn(250);
+                }
+                else {
+                    var type = -1;
+                    if ($('.filter-type li.active a').length > 0) type = $('.filter-type li.active a').attr('data-type');
+                    ul.children('li').stop(true, true).hide();
+                    if (type > -1) ul.children('li[data-type="' + type + '"][data-location="' + location + '"]').stop(true, true).fadeIn(250);
+                    else ul.children('li[data-location="' + location + '"]').stop(true, true).fadeIn(250);
+                }
             });
         });
     </script>

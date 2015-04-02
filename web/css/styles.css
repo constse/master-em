@@ -286,23 +286,23 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 .index-page .tours {
-    margin-top: 34px;
-    padding: 0 7px 0;
+    margin: 34px -4px 0 -4px;
+    padding: 0;
 }
 
 .index-page .tours li {
     color: #fff;
     display: inline-block;
     height: 202px;
-    margin: 0 22px 19px 0;
+    margin: 0 11px 19px 11px;
     position: relative;
     text-shadow: 1px 1px 1px #666;
     width: 314px;
 }
 
-.index-page .tours li:nth-of-type(3n) {
-    margin-right: 0;
-}
+/*.index-page .tours li:nth-of-type(3n) {*/
+    /*margin-right: 0;*/
+/*}*/
 
 .index-page .tours .caption {
     font-size: 27px;

@@ -36,7 +36,14 @@ class GeneralController extends InitializableController
 
     public function indexAction()
     {
-        return $this->render('MasterSiteBundle:General:index.html.twig');
+        $tours = $this->getRepository('Tour')->createQueryBuilder('t')
+            ->leftJoin('t.image', 'i')
+            ->orderBy('t.created', 'DESC')
+            ->getQuery()->getResult();
+
+        return $this->render('MasterSiteBundle:General:index.html.twig', array(
+            'tours' => $tours
+        ));
     }
 
     public function loyaltyAction()
