@@ -894,3 +894,70 @@ a, a:active, a:hover, a:visited, a:focus {
     font-size: 29px;
     padding: 70px 0 0 195px;
 }
+
+#faq-page .header-separator {
+    background: url('../img/header-separator.jpg') repeat-x;
+    height: 4px;
+}
+
+#faq-page .heading {
+    margin: 26px 0 20px;
+    position: relative;
+}
+
+#faq-page .heading h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#faq-page .main {
+    width: 100%;
+}
+
+#faq-page .main td {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+#faq-page .main .left {
+    width: 273px;
+    padding-right: 7px;
+}
+
+#faq-page .main .left a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+#faq-page .main .right {
+    padding-left: 7px;
+}
+
+#faq-page .article {
+    line-height: 27px;
+}
+
+#faq-page .article p {
+    margin-bottom: 27px;
+}
+
+#faq-page .article .plane {
+    background: url('../img/faq-plane.png') left top no-repeat transparent;
+    float: right;
+    height: 93px;
+    width: 194px;
+    margin-left: 15px;
+}
+
+#faq-page .article .smile {
+    background: url('../img/faq-smile.png') left top no-repeat transparent;
+    float: right;
+    height: 100px;
+    width: 194px;
+    margin-left: 15px;
+}
