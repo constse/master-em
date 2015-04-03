@@ -38,7 +38,7 @@ class Tour extends AbstractEntity
 
     /**
      * @var string
-     * @ORM\COlumn(name = "from", type = "string")
+     * @ORM\COlumn(name = "tourfrom", type = "string")
      */
     protected $from;
 

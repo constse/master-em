@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{% block head_title %}Page{% endblock %} | Администрирование</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="const-se.ru">
+    <link rel="stylesheet" href="{{ asset('/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/admin.css') }}">
+    <script src="{{ asset('/js/jquery-1.11.2.min.js') }}"></script>
+    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+    {% block head_additions %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li{% if app.request.get('_route') == 'admin_index' %} class="active"{% endif %}><a href="{{ url('admin_index') }}">Туры</a></li>
+                    <li{% if app.request.get('_route') == 'admin_certificates' %} class="active"{% endif %}><a href="{{ url('admin_certificates') }}">Сертификаты</a></li>
+                    <li{% if app.request.get('_route') == 'admin_reviews' %} class="active"{% endif %}><a href="{{ url('admin_reviews') }}">Отзывы</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url('admin_security_logout') }}">Выход</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        {% block body_content %}Content{% endblock %}
+    </div>
+    {% block body_additions %}{% endblock %}
+</body>
+</html>

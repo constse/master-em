@@ -64,7 +64,7 @@ class User extends AbstractEntity implements UserInterface
     {
         parent::__construct();
 
-        $this->enabled = false;
+        $this->enabled = true;
         $this->locked = false;
         $this->roles = new ArrayCollection();
         $this->salt = self::generateSalt();

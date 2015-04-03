@@ -1,4 +1,42 @@
+# 4
+
+admin_tour_edit:
+  path: /admin/tour/edit/{tour}
+  defaults: { _controller: "MasterAdminBundle:Admin:tour" }
+
+admin_tour_delete:
+  path: /admin/tour/delete/{tour}
+  defaults: { _controller: "MasterAdminBundle:Admin:deleteTour" }
+
+# 3
+
+admin_tour_add:
+  path: /admin/tour/add
+  defaults: { _controller: "MasterAdminBundle:Admin:addTour" }
+
+admin_certificates:
+  path: /admin/certificates
+  defaults: { _controller: "MasterAdminBundle:Admin:cerificates" }
+
+admin_reviews:
+  path: /admin/reviews
+  defaults: { _controller: "MasterAdminBundle:Admin:reviews" }
+
+admin_security_login:
+  path: /admin/login
+  defaults: { _controller: "MasterAdminBundle:Admin:login" }
+
+admin_security_login_check:
+  path: /admin/login-check
+
+admin_security_logout:
+  path: /admin/logout
+
 # 1
+
+admin_index:
+  path: /admin
+  defaults: { _controller: "MasterAdminBundle:Admin:index" }
 
 site_general_booking:
   path: /booking

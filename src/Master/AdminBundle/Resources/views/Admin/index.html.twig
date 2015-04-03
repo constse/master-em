@@ -1,0 +1,17 @@
+{% extends 'MasterAdminBundle::layout.html.twig' %}
+
+{% block head_title %}Туры{% endblock %}
+
+{% block body_content %}
+    <div class="page-header"><h1>Туры</h1></div>
+    <a href="{{ url('admin_tour_add') }}" class="btn btn-success">Добавить новый тур</a><br><br>
+    {% for tour in tours %}
+        <p>
+            <img src="{{ asset(tour.image.path|e) }}" height="100px">
+            {% set landing = ['', 'Белокуриха', 'Экстрим', 'Алтай', 'Россия', 'Зарубежный'] %}
+            <a href="{{ url('admin_tour_edit', {'tour': tour.id}) }}">{{ tour.caption|e }}</a>, из: {{ tour.from|e }}, {{ tour.days|e }}, лендинг: {{ landing[tour.landing] }}, цена: {{ tour.price|e }}
+        </p>
+    {% else %}
+        <p>Нет туров</p>
+    {% endfor %}
+{% endblock %}
