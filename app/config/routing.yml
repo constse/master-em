@@ -1,8 +1,24 @@
 # 4
 
+admin_certificate_edit:
+  path: /admin/cert/edit/{cert}
+  defaults: { _controller: "MasterAdminBundle:Admin:editCertificate" }
+
+admin_certificate_delete:
+  path: /admin/cert/delete/{cert}
+  defaults: { _controller: "MasterAdminBundle:Admin:deleteCertificate" }
+
+admin_review_edit:
+  path: /admin/review/edit/{review}
+  defaults: { _controller: "MasterAdminBundle:Admin:editReview" }
+
+admin_review_delete:
+  path: /admin/review/delete/{review}
+  defaults: { _controller: "MasterAdminBundle:Admin:deleteReview" }
+
 admin_tour_edit:
   path: /admin/tour/edit/{tour}
-  defaults: { _controller: "MasterAdminBundle:Admin:tour" }
+  defaults: { _controller: "MasterAdminBundle:Admin:editTour" }
 
 admin_tour_delete:
   path: /admin/tour/delete/{tour}
@@ -10,13 +26,21 @@ admin_tour_delete:
 
 # 3
 
+admin_certificate_add:
+  path: /admin/cert/add
+  defaults: { _controller: "MasterAdminBundle:Admin:addCertificate" }
+
+admin_review_add:
+  path: /admin/review/add
+  defaults: { _controller: "MasterAdminBundle:Admin:addReview" }
+
 admin_tour_add:
   path: /admin/tour/add
   defaults: { _controller: "MasterAdminBundle:Admin:addTour" }
 
 admin_certificates:
   path: /admin/certificates
-  defaults: { _controller: "MasterAdminBundle:Admin:cerificates" }
+  defaults: { _controller: "MasterAdminBundle:Admin:certificates" }
 
 admin_reviews:
   path: /admin/reviews

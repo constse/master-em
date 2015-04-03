@@ -9,5 +9,5 @@
         <button type="submit" class="btn btn-success">Сохранить</button>
     {{ form_end(form) }}
     <br><br>
-    {% if tour is not empty %}<a href="{{ url('admin_tour_delete', {'tour': tour.id}) }}" class="btn btn-danger"></a>{% endif %}
+    {% if tour is not empty %}<a href="{{ url('admin_tour_delete', {'tour': tour.id}) }}" class="btn btn-danger">Удалить тур</a>{% endif %}
 {% endblock %}

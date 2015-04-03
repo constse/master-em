@@ -1,0 +1,16 @@
+{% extends 'MasterAdminBundle::layout.html.twig' %}
+
+{% block head_title %}Сертификаты{% endblock %}
+
+{% block body_content %}
+    <div class="page-header"><h1>Сертификаты</h1></div>
+    <a href="{{ url('admin_certificate_add') }}" class="btn btn-success">Добавить новый сертификат</a><br><br>
+    {% for cert in certs %}
+        <p>
+            <img src="{{ asset(cert.image.path|e) }}" height="120px">
+            <a href="{{ url('admin_certificate_edit', {'cert': cert.id}) }}">{{ cert.caption|e }}</a>
+        </p>
+    {% else %}
+        <p>Нет сертификатов</p>
+    {% endfor %}
+{% endblock %}

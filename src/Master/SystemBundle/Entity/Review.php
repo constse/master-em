@@ -14,7 +14,7 @@ class Review extends AbstractEntity
 {
     /**
      * @var string
-     * @ORM\Column(name = "fulltext", type = "text")
+     * @ORM\Column(name = "reviewfull", type = "text")
      */
     protected $full;
 
@@ -33,7 +33,7 @@ class Review extends AbstractEntity
 
     /**
      * @var string
-     * @ORM\Column(name = "shorttext", type = "string")
+     * @ORM\Column(name = "reviewshort", type = "string")
      */
     protected $short;
 
