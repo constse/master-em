@@ -1,4 +1,5 @@
 html {
+    height: 100%;
     -webkit-font-smoothing: subpixel-antialiased;
     -webkit-backface-visibility: hidden;
 }
@@ -7,7 +8,9 @@ body {
     background-color: #fff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #000;
+    height: 100%;
     line-height: 1.2;
+    position: relative;
 }
 
 a, a:active, a:hover, a:visited, a:focus {
@@ -121,6 +124,11 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #slider {
     height: 389px;
+}
+
+#slider .item img {
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 #slider .carousel-control {
@@ -763,6 +771,14 @@ a, a:active, a:hover, a:visited, a:focus {
     width: 24px;
 }
 
+#contacts-page .timetable .contacts-ok {
+    background: url('../img/contacts-ok.jpg') no-repeat;
+    display: inline-block;
+    height: 24px;
+    margin-right: 4px;
+    width: 24px;
+}
+
 #contacts-page .certs {
     margin-top: 41px;
 }
@@ -921,6 +937,16 @@ a, a:active, a:hover, a:visited, a:focus {
 #faq-page .main .left {
     width: 273px;
     padding-right: 7px;
+    position: relative;
+}
+
+#faq-page .main .left .line {
+    background: url('../img/faq-left.png') no-repeat;
+    height: 81px;
+    left: -14px;
+    position: absolute;
+    top: 14px;
+    width: 5px;
 }
 
 #faq-page .main .left a {
@@ -947,18 +973,22 @@ a, a:active, a:hover, a:visited, a:focus {
     margin-bottom: 27px;
 }
 
+#faq-page .article p em {
+    font-weight: bold;
+}
+
 #faq-page .article .plane {
-    background: url('../img/faq-plane.png') left top no-repeat transparent;
+    background: url('../img/flights-plane.png') left top no-repeat transparent;
     float: right;
-    height: 93px;
+    height: 70px;
     width: 194px;
     margin-left: 15px;
 }
 
 #faq-page .article .smile {
-    background: url('../img/faq-smile.png') left top no-repeat transparent;
+    background: url('../img/visa-smile.png') left top no-repeat transparent;
     float: right;
-    height: 100px;
+    height: 70px;
     width: 194px;
     margin-left: 15px;
 }
@@ -1002,10 +1032,10 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #loyalty-page .article .sun {
-    background: url('../img/loyalty-sun.png') no-repeat transparent;
+    background: url('../img/flights-sun.png') no-repeat transparent;
     float: right;
     height: 123px;
-    width: 270px;
+    width: 350px;
 }
 
 #loyalty-page .article .smile {
@@ -1013,4 +1043,96 @@ a, a:active, a:hover, a:visited, a:focus {
     float: right;
     height: 238px;
     width: 175px;
+}
+
+#fade {
+    background: url('../img/fade-bg.png');
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+#modal-form {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px #666;
+    display: none;
+    height: 437px;
+    left: 50%;
+    margin-left: -264px;
+    margin-top: -218px;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    width: 528px;
+    z-index: 10100;
+}
+
+#modal-form .caption {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#modal-form .subcaption {
+    font-size: 15px;
+}
+
+#modal-form form {
+    margin-top: 28px;
+    width: 100%;
+}
+
+#modal-form form fieldset {
+    height: 68px;
+    position: relative;
+    width: 100%;
+}
+
+#modal-form form fieldset label {
+    font-weight: normal;
+    width: 120px;
+}
+
+#modal-form form fieldset input {
+    border: 1px #e8e8e8;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 4px 1px #999;
+    font-size: 14px;
+    height: 30px;
+    left: 120px;
+    padding: 7px;
+    position: absolute;
+    top: 0;
+    width: 315px;
+}
+
+#modal-form form button {
+    background: url('../img/form-button.jpg') left top repeat-x;
+    border: 0;
+    border-radius: 22px;
+    color: #fff;
+    font-size: 16px;
+    height: 44px;
+    margin-left: 120px;
+    padding: 0 35px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #666;
+}
+
+#modal-form .close {
+    color: #666;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#modal-form .close:hover {
+    color: #f68400;
 }

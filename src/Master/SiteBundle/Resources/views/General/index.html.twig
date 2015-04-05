@@ -87,20 +87,45 @@
                             <div class="caption left-top-first">{{ tour.caption|e }}</div>
                             <div class="days left-top-second">{{ tour.days|e }}</div>
                             <div class="city left-bottom">{{ tour.from|e }}</div>
-                            <div class="price right">{{ tour.price|e }} ₽</div>
-                            <a href="javascript:void(0);" class="text-center button">Купить</a>
+                            <div class="price right">
+                                {{ tour.price|e }}
+                                <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span>
+                            </div>
+                            <a href="javascript:void(0);"
+                               data-modal-caption="Подробней о туре"
+                               data-modal-subcaption="Оставьте свои контактные данные, и мы свяжемся с Вами в ближайшее время"
+                               data-modal-from="Главная страница, тур {{ tour.caption }}"
+                               class="text-center button show-modal">
+                                Подробнее
+                            </a>
                         {% elseif tour.template == 1 %}
                             <div class="caption left-top-first">{{ tour.caption|e }}</div>
                             <div class="days left-top-second">{{ tour.days|e }}</div>
                             <div class="city left-bottom">{{ tour.from|e }}</div>
                             <div class="price right"></div>
-                            <a href="javascript:void(0);" class="text-center button">{{ tour.price|e }} ₽</a>
+                            <a href="javascript:void(0);"
+                               data-modal-caption="Подробней о туре"
+                               data-modal-subcaption="Оставьте свои контактные данные, и мы свяжемся с Вами в ближайшее время"
+                               data-modal-from="Главная страница, тур {{ tour.caption }}"
+                               class="text-center button show-modal">
+                                от {{ tour.price|e }}
+                                <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span>
+                            </a>
                         {% else %}
                             <div class="caption left-top-second">{{ tour.caption|e }}</div>
                             <div class="days left-bottom">{{ tour.days|e }}</div>
                             <div class="city left-top-first">{{ tour.from|e }}</div>
-                            <div class="price right">{{ tour.price|e }} ₽</div>
-                            <a href="javascript:void(0);" class="text-center button">Купить</a>
+                            <div class="price right">
+                                {{ tour.price|e }}
+                                <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span>
+                            </div>
+                            <a href="javascript:void(0);"
+                               data-modal-caption="Подробней о туре"
+                               data-modal-subcaption="Оставьте свои контактные данные, и мы свяжемся с Вами в ближайшее время"
+                               data-modal-from="Главная страница, тур {{ tour.caption }}"
+                               class="text-center button show-modal">
+                                Подробнее
+                            </a>
                         {% endif %}
                     </li>
                 {% endfor %}
@@ -122,13 +147,17 @@
                     <p>Особо ценные предложения для<br>постоянных клиентов</p>
                 </li>
                 <li>
-                    <h2><a href="{{ url('site_general_contacts') }}">О компании</a></h2>
+                    <h2><a href="{{ url('site_general_contacts') }}#contacts">О компании</a></h2>
                     <p>Контакты, реквизиты,<br>сотрудничество</p>
                 </li>
             {% endspaceless %}
         </ul>
         <div class="text-center">
-            <a href="javascript:void(0);" class="order">
+            <a href="javascript:void(0);"
+               data-modal-caption="Заказ тура"
+               data-modal-subcaption="Оставьте заявку на оформление тура, и мы свяжемся с Вами в ближайшее время"
+               data-modal-from="Кнопка Заказать тур на главной странице"
+               class="order show-modal">
                 <div class="order-tour">Заказать тур</div>
                 <div class="order-by-phone">оформление по телефону</div>
             </a>

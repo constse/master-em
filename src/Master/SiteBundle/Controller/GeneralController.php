@@ -2,10 +2,32 @@
 
 namespace Master\SiteBundle\Controller;
 
+use Master\SiteBundle\Form\Type\RequestFormType;
 use Master\SystemBundle\Controller\InitializableController;
+use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class GeneralController extends InitializableController
 {
+    /** @var Form */
+    protected $form;
+
+    public function initialize(Request $request)
+    {
+        parent::initialize($request);
+
+        $this->form = $this->createForm(new RequestFormType());
+    }
+
+    public function render($view, array $parameters = array(), Response $response = null)
+    {
+        $parameters = array_merge($parameters, array('form' => $this->form->createView()));
+
+        return parent::render($view, $parameters, $response);
+    }
+
     public function bookingAction()
     {
         return $this->render('MasterSiteBundle:General:booking.html.twig');
@@ -185,6 +207,33 @@ class GeneralController extends InitializableController
         return $this->render('MasterSiteBundle:General:reviews.html.twig', array(
             'reviews' => $reviews
         ));
+    }
+
+    public function requestAction()
+    {
+        $this->form->handleRequest($this->request);
+
+        if ($this->form->isSubmitted() && $this->form->isValid()) {
+            $text = $this->renderView('MasterSiteBundle:General:mail.html.twig', array(
+                'name' => $this->form->get('name')->getData(),
+                'phone' => $this->form->get('phone')->getData(),
+                'email' => $this->form->get('email')->getData(),
+                'from' => $this->form->get('from')->getData(),
+                'query' => $this->form->get('query')->getData()
+            ));
+
+            $headers = array(
+                'From: <noreply@master-em.com>',
+                'MIME-Version: 1.0',
+                "Content-Type: text/html; charset=utf-8\r\n"
+            );
+
+            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) {
+                return new JsonResponse('ok');
+            }
+        }
+
+        throw $this->createNotFoundException();
     }
 
     public function visaAction()

@@ -17,6 +17,58 @@
     <div class="container">
         {% block body_content %}Content{% endblock %}
     </div>
+    <div id="fade"></div>
+    <div id="modal-form">
+        <div class="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </div>
+        <div class="caption">Заявка</div>
+        <div class="subcaption">Закажите тур сейчас и...</div>
+        {{ form_start(form) }}
+            <fieldset>
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+            </fieldset>
+            <fieldset>
+                {{ form_label(form.phone) }}
+                {{ form_widget(form.phone) }}
+            </fieldset>
+            <fieldset>
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </fieldset>
+            {{ form_widget(form.submit) }}
+        {{ form_end(form) }}
+    </div>
+    <script>
+        function showModal(sender) {
+            $('#fade').stop(true, true).fadeIn(250);
+            $('#modal-form .caption').html(sender.attr('data-modal-caption'));
+            $('#modal-form .subcaption').html(sender.attr('data-modal-subcaption'));
+            $('#modal-form form input').val('');
+            $('#modal-form form input.hidden-from').val(sender.attr('data-modal-from'));
+            $('#modal-form form input.hidden-query').val(window.location.search.substring(1));
+            $('#modal-form').stop(true, true).fadeIn(250);
+        }
+
+        function closeModal() { $('#modal-form').stop(true, true).fadeOut(250); $('#fade').stop(true, true).fadeOut(250); }
+
+        function handleModal(form) {
+            $.ajax({
+                url: '{{ url('site_general_request') }}',
+                data: form.serialize(),
+                dataType: 'json',
+                method: 'post',
+                error: function() { alert('Извините, не удалось отправить заявку. Пожалуйста, повторите попытку позже.'); },
+                success: function() { alert('Благодарим за заявку! Мы свяжемся с Вами в ближайшее время.'); }
+            });
+        }
+
+        $(document).ready(function() {
+            $('#modal-form form').submit(function(e) { handleModal($(this)); closeModal(); e.preventDefault(); return false; });
+            $('#fade').click(closeModal);
+            $('#modal-form .close').click(closeModal);
+            $('.show-modal').click(function() { showModal($(this)); });
+        });
+    </script>
     <!-- BEGIN JIVOSITE CODE {literal} -->
     <script type='text/javascript'>
         (function() {
