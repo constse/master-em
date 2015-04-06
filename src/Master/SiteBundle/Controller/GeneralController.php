@@ -262,7 +262,7 @@ class GeneralController extends InitializableController
     public function visaAction()
     {
         if ($this->ajax) return $this->ajax;
-        
+
         return $this->render('MasterSiteBundle:General:visa.html.twig');
     }
 } 
