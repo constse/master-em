@@ -102,6 +102,10 @@ site_general_loyalty:
   path: /loyalty
   defaults: { _controller: "MasterSiteBundle:General:loyalty" }
 
+site_general_request:
+  path: /request
+  defaults: { _controller: "MasterSiteBundle:General:request" }
+
 site_general_reviews:
   path: /reviews
   defaults: { _controller: "MasterSiteBundle:General:reviews" }

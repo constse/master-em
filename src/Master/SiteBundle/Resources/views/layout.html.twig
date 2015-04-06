@@ -43,7 +43,7 @@
             $('#fade').stop(true, true).fadeIn(250);
             $('#modal-form .caption').html(sender.attr('data-modal-caption'));
             $('#modal-form .subcaption').html(sender.attr('data-modal-subcaption'));
-            $('#modal-form form input').val('');
+            $('#modal-form form input[type=text], #modal-form form[type=email]').val('');
             $('#modal-form form input.hidden-from').val(sender.attr('data-modal-from'));
             $('#modal-form form input.hidden-query').val(window.location.search.substring(1));
             $('#modal-form').stop(true, true).fadeIn(250);
@@ -53,6 +53,7 @@
 
         function handleModal(form) {
             $.ajax({
+                url: '{{ url('site_general_request') }}',
                 data: form.serialize(),
                 dataType: 'json',
                 method: 'post',
