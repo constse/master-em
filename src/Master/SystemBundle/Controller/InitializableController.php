@@ -10,6 +10,7 @@ class InitializableController extends Controller
     protected $authChecker;
     protected $manager;
     protected $repositories;
+    /** @var Request */
     protected $request;
     protected $session;
     protected $user;

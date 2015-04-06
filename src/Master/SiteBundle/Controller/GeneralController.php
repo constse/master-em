@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GeneralController extends InitializableController
 {
+    protected $ajax;
     /** @var Form */
     protected $form;
 
@@ -18,7 +19,32 @@ class GeneralController extends InitializableController
     {
         parent::initialize($request);
 
+        $this->ajax = false;
         $this->form = $this->createForm(new RequestFormType());
+        $this->form->handleRequest($this->request);
+
+        if ($this->request->isXmlHttpRequest()) {
+            if ($this->form->isSubmitted() && $this->form->isValid()) {
+                $text = $this->renderView('MasterSiteBundle:General:mail.html.twig', array(
+                    'name' => $this->form->get('name')->getData(),
+                    'phone' => $this->form->get('phone')->getData(),
+                    'email' => $this->form->get('email')->getData(),
+                    'from' => $this->form->get('from')->getData(),
+                    'query' => $this->form->get('query')->getData()
+                ));
+
+                $headers = array(
+                    'From: <noreply@master-em.com>',
+                    'MIME-Version: 1.0',
+                    "Content-Type: text/html; charset=utf-8\r\n"
+                );
+
+                if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers))
+                    $this->ajax = new JsonResponse('ok');
+            }
+
+            throw $this->createNotFoundException();
+        }
     }
 
     public function render($view, array $parameters = array(), Response $response = null)
@@ -30,11 +56,15 @@ class GeneralController extends InitializableController
 
     public function bookingAction()
     {
+        if ($this->ajax) return $this->ajax;
+
         return $this->render('MasterSiteBundle:General:booking.html.twig');
     }
 
     public function contactsAction()
     {
+        if ($this->ajax) return $this->ajax;
+
         $certificates = $this->getRepository('Certificate')->createQueryBuilder('c')
             ->leftJoin('c.image', 'i')
             ->orderBy('c.created', 'DESC')
@@ -47,16 +77,22 @@ class GeneralController extends InitializableController
 
     public function faqAction()
     {
+        if ($this->ajax) return $this->ajax;
+
         return $this->render('MasterSiteBundle:General:faq.html.twig');
     }
 
     public function flightsAction()
     {
+        if ($this->ajax) return $this->ajax;
+
         return $this->render('MasterSiteBundle:General:flights.html.twig');
     }
 
     public function indexAction()
     {
+        if ($this->ajax) return $this->ajax;
+
         $tours = $this->getRepository('Tour')->createQueryBuilder('t')
             ->leftJoin('t.image', 'i')
             ->orderBy('t.created', 'DESC')
@@ -69,6 +105,8 @@ class GeneralController extends InitializableController
 
     public function landing1Action()
     {
+        if ($this->ajax) return $this->ajax;
+
         $tours = $this->getRepository('Tour')->createQueryBuilder('t')
             ->leftJoin('t.image', 'i')
             ->where('t.landing = :landing')
@@ -94,6 +132,8 @@ class GeneralController extends InitializableController
 
     public function landing2Action()
     {
+        if ($this->ajax) return $this->ajax;
+
         $tours = $this->getRepository('Tour')->createQueryBuilder('t')
             ->leftJoin('t.image', 'i')
             ->where('t.landing = :landing')
@@ -119,6 +159,8 @@ class GeneralController extends InitializableController
 
     public function landing3Action()
     {
+        if ($this->ajax) return $this->ajax;
+
         $tours = $this->getRepository('Tour')->createQueryBuilder('t')
             ->leftJoin('t.image', 'i')
             ->where('t.landing = :landing')
@@ -144,6 +186,8 @@ class GeneralController extends InitializableController
 
     public function landing4Action()
     {
+        if ($this->ajax) return $this->ajax;
+
         $tours = $this->getRepository('Tour')->createQueryBuilder('t')
             ->leftJoin('t.image', 'i')
             ->where('t.landing = :landing')
@@ -169,6 +213,8 @@ class GeneralController extends InitializableController
 
     public function landing5Action()
     {
+        if ($this->ajax) return $this->ajax;
+
         $tours = $this->getRepository('Tour')->createQueryBuilder('t')
             ->leftJoin('t.image', 'i')
             ->where('t.landing = :landing')
@@ -194,11 +240,15 @@ class GeneralController extends InitializableController
 
     public function loyaltyAction()
     {
+        if ($this->ajax) return $this->ajax;
+
         return $this->render('MasterSiteBundle:General:loyalty.html.twig');
     }
 
     public function reviewsAction()
     {
+        if ($this->ajax) return $this->ajax;
+
         $reviews = $this->getRepository('Review')->createQueryBuilder('r')
             ->leftJoin('r.image', 'i')
             ->orderBy('r.created', 'DESC')
@@ -209,35 +259,10 @@ class GeneralController extends InitializableController
         ));
     }
 
-    public function requestAction()
-    {
-        $this->form->handleRequest($this->request);
-
-        if ($this->form->isSubmitted() && $this->form->isValid()) {
-            $text = $this->renderView('MasterSiteBundle:General:mail.html.twig', array(
-                'name' => $this->form->get('name')->getData(),
-                'phone' => $this->form->get('phone')->getData(),
-                'email' => $this->form->get('email')->getData(),
-                'from' => $this->form->get('from')->getData(),
-                'query' => $this->form->get('query')->getData()
-            ));
-
-            $headers = array(
-                'From: <noreply@master-em.com>',
-                'MIME-Version: 1.0',
-                "Content-Type: text/html; charset=utf-8\r\n"
-            );
-
-            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) {
-                return new JsonResponse('ok');
-            }
-        }
-
-        throw $this->createNotFoundException();
-    }
-
     public function visaAction()
     {
+        if ($this->ajax) return $this->ajax;
+        
         return $this->render('MasterSiteBundle:General:visa.html.twig');
     }
 } 
