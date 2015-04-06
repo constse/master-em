@@ -233,6 +233,11 @@ class GeneralController extends InitializableController
             }
         }
 
+        $errs = $this->form->getErrors();
+        $mes = '';
+        foreach ($errs as $err) $mes .= $err->getMessage() . '  ';
+        return new JsonResponse($mes);
+
         throw $this->createNotFoundException();
     }
 
