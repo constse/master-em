@@ -214,13 +214,15 @@ class GeneralController extends InitializableController
         $this->form->handleRequest($this->request);
 
         if ($this->form->isSubmitted() && $this->form->isValid()) {
-            $text = $this->renderView('MasterSiteBundle:General:mail.html.twig', array(
-                'name' => $this->form->get('name')->getData(),
-                'phone' => $this->form->get('phone')->getData(),
-                'email' => $this->form->get('email')->getData(),
-                'from' => $this->form->get('from')->getData(),
-                'query' => $this->form->get('query')->getData()
-            ));
+//            $text = $this->renderView('MasterSiteBundle:General:mail.html.twig', array(
+//                'name' => $this->form->get('name')->getData(),
+//                'phone' => $this->form->get('phone')->getData(),
+//                'email' => $this->form->get('email')->getData(),
+//                'from' => $this->form->get('from')->getData(),
+//                'query' => $this->form->get('query')->getData()
+//            ));
+
+            $text = '123';
 
             $headers = array(
                 'From: <noreply@master-em.com>',

@@ -372,12 +372,12 @@ a, a:active, a:hover, a:visited, a:focus {
     border-radius: 3px;
     bottom: 9px;
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     height: 31px;
-    padding-top: 5px;
+    padding-top: 7px;
     position: absolute;
     right: 9px;
-    width: 87px;
+    width: 100px;
 }
 
 #index-page .shadow {
