@@ -785,6 +785,45 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #contacts-page .certs h2 {
     font-size: 29px;
+    margin-bottom: 21px;
+}
+
+#contacts-page .certs ul {
+    width: 840px;
+}
+
+#contacts-page .certs ul li {
+    text-align: center;
+    margin: 0 40px 20px 0;
+    width: 165px;
+}
+
+#contacts-page .certs ul li a {
+    display: block;
+    text-align: center;
+}
+
+#contacts-page .certs ul li img {
+    border: 0;
+    height: 166px;
+    margin-bottom: 15px;
+}
+
+#contacts-page .certs .more {
+    background: url('../img/certs-more.png') no-repeat;
+    color: #fff;
+    display: inline-block;
+    height: 24px;
+    padding: 2px 0 0 11px;
+    width: 122px;
+}
+
+#contacts-page .certs .more span {
+    border-bottom: 1px dashed #fff;
+}
+
+#contacts-page .certs ul.certs2 {
+    display: none;
 }
 
 #contacts-page .details h2 {
@@ -1135,4 +1174,36 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #modal-form .close:hover {
     color: #f68400;
+}
+
+#modal-certificate {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px #666;
+    display: none;
+    height: 700px;
+    left: 50%;
+    margin-left: -275px;
+    margin-top: -350px;
+    padding: 20px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 550px;
+    z-index: 10100;
+}
+
+#modal-certificate .close {
+    color: #666;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+
+#modal-certificate img {
+    max-height: 660px;
+    max-width: 510px;
 }

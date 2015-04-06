@@ -19,7 +19,7 @@
     </div>
     <div id="fade"></div>
     <div id="modal-form">
-        <div class="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </div>
+        <div class="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
         <div class="caption">Заявка</div>
         <div class="subcaption">Закажите тур сейчас и...</div>
         {{ form_start(form) }}
@@ -38,6 +38,10 @@
             {{ form_widget(form.submit) }}
         {{ form_end(form) }}
     </div>
+    <div id="modal-certificate">
+        <div class="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+        <img src="">
+    </div>
     <script>
         function showModal(sender) {
             $('#fade').stop(true, true).fadeIn(250);
@@ -49,7 +53,11 @@
             $('#modal-form').stop(true, true).fadeIn(250);
         }
 
-        function closeModal() { $('#modal-form').stop(true, true).fadeOut(250); $('#fade').stop(true, true).fadeOut(250); }
+        function closeModal() {
+            $('#modal-certificate').stop(true, true).fadeOut(250);
+            $('#modal-form').stop(true, true).fadeOut(250);
+            $('#fade').stop(true, true).fadeOut(250);
+        }
 
         function handleModal(form) {
             $.ajax({
@@ -61,6 +69,12 @@
                 error: function() { alert('Извините, не удалось отправить заявку. Пожалуйста, повторите попытку позже.'); },
                 success: function(data) { alert('Благодарим за заявку! Мы свяжемся с Вами в ближайшее время.'); }
             });
+        }
+
+        function showCertificate(src) {
+            $('#fade').stop(true, true).fadeIn(250);
+            $('#modal-certificate img').attr('src', src);
+            $('#modal-certificate').stop(true, true).fadeIn(250);
         }
 
         $(document).ready(function() {

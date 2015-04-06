@@ -50,7 +50,21 @@
             <div class="certs">
                 <h2>Сертификаты и награды</h2>
                 <ul class="list-inline">
-                    <!-- Certs -->
+                    {% for cert in certificates[:4] %}
+                        <li>
+                            <a href="javascript:void(0);" class="show-cert"><img src="{{ cert.image.path|e }}"></a>
+                            {{ cert.caption|e }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a href="javascript:void(0);" class="more"><span>Смотреть все</span></a>
+                <ul class="list-inline certs2">
+                    {% for cert in certificates[4:] %}
+                        <li>
+                            <a href="javascript:void(0);" class="show-cert"><img src="{{ cert.image.path|e }}"></a>
+                            {{ cert.caption|e }}
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
             <a name="contacts"></a>
@@ -116,6 +130,13 @@
                         + 'г. Барнаул, Алтайский край, Россия, 656056<br>'
                         + 'тел.: 8 800 775-12-57'
                 }));
+            });
+            $('#contacts-page .certs .more').click(function() {
+                $(this).hide();
+                $('#contacts-page .certs ul.certs2').slideDown(250);
+            });
+            $('.show-cert').click(function() {
+                showCertificate($(this).children('img').attr('src'));
             });
         });
     </script>
