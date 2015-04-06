@@ -211,31 +211,34 @@ class GeneralController extends InitializableController
 
     public function requestAction()
     {
-        $this->form->handleRequest($this->request);
+        try {
+            $this->form->handleRequest($this->request);
 
-        if ($this->form->isSubmitted() && $this->form->isValid()) {
-//            $text = $this->renderView('MasterSiteBundle:General:mail.html.twig', array(
-//                'name' => $this->form->get('name')->getData(),
-//                'phone' => $this->form->get('phone')->getData(),
-//                'email' => $this->form->get('email')->getData(),
-//                'from' => $this->form->get('from')->getData(),
-//                'query' => $this->form->get('query')->getData()
-//            ));
+            if ($this->form->isSubmitted() && $this->form->isValid()) {
+                $text = $this->renderView('MasterSiteBundle:General:mail.html.twig', array(
+                    'name' => $this->form->get('name')->getData(),
+                    'phone' => $this->form->get('phone')->getData(),
+                    'email' => $this->form->get('email')->getData(),
+                    'from' => $this->form->get('from')->getData(),
+                    'query' => $this->form->get('query')->getData()
+                ));
 
-            $text = '123';
+                $headers = array(
+                    'From: <noreply@master-em.com>',
+                    'MIME-Version: 1.0',
+                    "Content-Type: text/html; charset=utf-8\r\n"
+                );
 
-            $headers = array(
-                'From: <noreply@master-em.com>',
-                'MIME-Version: 1.0',
-                "Content-Type: text/html; charset=utf-8\r\n"
-            );
-
-            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) {
-                return new JsonResponse('ok');
+                if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) {
+                    return new JsonResponse('ok');
+                }
             }
         }
+        catch (\Exception $e) {
+            return new JsonResponse($e->getMessage());
+        }
 
-        throw $this->createNotFoundException();
+//        throw $this->createNotFoundException();
     }
 
     public function visaAction()
