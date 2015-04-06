@@ -57,6 +57,7 @@
                 data: form.serialize(),
                 dataType: 'json',
                 method: 'post',
+                cache: false,
                 error: function() { alert('Извините, не удалось отправить заявку. Пожалуйста, повторите попытку позже.'); },
                 success: function(data) { alert(data); alert('Благодарим за заявку! Мы свяжемся с Вами в ближайшее время.'); }
             });

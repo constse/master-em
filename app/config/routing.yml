@@ -103,7 +103,7 @@ site_general_loyalty:
   defaults: { _controller: "MasterSiteBundle:General:loyalty" }
 
 site_general_request:
-  path: /ajax-request
+  path: /request
   defaults: { _controller: "MasterSiteBundle:General:request" }
 
 site_general_reviews:
