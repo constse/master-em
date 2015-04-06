@@ -221,22 +221,17 @@ class GeneralController extends InitializableController
                 'from' => $this->form->get('from')->getData(),
                 'query' => $this->form->get('query')->getData()
             ));
-
             $headers = array(
                 'From: <noreply@master-em.com>',
                 'MIME-Version: 1.0',
                 "Content-Type: text/html; charset=utf-8\r\n"
             );
+            $headers = implode("\r\n", $headers);
 
             if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) {
                 return new JsonResponse('ok');
             }
         }
-
-        $errs = $this->form->getErrors();
-        $mes = '';
-        foreach ($errs as $err) $mes .= $err->getMessage() . '  ';
-        return new JsonResponse($mes);
 
         throw $this->createNotFoundException();
     }
