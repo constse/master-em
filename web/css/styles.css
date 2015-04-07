@@ -673,17 +673,22 @@ a, a:active, a:hover, a:visited, a:focus {
     width: 777px;
 }
 
+#flights-page .article li {
+    margin-bottom: 16px;
+}
+
 #flights-page .article .sun {
-    background: url('../img/flights-sun.png') left 6px no-repeat transparent;
+    background: url('../img/flights-sun.png') left bottom no-repeat transparent;
     float: right;
-    height: 78px;
+    height: 90px;
+    margin-left: 15px;
     width: 184px;
 }
 
 #flights-page .article .plane {
-    background: url('../img/flights-plane.png') no-repeat transparent;
+    background: url('../img/flights-plane.png') left bottom no-repeat transparent;
     float: right;
-    height: 72px;
+    height: 90px;
     margin-left: 24px;
     width: 155px;
 }

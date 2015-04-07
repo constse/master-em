@@ -121,6 +121,13 @@
 {% block body_additions %}
     <script>
         $(document).ready(function() {
+            $('#contacts-page .certs .more').click(function() {
+                $(this).hide();
+                $('#contacts-page .certs ul.certs2').slideDown(250);
+            });
+            $('.show-cert').click(function() {
+                showCertificate($(this).children('img').attr('src'));
+            });
             var map;
             ymaps.ready(function() {
                 map = new ymaps.Map('map', {
@@ -134,13 +141,6 @@
                         + 'г. Барнаул, Алтайский край, Россия, 656056<br>'
                         + 'тел.: 8 800 775-12-57'
                 }));
-            });
-            $('#contacts-page .certs .more').click(function() {
-                $(this).hide();
-                $('#contacts-page .certs ul.certs2').slideDown(250);
-            });
-            $('.show-cert').click(function() {
-                showCertificate($(this).children('img').attr('src'));
             });
         });
     </script>
