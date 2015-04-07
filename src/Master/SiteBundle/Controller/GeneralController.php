@@ -50,6 +50,31 @@ class GeneralController extends InitializableController
         return $this->render('MasterSiteBundle:General:faq.html.twig');
     }
 
+    public function filesDocsAction()
+    {
+        $filename = __DIR__ . '/../../../../web/files/docs.doc';
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/msword');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($filename) . '";');
+        $response->headers->set('Content-Length', filesize($filename));
+        $response->setContent(readfile($filename));
+
+        return $response;
+    }
+
+    public function filesPriceAction()
+    {
+        $filename = __DIR__ . '/../../../../web/files/price.doc';
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/msword');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($filename) . '";');
+        $response->headers->set('Content-Length', filesize($filename));
+        $response->sendHeaders();
+        $response->setContent(readfile($filename));
+
+        return $response;
+    }
+
     public function flightsAction()
     {
         return $this->render('MasterSiteBundle:General:flights.html.twig');

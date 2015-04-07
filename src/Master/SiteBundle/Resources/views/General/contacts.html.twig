@@ -47,26 +47,30 @@
                 <h3>8 (3852) 229-281</h3>
                 <p><a href="mailto:master-em@list.ru">master-em@list.ru</a></p>
             </div>
-            <div class="certs">
-                <h2>Сертификаты и награды</h2>
-                <ul class="list-inline">
-                    {% for cert in certificates[:4] %}
-                        <li>
-                            <a href="javascript:void(0);" class="show-cert"><img src="{{ cert.image.path|e }}"></a>
-                            {{ cert.caption|e }}
-                        </li>
-                    {% endfor %}
-                </ul>
-                <a href="javascript:void(0);" class="more"><span>Смотреть все</span></a>
-                <ul class="list-inline certs2">
-                    {% for cert in certificates[4:] %}
-                        <li>
-                            <a href="javascript:void(0);" class="show-cert"><img src="{{ cert.image.path|e }}"></a>
-                            {{ cert.caption|e }}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+            {% if certificates|length > 0 %}
+                <div class="certs">
+                    <h2>Сертификаты и награды</h2>
+                    <ul class="list-inline">
+                        {% for cert in certificates[:4] %}
+                            <li>
+                                <a href="javascript:void(0);" class="show-cert"><img src="{{ cert.image.path|e }}"></a>
+                                {{ cert.caption|e }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% if certificates|length > 4 %}
+                        <a href="javascript:void(0);" class="more"><span>Смотреть все</span></a>
+                        <ul class="list-inline certs2">
+                            {% for cert in certificates[4:] %}
+                                <li>
+                                    <a href="javascript:void(0);" class="show-cert"><img src="{{ cert.image.path|e }}"></a>
+                                    {{ cert.caption|e }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endif %}
             <a name="contacts"></a>
             <div class="details">
                 <h2>Реквизиты</h2>
@@ -101,7 +105,7 @@
                                 К/с 30101810000000000201<br>
                                 <br>
                                 <strong>Расчет по карте</strong><br>
-                                Получатель &mdash; Клепикова Анна Николаевна (ANNA KLEPIKOVA)<br>
+                                Получатель &mdash; Клепикова Анна Николаевна<br>
                                 4276 0200 1016 2953
                             </td>
                         </tr>

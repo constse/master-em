@@ -582,7 +582,13 @@ a, a:active, a:hover, a:visited, a:focus {
     position: absolute;
     right: 0;
     top: 17px;
-    width: 210px;
+    width: 230px;
+}
+
+#visa-page .heading div a.files {
+    display: inline-block;
+    margin: 8px 4px 0 17px;
+    text-decoration: underline;
 }
 
 #visa-page .heading .callback {
@@ -598,7 +604,7 @@ a, a:active, a:hover, a:visited, a:focus {
     text-align: center;
     text-shadow: 1px 1px 1px #666;
     /*top: 17px;*/
-    width: 210px;
+    width: 230px;
 }
 
 #visa-page .article {
@@ -661,6 +667,7 @@ a, a:active, a:hover, a:visited, a:focus {
 #flights-page .article {
     line-height: 25px;
     list-style-position: inside;
+    list-style-type: none;
     margin: 10px 0 190px;
     padding: 0;
     width: 777px;
@@ -979,25 +986,18 @@ a, a:active, a:hover, a:visited, a:focus {
     position: relative;
 }
 
-#faq-page .main .left .line {
-    background: url('../img/faq-left.png') no-repeat;
-    height: 81px;
-    left: -14px;
-    position: absolute;
-    top: 14px;
-    width: 5px;
-}
-
 #faq-page .main .left a {
-    border-bottom: 1px solid transparent;
+    border-left: 5px solid #fff;
     display: inline-block;
     color: #000;
     text-decoration: none;
+    margin-left: -10px;
     margin-top: 10px;
+    padding-left: 8px;
 }
 
-#faq-page .main .left a:hover {
-    border-bottom: 1px dotted #000;
+#faq-page .main .left a.active {
+    border-left: 5px solid #0BB789;
 }
 
 #faq-page .main .right {
@@ -1104,7 +1104,7 @@ a, a:active, a:hover, a:visited, a:focus {
     left: 50%;
     margin-left: -264px;
     margin-top: -218px;
-    padding: 20px;
+    padding: 40px;
     position: fixed;
     top: 50%;
     width: 528px;
@@ -1134,7 +1134,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #modal-form form fieldset label {
     font-weight: normal;
-    width: 120px;
+    width: 128px;
 }
 
 #modal-form form fieldset input {
@@ -1143,10 +1143,10 @@ a, a:active, a:hover, a:visited, a:focus {
     box-shadow: inset 0 1px 4px 1px #999;
     font-size: 14px;
     height: 30px;
-    left: 120px;
+    left: 128px;
     padding: 7px;
     position: absolute;
-    top: 0;
+    top: -2зч;
     width: 315px;
 }
 
@@ -1157,7 +1157,7 @@ a, a:active, a:hover, a:visited, a:focus {
     color: #fff;
     font-size: 16px;
     height: 44px;
-    margin-left: 120px;
+    margin-left: 128px;
     padding: 0 35px;
     text-align: center;
     text-shadow: 1px 1px 1px #666;

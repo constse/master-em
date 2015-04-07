@@ -525,7 +525,7 @@ a, a:active, a:hover, a:visited, a:focus {
     left: 50%;
     margin-left: -264px;
     margin-top: -218px;
-    padding: 20px;
+    padding: 40px;
     position: fixed;
     top: 50%;
     width: 528px;
@@ -555,7 +555,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #modal-form form fieldset label {
     font-weight: normal;
-    width: 120px;
+    width: 128px;
 }
 
 #modal-form form fieldset input {
@@ -564,10 +564,10 @@ a, a:active, a:hover, a:visited, a:focus {
     box-shadow: inset 0 1px 4px 1px #999;
     font-size: 14px;
     height: 30px;
-    left: 120px;
+    left: 128px;
     padding: 7px;
     position: absolute;
-    top: 0;
+    top: -2px;
     width: 315px;
 }
 
@@ -578,7 +578,7 @@ a, a:active, a:hover, a:visited, a:focus {
     color: #fff;
     font-size: 16px;
     height: 44px;
-    margin-left: 120px;
+    margin-left: 128px;
     padding: 0 35px;
     text-align: center;
     text-shadow: 1px 1px 1px #666;
@@ -595,4 +595,36 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #modal-form .close:hover {
     color: #f68400;
+}
+
+#modal-certificate {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px #666;
+    display: none;
+    height: 700px;
+    left: 50%;
+    margin-left: -275px;
+    margin-top: -350px;
+    padding: 20px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 550px;
+    z-index: 10100;
+}
+
+#modal-certificate .close {
+    color: #666;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+
+#modal-certificate img {
+    max-height: 660px;
+    max-width: 510px;
 }
