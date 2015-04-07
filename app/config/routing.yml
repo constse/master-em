@@ -76,9 +76,17 @@ site_general_booking:
   path: /booking
   defaults: { _controller: "MasterSiteBundle:General:booking" }
 
+site_general_certificate:
+  path: /certificate
+  defaults: { _controller: "MasterSiteBundle:General:certificate" }
+
 site_general_contacts:
   path: /contacts
   defaults: { _controller: "MasterSiteBundle:General:contacts" }
+
+site_general_credit:
+  path: /credit
+  defaults: { _controller: "MasterSiteBundle:General:credit" }
 
 site_general_faq:
   path: /faq

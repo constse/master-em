@@ -33,6 +33,11 @@ class GeneralController extends InitializableController
         return $this->render('MasterSiteBundle:General:booking.html.twig');
     }
 
+    public function certificateAction()
+    {
+        return $this->render('MasterSiteBundle:General:certificate.html.twig');
+    }
+
     public function contactsAction()
     {
         $certificates = $this->getRepository('Certificate')->createQueryBuilder('c')
@@ -43,6 +48,11 @@ class GeneralController extends InitializableController
         return $this->render('MasterSiteBundle:General:contacts.html.twig', array(
             'certificates' => $certificates
         ));
+    }
+
+    public function creditAction()
+    {
+        return $this->render('MasterSiteBundle:General:credit.html.twig');
     }
 
     public function faqAction()

@@ -1,0 +1,56 @@
+{% extends 'MasterSiteBundle::layout.html.twig' %}
+
+{% block head_title %}Авиабилеты{% endblock %}
+
+{% block body_content %}
+    {% set menu_active = 'flights' %}
+    {% include 'MasterSiteBundle::header.html.twig' %}
+    <div id="flights-page">
+        <div class="header-separator"></div>
+        <div class="heading">
+            <h1>Оформление рассрочки или кредита</h1>
+            <a href="javascript:void(0);"
+               data-modal-caption="Узнать подробнее о рассрочке"
+               data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами и подробно проконсультируем по оформлению рассрочки или кредита в ближайшее время с 10 до 19 часов"
+               data-modal-from="Страница о кредите, кнопка Подробнее"
+               class="callback show-modal">
+                Заказать расчёт
+            </a>
+        </div>
+        <ol class="article ol">
+            <li>
+                Оплата своего отдыха частями с минимальной переплатой или без переплаты вообще.
+            </li>
+            <li>
+                Уверенность в надежности банков-партнеров.
+                <div class="star"></div>
+            </li>
+            <li>
+                Оформление в офисе агентства.
+            </li>
+            <li>
+                Время решения банка от 15 минут.
+            </li>
+            <li>
+                Первоначальный взнос &mdash; от 10%.
+            </li>
+            <li>
+                Минимум документов при оформлении заявки.
+            </li>
+            <li>
+                Возможность оформления суммы от 3 000 до 500 000 рублей.
+            </li>
+            <li>
+                Возможность самостоятельного выбора срока кредитования от 3 до 24 месяцев.
+            </li>
+            <li>
+                Отсутствие комиссии за досрочное погашение.
+                <div class="ship"></div>
+            </li>
+            <li>
+                Дальнейшая оплата в любом офисе банка-партнера.
+            </li>
+        </ol>
+    </div>
+    {% include 'MasterSiteBundle::footer.html.twig' %}
+{% endblock %}
