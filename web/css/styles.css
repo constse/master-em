@@ -1103,6 +1103,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #modal-form {
     background: #fff;
+    border: 2px solid #0bba8b;
     border-radius: 8px;
     box-shadow: 0 0 10px 1px #666;
     display: none;
@@ -1133,14 +1134,14 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #modal-form form fieldset {
-    height: 68px;
+    height: 60px;
     position: relative;
     width: 100%;
 }
 
 #modal-form form fieldset label {
     font-weight: normal;
-    width: 128px;
+    width: 118px;
 }
 
 #modal-form form fieldset input {
@@ -1152,7 +1153,7 @@ a, a:active, a:hover, a:visited, a:focus {
     left: 128px;
     padding: 7px;
     position: absolute;
-    top: -2зч;
+    top: -2px;
     width: 315px;
 }
 

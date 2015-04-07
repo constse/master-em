@@ -13,7 +13,13 @@
         <div class="header-separator"></div>
         <div class="heading">
             <h1>О компании</h1>
-            <a href="#" class="callback">Заказать звонок</a>
+            <a href="javascript:void(0);"
+               data-modal-caption="Заказать звонок"
+               data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами в ближайшее время с 10 до 19 часов"
+               data-modal-from="Страница Контакты, заказ звонка"
+               class="callback show-modal">
+                Заказать звонок
+            </a>
         </div>
         <div class="about-company">
             <div class="photo"></div>
@@ -128,19 +134,22 @@
             $('.show-cert').click(function() {
                 showCertificate($(this).children('img').attr('src'));
             });
-            var map;
+            var map, placemark;
             ymaps.ready(function() {
                 map = new ymaps.Map('map', {
                     center: [53.3308, 83.7976],
                     zoom: 17,
                     controls: ['zoomControl', 'fullscreenControl']
                 });
-                map.geoObjects.add(new ymaps.Placemark([53.3308, 83.7976], {
-                    balloonContent: '<strong>Мастер Эмоций</strong><br>'
-                        + 'ул. Мало-Тобольская, д. 19, оф. 105<br>'
-                        + 'г. Барнаул, Алтайский край, Россия, 656056<br>'
-                        + 'тел.: 8 800 775-12-57'
-                }));
+                placemark = new ymaps.Placemark([53.3308, 83.7976], {
+                    balloonContent: '<a href="{{ url('site_general_index') }}"><strong>Мастер Эмоций</strong></a><br>'
+                    + 'ул. Мало-Тобольская, д. 19, оф. 105<br>'
+                    + 'г. Барнаул, Алтайский край, Россия, 656056<br>'
+                    + 'тел.: 8 800 775-12-57, 8 (3852) 229-281<br>'
+                    + 'e-mail: <a href="mailto:master-em@list.ru">master-em@list.ru</a>'
+                });
+                map.geoObjects.add(placemark);
+                placemark.balloon.open();
             });
         });
     </script>

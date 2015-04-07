@@ -518,6 +518,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #modal-form {
     background: #fff;
+    border: 3px solid #0bba8b;
     border-radius: 8px;
     box-shadow: 0 0 10px 1px #666;
     display: none;

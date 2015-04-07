@@ -20,7 +20,7 @@
                 {% if menu_active == 'booking' %}<div class="active"></div>{% endif %}
             </li>
             <li{% if menu_active == 'contacts' %} class="active"{% endif %}>
-                <a href="{{ url('site_general_contacts') }}">Контакты</a>
+                <a href="{{ url('site_general_contacts') }}#contacts">Контакты</a>
                 {% if menu_active == 'contacts' %}<div class="active"></div>{% endif %}
             </li>
         {% endspaceless %}
@@ -30,8 +30,8 @@
         <div class="timetable">пн-пт, с 10:00 до 19:00</div>
         <div class="order">
             <a href="javascript:void(0);"
-               data-modal-caption="Заказ обратного звонка"
-               data-modal-subcaption="Оставьте ваши контактные данные, и мы свяжемся с Вами в ближайшее время"
+               data-modal-caption="Заказать обратный звонок"
+               data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами в ближайшее время с 10 до 19 часов"
                data-modal-from="Заказ звонка в шапке сайта"
                class="show-modal">
                 Заказать обратный звонок

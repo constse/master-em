@@ -57,6 +57,7 @@ class GeneralController extends InitializableController
         $response->headers->set('Content-Type', 'application/msword');
         $response->headers->set('Content-Disposition', 'attachment; filename="' . basename($filename) . '";');
         $response->headers->set('Content-Length', filesize($filename));
+        $response->sendHeaders();
         $response->setContent(readfile($filename));
 
         return $response;
