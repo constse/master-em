@@ -617,16 +617,16 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #visa-page .article .star {
-    background: url('../img/visa-star.png') left 10px no-repeat transparent;
+    background: url('../img/flights-star.png') left 10px no-repeat transparent;
     float: right;
-    height: 85px;
+    height: 90px;
     width: 151px;
 }
 
 #visa-page .article .smile {
-    background: url('../img/visa-smile.png') left top no-repeat transparent;
+    background: url('../img/flights-smile.png') left top no-repeat transparent;
     float: right;
-    height: 59px;
+    height: 90px;
     margin-top: 75px;
     width: 118px;
 }
@@ -1024,15 +1024,16 @@ a, a:active, a:hover, a:visited, a:focus {
 #faq-page .article .plane {
     background: url('../img/flights-plane.png') left top no-repeat transparent;
     float: right;
-    height: 70px;
+    height: 90px;
     width: 194px;
+    margin-bottom: 10px;
     margin-left: 15px;
 }
 
 #faq-page .article .smile {
-    background: url('../img/visa-smile.png') left top no-repeat transparent;
+    background: url('../img/flights-smile.png') left top no-repeat transparent;
     float: right;
-    height: 70px;
+    height: 90px;
     width: 194px;
     margin-left: 15px;
 }
@@ -1083,7 +1084,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #loyalty-page .article .smile {
-    background: url('../img/loyalty-smile.png') left bottom no-repeat transparent;
+    background: url('../img/flights-smile2.png') left bottom no-repeat transparent;
     float: right;
     height: 238px;
     width: 175px;
