@@ -831,6 +831,7 @@ a, a:active, a:hover, a:visited, a:focus {
 #contacts-page .certs ul li {
     text-align: center;
     margin: 0 40px 20px 0;
+    vertical-align: top;
     width: 165px;
 }
 
@@ -843,6 +844,7 @@ a, a:active, a:hover, a:visited, a:focus {
     border: 0;
     height: 166px;
     margin-bottom: 15px;
+    max-width: 170px;
 }
 
 #contacts-page .certs .more {
@@ -945,6 +947,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #reviews-page .reviews .image {
     width: 170px;
+    padding-bottom: 10px;
 }
 
 #reviews-page .reviews .image img {
@@ -954,7 +957,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #reviews-page .reviews .full {
     color: #7b7b7b;
-    padding: 0 50px 0 25px;
+    padding: 0 50px 28px 25px;
     font-size: 15px;
     line-height: 24px;
 }
