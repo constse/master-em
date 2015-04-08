@@ -250,6 +250,7 @@ class GeneralController extends InitializableController
         $this->form->handleRequest($this->request);
 
         if ($this->form->isSubmitted() && $this->form->isValid()) {
+            $success = false;
             $text = $this->renderView('MasterSiteBundle:General:mail.html.twig', array(
                 'name' => $this->form->get('name')->getData(),
                 'phone' => $this->form->get('phone')->getData(),
@@ -264,9 +265,20 @@ class GeneralController extends InitializableController
             );
             $headers = implode("\r\n", $headers);
 
-            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) {
-                return new JsonResponse('ok');
-            }
+            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) $success = true;
+
+            require_once __DIR__ . '/../../../../web/smsc_api.php';
+            $text = 'Заявка с сайта: '
+                . $this->form->get('name')->getData() . ', '
+                . $this->form->get('phone')->getData() . ', '
+                . $this->form->get('email')->getData();
+
+            $count = 0;
+            list($id, $count, $cost, $balance) = send_sms('+79836010014', $text, 0, 0, 0, 0, false);
+
+            if ($count > 0) $success = true;
+
+            if ($success) return new JsonResponse('ok');
         }
 
         throw $this->createNotFoundException();
