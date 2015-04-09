@@ -82,8 +82,10 @@
             {% spaceless %}
                 {% for tour in tours %}
                     <li data-type="{{ tour.type|e }}" data-location="{{ tour.location|e }}">
-                        <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="314" height="202">
-                        {% if tour.template == 0 %}
+                        {% if tour.image is not empty %}
+                            <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="314" height="202">
+                        {% endif %}
+                        {% if tour.template == 1 %}
                             <div class="caption left-top-first">{{ tour.caption|e }}</div>
                             <div class="days left-top-second">{{ tour.days|e }}</div>
                             <div class="city left-bottom">{{ tour.from|e }}</div>
@@ -98,7 +100,7 @@
                                class="text-center button show-modal">
                                 Подробнее
                             </a>
-                        {% elseif tour.template == 1 %}
+                        {% elseif tour.template == 2 %}
                             <div class="caption left-top-first">{{ tour.caption|e }}</div>
                             <div class="days left-top-second">{{ tour.days|e }}</div>
                             <div class="city left-bottom">{{ tour.from|e }}</div>

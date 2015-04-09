@@ -15,11 +15,11 @@ class TourFormType extends AbstractEntityFormType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('image', new ImageFormType(), array('label' => 'Изображение'))
+        $builder->add('image', new ImageFormType(), array('label' => 'Изображение', 'required' => false))
             ->add('caption', 'text', array('label' => 'Наименование'))
-            ->add('from', 'text', array('label' => 'Откуда'))
-            ->add('days', 'text', array('label' => 'Продолжительность'))
-            ->add('price', 'integer', array('label' => 'Стоимость'))
+            ->add('from', 'text', array('label' => 'Откуда', 'required' => false))
+            ->add('days', 'text', array('label' => 'Продолжительность', 'required' => false))
+            ->add('price', 'integer', array('label' => 'Стоимость', 'required' => false))
             ->add('type', 'choice', array('label' => 'Тип',
                 'choices' => array(Tour::TYPE_NEW => 'Новый', Tour::TYPE_LATEST => 'Горящий', Tour::TYPE_OFFER => 'Акция'),
             ))->add('location', 'choice', array('label' => 'Расположение',

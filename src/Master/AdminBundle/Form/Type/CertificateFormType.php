@@ -15,6 +15,6 @@ class CertificateFormType extends AbstractEntityFormType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('caption', 'text', array('label' => 'Наименование'))
-            ->add('image', new ImageFormType(), array('label' => 'Изображение'));
+            ->add('image', new ImageFormType(), array('label' => 'Изображение', 'required' => false));
     }
 } 
