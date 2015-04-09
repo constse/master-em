@@ -299,11 +299,12 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li {
-    border-radius: 6px;
+    border-radius: 4px;
     color: #fff;
     display: inline-block;
     height: 202px;
     margin: 0 11px 19px 11px;
+    overflow: hidden;
     position: relative;
     text-shadow: 1px 1px 1px #666;
     width: 314px;
