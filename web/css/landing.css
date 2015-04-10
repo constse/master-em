@@ -436,6 +436,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 .certificates ul li {
+    height: 300px;
     margin: 0 10px 0;
     overflow: hidden;
     width: 190px;

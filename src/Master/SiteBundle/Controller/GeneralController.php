@@ -97,6 +97,7 @@ class GeneralController extends InitializableController
             ->leftJoin('t.image', 'i')
             ->orderBy('t.created', 'DESC')
             ->getQuery()->getResult();
+        shuffle($tours);
 
         return $this->render('MasterSiteBundle:General:index.html.twig', array(
             'tours' => $tours
