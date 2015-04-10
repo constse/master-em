@@ -86,8 +86,10 @@
                             <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="314" height="202">
                         {% endif %}
                         {% if tour.template == 1 %}
-                            <div class="caption left-top-first">{{ tour.caption|e }}</div>
-                            <div class="days left-top-second">{{ tour.days|e }}</div>
+                            <div class="caption left-top-first">
+                                {{ tour.caption|e }}
+                                <div class="days left-top-second">{{ tour.days|e }}</div>
+                            </div>
                             <div class="city left-bottom">{{ tour.from|e }}</div>
                             <div class="price right">
                                 от {{ tour.price|e }}

@@ -303,6 +303,7 @@ a, a:active, a:hover, a:visited, a:focus {
     color: #fff;
     display: inline-block;
     height: 202px;
+    line-height: 1;
     margin: 0 11px 19px 11px;
     overflow: hidden;
     position: relative;
@@ -318,6 +319,7 @@ a, a:active, a:hover, a:visited, a:focus {
 #index-page .tours .caption.left-top-first {
     left: 17px;
     top: 10px;
+    width: 160px;
 }
 
 #index-page .tours .caption.left-top-second {
@@ -327,12 +329,12 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #index-page .tours .days {
     font-size: 17px;
-    position: absolute;
+    /*position: absolute;*/
 }
 
 #index-page .tours .days.left-top-second {
-    left: 17px;
-    top: 44px;
+    /*left: 17px;*/
+    /*top: 44px;*/
 }
 
 #index-page .tours .days.left-bottom {
@@ -362,6 +364,10 @@ a, a:active, a:hover, a:visited, a:focus {
 #index-page .tours .price {
     font-size: 21px;
     position: absolute;
+}
+
+#index-page .tours .price span.glyphicon {
+    font-size: 15px;
 }
 
 #index-page .tours .price.right {
