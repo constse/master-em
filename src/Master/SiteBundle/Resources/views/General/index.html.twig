@@ -87,14 +87,19 @@
                             <div class="caption">Узнайте первыми о<br>лучших турах</div>
                         </li>
                     {% endif %}
-                    {% if loop.index == 13 %}
+                    {% if loop.index == 12 %}
                         <li class="tour-gift">
                             <img src="/img/tour-gift.png">
                         </li>
                     {% endif %}
-                    {% if loop.index == 18 %}
+                    {% if loop.index == 16 %}
                         <li class="tour-gift">
                             <img src="/img/tour-visa.png">
+                        </li>
+                    {% endif %}
+                    {% if loop.index == 17 %}
+                        <li class="tour-note">
+                            <img src="/img/tour-note.jpg">
                         </li>
                     {% endif %}
                     <li data-type="{{ tour.type|e }}" data-location="{{ tour.location|e }}">

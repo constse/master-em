@@ -1321,3 +1321,9 @@ a, a:active, a:hover, a:visited, a:focus {
     margin: 0 10px 11px 11px;
     width: 315px;
 }
+
+#index-page .tours li.tour-note {
+    height: 213px;
+    margin: 0 9px 10px 8px;
+    width: 319px;
+}
