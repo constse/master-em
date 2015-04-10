@@ -760,3 +760,47 @@ a, a:active, a:hover, a:visited, a:focus {
     bottom: 0;
     background: rgba(0, 0, 0, 0.15);
 }
+
+#modal-privacy {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px #666;
+    display: none;
+    height: 500px;
+    left: 50%;
+    margin-left: -275px;
+    margin-top: -350px;
+    padding: 40px 20px 20px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 550px;
+    z-index: 10100;
+}
+
+#modal-privacy .close {
+    color: #666;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+
+#modal-privacy .article {
+    height: 100%;
+    overflow: scroll;
+    text-align: left;
+}
+
+#modal-privacy .article .caption {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#modal-privacy .article strong {
+    display: inline-block;
+    margin: 10px 0 10px;
+}
