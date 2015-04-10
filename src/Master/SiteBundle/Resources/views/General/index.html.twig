@@ -90,16 +90,28 @@
                     {% if loop.index == 12 %}
                         <li class="tour-gift">
                             <img src="/img/tour-gift.png">
+                            <div class="caption">Идеальный подарок<br>близким</div>
+                            <a href="{{ url('site_general_certificate') }}">Подарочный сертификат</a>
                         </li>
                     {% endif %}
                     {% if loop.index == 16 %}
                         <li class="tour-gift">
                             <img src="/img/tour-visa.png">
+                            <div class="caption">Путешествие в кредит<br>или в рассрочку</div>
+                            <a href="{{ url('site_general_credit') }}">Узнать подробнее</a>
                         </li>
                     {% endif %}
                     {% if loop.index == 17 %}
                         <li class="tour-note">
                             <img src="/img/tour-note.jpg">
+                            <div class="caption">Не забудьте заказать<br>горящий тур!</div>
+                            <a href="javascript:void(0);"
+                               data-modal-caption="Заказать горящий тур"
+                               data-modal-subcaption="Пожалуйста, оставьте свои контактные данные"
+                               data-modal-from="Главная страница, тур {{ tour.caption }}"
+                               class="show-modal">
+                                Получать рассылку
+                            </a>
                         </li>
                     {% endif %}
                     <li data-type="{{ tour.type|e }}" data-location="{{ tour.location|e }}">

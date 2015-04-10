@@ -1304,10 +1304,10 @@ a, a:active, a:hover, a:visited, a:focus {
     color: #000;
     font-size: 24px;
     font-weight: bold;
-    left: 0;
+    left: 20px;
     position: absolute;
     text-shadow: none;
-    top: 0;
+    top: 20px;
 }
 
 #index-page .tours li.tour-gift {
@@ -1316,14 +1316,71 @@ a, a:active, a:hover, a:visited, a:focus {
     width: 316px;
 }
 
+#index-page .tours li.tour-gift .caption {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    left: 20px;
+    position: absolute;
+    text-shadow: none;
+    top: 20px;
+}
+
+#index-page .tours li.tour-gift a {
+    font-size: 15px;
+    left: 20px;
+    position: absolute;
+    text-decoration: underline;
+    text-shadow: none;
+    top: 85px;
+}
+
 #index-page .tours li.tour-visa {
     height: 212px;
     margin: 0 10px 11px 11px;
     width: 315px;
 }
 
+#index-page .tours li.tour-visa .caption {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    left: 20px;
+    position: absolute;
+    text-shadow: none;
+    top: 20px;
+}
+
+#index-page .tours li.tour-visa a {
+    font-size: 15px;
+    left: 20px;
+    position: absolute;
+    text-decoration: underline;
+    text-shadow: none;
+    top: 85px;
+}
+
 #index-page .tours li.tour-note {
     height: 213px;
     margin: 0 9px 10px 8px;
     width: 319px;
+}
+
+#index-page .tours li.tour-note .caption {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    left: 20px;
+    position: absolute;
+    text-shadow: none;
+    top: 30px;
+}
+
+#index-page .tours li.tour-note a {
+    bottom: 30px;
+    font-size: 15px;
+    left: 20px;
+    position: absolute;
+    text-decoration: underline;
+    text-shadow: none;
 }
