@@ -81,6 +81,17 @@
         <ul class="tours">
             {% spaceless %}
                 {% for tour in tours %}
+                    {% if loop.index == 8 %}
+                        <li class="tour-mail">
+                            <img src="/img/tour-mail.jpg">
+                            <div class="caption">Узнайте первыми о<br>лучших турах</div>
+                        </li>
+                    {% endif %}
+                    {% if loop.index == 13 %}
+                        <li class="tour-gift">
+                            <img src="/img/tour-gift.png">
+                        </li>
+                    {% endif %}
                     <li data-type="{{ tour.type|e }}" data-location="{{ tour.location|e }}">
                         {% if tour.image is not empty %}
                             <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="314" height="202">

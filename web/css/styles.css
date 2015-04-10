@@ -1299,3 +1299,19 @@ a, a:active, a:hover, a:visited, a:focus {
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
 }
+
+#index-page .tours li.tour-mail .caption {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    left: 0;
+    position: absolute;
+    text-shadow: none;
+    top: 0;
+}
+
+#index-page .tours li.tour-gift {
+    height: 217px;
+    margin: 0 10px 17px 10px;
+    width: 316px;
+}

@@ -437,6 +437,7 @@ a, a:active, a:hover, a:visited, a:focus {
     font-style: italic;
     height: 243px;
     line-height: 24px;
+    overflow: hidden;
     padding: 25px;
     width: 100%;
 }
