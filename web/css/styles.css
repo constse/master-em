@@ -1312,6 +1312,12 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #index-page .tours li.tour-gift {
     height: 217px;
-    margin: 0 10px 17px 10px;
+    margin: 0 10px 6px 10px;
     width: 316px;
+}
+
+#index-page .tours li.tour-visa {
+    height: 212px;
+    margin: 0 10px 11px 11px;
+    width: 315px;
 }

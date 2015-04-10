@@ -17,6 +17,9 @@
     <div class="container">
         <div id="header" class="header{{ landing|e }}">
             <a href="{{ url('site_general_index') }}" class="logo">Туристическое агентство</a>
+            <h1>{% block body_h1 %}{% endblock %}</h1>
+            <h2>{% block body_h2 %}{% endblock %}</h2>
+            <h3>{% block body_h3 %}{% endblock %}</h3>
             <div class="contacts">
                 <div class="phone"><a href="tel:+78007751257">8 800 775-12-57</a></div>
                 <div class="timetable">пн-пт, с 10:00 до 19:00</div>
@@ -30,9 +33,6 @@
                     </a>
                 </div>
             </div>
-            <h1>{% block body_h1 %}{% endblock %}</h1>
-            <h2>{% block body_h2 %}{% endblock %}</h2>
-            <h3>{% block body_h3 %}{% endblock %}</h3>
             <a href="javascript:void(0);"
                data-modal-caption="Заказать расчёт тура"
                data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами и подробно проконсультируем по интересующему Вас  туру в ближайшее время с 10 до 19 часов"
