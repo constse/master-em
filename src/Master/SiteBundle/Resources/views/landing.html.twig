@@ -56,7 +56,13 @@
                                 </div>
                                 <div class="city left-bottom">{{ tour.from|e }}</div>
                                 <div class="price right">{{ tour.price|e }} ₽</div>
-                                <a href="javascript:void(0);" class="text-center button">Подробнее</a>
+                                <a href="javascript:void(0);"
+                                   data-modal-caption="Узнать подробнее о туре"
+                                   data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами и подробно проконсультируем по данному туру в ближайшее время с 10 до 19 часов"
+                                   data-modal-from="Лэндинг №{{ landing|e }}, тур {{ tour.caption }}"
+                                   class="text-center button show-modal">
+                                    Подробнее
+                                </a>
                             {% elseif tour.template == 2 %}
                                 <div class="caption left-top-first">{{ tour.caption|e }}</div>
                                 <div class="days left-top-second">{{ tour.days|e }}</div>
