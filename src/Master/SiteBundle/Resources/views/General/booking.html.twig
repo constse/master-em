@@ -18,7 +18,13 @@
             <li>Отслеживать стоимость тура в зависимости от дат и курса валют.</li>
             <li>Забронировать выбранный тур в режиме реального времени.</li>
         </ol>
-        <div class="online">Тут должен быть виджет</div>
+        <div class="online">
+            <script type="text/javascript" src="http://tourvisor.ru/module/ts_search_module.js" charset="utf-8"></script>
+            <DIV align=center><DIV id="ts_search_form" align=center></DIV><DIV id="ts_search_result" align=center></DIV></DIV>
+            <script type="text/javascript">
+                TS_Init_Module({ theme: "blue", formtype: "normal", newpage: "0", pricetype: "1", city: "25", country: "4", showdetails: "1" });
+            </script>
+        </div>
     </div>
     {% include 'MasterSiteBundle::footer.html.twig' %}
 {% endblock %}
