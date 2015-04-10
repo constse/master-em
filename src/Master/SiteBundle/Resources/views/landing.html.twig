@@ -219,6 +219,10 @@
         {{ form_widget(form.submit) }}
         {{ form_end(form) }}
     </div>
+    <div id="modal-certificate">
+        <div class="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+        <img src="">
+    </div>
     <div id="modal-privacy">
         <div class="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
         <div class="article">
@@ -264,6 +268,7 @@
         }
 
         function closeModal() {
+            $('#modal-certificate').stop(true, true).fadeOut(250);
             $('#modal-privacy').stop(true, true).fadeOut(250);
             $('#modal-form').stop(true, true).fadeOut(250);
             $('#fade').stop(true, true).fadeOut(250);
@@ -342,6 +347,12 @@
             initCertificates();
         }
 
+        function showCertificate(src) {
+            $('#fade').stop(true, true).fadeIn(250);
+            $('#modal-certificate img').attr('src', src);
+            $('#modal-certificate').stop(true, true).fadeIn(250);
+        }
+
         $(document).ready(function() {
             $('#modal-form form').submit(function(e) { handleModal($(this)); closeModal(); e.preventDefault(); return false; });
             $('#fade').click(closeModal);
@@ -358,6 +369,8 @@
                 $('#modal-privacy').stop(true, true).fadeIn(250);
             });
             $('#modal-privacy .close').click(closeModal);
+            $('#modal-certificate .close').click(closeModal);
+            $('.certificates img').click(function() { showCertificate($(this).attr('src')); });
         });
     </script>
     <!-- BEGIN JIVOSITE CODE {literal} -->

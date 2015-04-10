@@ -525,6 +525,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 .certificates ul li img {
     border: 0;
+    cursor: pointer;
     height: 163px;
     margin-bottom: 10px;
     max-width: 190px;
@@ -678,7 +679,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #modal-form form fieldset label {
     font-weight: normal;
-    width: 128px;
+    width: 118px;
 }
 
 #modal-form form fieldset input {
@@ -725,15 +726,13 @@ a, a:active, a:hover, a:visited, a:focus {
     border-radius: 8px;
     box-shadow: 0 0 10px 1px #666;
     display: none;
-    height: 700px;
     left: 50%;
-    margin-left: -275px;
-    margin-top: -350px;
-    padding: 20px;
+    margin-left: -207px;
+    padding: 40px 20px 20px;
     position: fixed;
     text-align: center;
-    top: 50%;
-    width: 550px;
+    top: 50px;
+    width: 415px;
     z-index: 10100;
 }
 
@@ -748,8 +747,8 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #modal-certificate img {
-    max-height: 660px;
-    max-width: 510px;
+    max-height: 480px;
+    max-width: 375px;
 }
 
 .img-bg {
@@ -769,11 +768,10 @@ a, a:active, a:hover, a:visited, a:focus {
     height: 500px;
     left: 50%;
     margin-left: -275px;
-    margin-top: -350px;
     padding: 40px 20px 20px;
     position: fixed;
     text-align: center;
-    top: 50%;
+    top: 50px;
     width: 550px;
     z-index: 10100;
 }
