@@ -84,6 +84,7 @@
                     <li data-type="{{ tour.type|e }}" data-location="{{ tour.location|e }}">
                         {% if tour.image is not empty %}
                             <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="314" height="202">
+                            <div class="img-bg"></div>
                         {% endif %}
                         {% if tour.template == 1 %}
                             <div class="caption left-top-first">

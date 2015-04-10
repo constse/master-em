@@ -49,6 +49,7 @@
                     {% for tour in tours %}
                         <li>
                             <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="284" height="183">
+                            <div class="img-bg"></div>
                             {% if tour.template == 1 %}
                                 <div class="caption left-top-first">
                                     {{ tour.caption|e }}
