@@ -124,6 +124,30 @@
         </div>
         <div class="certificates">
             <h2>Дипломы и сертификаты</h2>
+            <ul class="list-inline">
+                <li class="cert-1">
+                    <img src=""><br>
+                    <div class="desc"></div>
+                </li>
+                <li class="cert-2">
+                    <img src=""><br>
+                    <div class="desc"></div>
+                </li>
+                <li class="cert-3">
+                    <img src=""><br>
+                    <div class="desc"></div>
+                </li>
+                <li class="cert-4">
+                    <img src=""><br>
+                    <div class="desc"></div>
+                </li>
+                <li class="cert-5">
+                    <img src=""><br>
+                    <div class="desc"></div>
+                </li>
+            </ul>
+            <div class="prev"></div>
+            <div class="next"></div>
         </div>
         <div id="footer" class="footer{{ landing|e }}">
             <h2>Подарок для Вас</h2>
@@ -167,6 +191,11 @@
         {{ form_end(form) }}
     </div>
     <script>
+        var certs = [
+            {% for cert in certificates %}{src: '{{ cert.image.path|e }}', desc: '{{ cert.caption|e }}'}{% if loop.index != certificates|length %},{% endif %}{% endfor %}
+        ];
+        var certPage = 0;
+
         function showModal(sender) {
             $('#fade').stop(true, true).fadeIn(250);
             $('#modal-form .caption').html(sender.attr('data-modal-caption'));
@@ -194,11 +223,41 @@
             });
         }
 
+        function initCertificates() {
+            $('.certificates li').hide();
+            for (var i = 0; i < 5; ++i) {
+                var cert = certs[certPage * 5 + i];
+                var li = $('.certificates .cert-' + (i + 1));
+                li.children('img').attr('src', cert.src);
+                li.children('.desc').html(cert.desc);
+                li.show();
+            }
+        }
+
+        function prevCertificates() {
+            var pages = (certs.length / 5).toFixed();
+            if (certs.length - pages * 5 > 0) pages = eval(pages) + 1;
+            --certPage;
+            if (certPage < 0) certPage = pages - 1;
+            initCertificates();
+        }
+
+        function nextCertificates() {
+            var pages = (certs.length / 5).toFixed();
+            if (certs.length - pages * 5 > 0) pages = eval(pages) + 1;
+            ++certPage;
+            if (certPage >= pages) certPage = 0;
+            initCertificates();
+        }
+
         $(document).ready(function() {
             $('#modal-form form').submit(function(e) { handleModal($(this)); closeModal(); e.preventDefault(); return false; });
             $('#fade').click(closeModal);
             $('#modal-form .close').click(closeModal);
             $('.show-modal').click(function() { showModal($(this)); });
+            initCertificates();
+            $('.certificates .prev').click(prevCertificates);
+            $('.certificates .next').click(nextCertificates);
         });
     </script>
     <!-- BEGIN JIVOSITE CODE {literal} -->

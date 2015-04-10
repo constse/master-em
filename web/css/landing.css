@@ -426,6 +426,46 @@ a, a:active, a:hover, a:visited, a:focus {
 
 .certificates {
     height: 432px;
+    position: relative;
+    text-align: center;
+}
+
+.certificates ul {
+    margin: 75px auto 0;
+    width: 1070px;
+}
+
+.certificates ul li {
+    margin: 0 10px 0;
+    overflow: hidden;
+    width: 190px;
+}
+
+.certificates ul li img {
+    border: 0;
+    height: 163px;
+    margin-bottom: 10px;
+    max-width: 190px;
+}
+
+.certificates .prev {
+    background: url('../img/land-cert-prev.jpg') left top transparent;
+    cursor: pointer;
+    height: 37px;
+    left: 27px;
+    position: absolute;
+    top: 198px;
+    width: 21px;
+}
+
+.certificates .next {
+    background: url('../img/land-cert-next.jpg') left top transparent;
+    cursor: pointer;
+    height: 37px;
+    position: absolute;
+    right: 27px;
+    top: 198px;
+    width: 21px;
 }
 
 #footer {
