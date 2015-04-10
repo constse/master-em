@@ -112,6 +112,7 @@ class GeneralController extends InitializableController
             ->setParameters(array('landing' => 1))
             ->orderBy('t.created', 'DESC')
             ->getQuery()->getResult();
+        shuffle($tours);
         $reviews = $this->getRepository('Review')->createQueryBuilder('r')
             ->leftJoin('r.image', 'i')
             ->orderBy('r.created', 'DESC')
@@ -137,6 +138,7 @@ class GeneralController extends InitializableController
             ->setParameters(array('landing' => 2))
             ->orderBy('t.created', 'DESC')
             ->getQuery()->getResult();
+        shuffle($tours);
         $reviews = $this->getRepository('Review')->createQueryBuilder('r')
             ->leftJoin('r.image', 'i')
             ->orderBy('r.created', 'DESC')
@@ -162,6 +164,7 @@ class GeneralController extends InitializableController
             ->setParameters(array('landing' => 3))
             ->orderBy('t.created', 'DESC')
             ->getQuery()->getResult();
+        shuffle($tours);
         $reviews = $this->getRepository('Review')->createQueryBuilder('r')
             ->leftJoin('r.image', 'i')
             ->orderBy('r.created', 'DESC')
@@ -187,6 +190,7 @@ class GeneralController extends InitializableController
             ->setParameters(array('landing' => 4))
             ->orderBy('t.created', 'DESC')
             ->getQuery()->getResult();
+        shuffle($tours);
         $reviews = $this->getRepository('Review')->createQueryBuilder('r')
             ->leftJoin('r.image', 'i')
             ->orderBy('r.created', 'DESC')
@@ -212,6 +216,7 @@ class GeneralController extends InitializableController
             ->setParameters(array('landing' => 5))
             ->orderBy('t.created', 'DESC')
             ->getQuery()->getResult();
+        shuffle($tours);
         $reviews = $this->getRepository('Review')->createQueryBuilder('r')
             ->leftJoin('r.image', 'i')
             ->orderBy('r.created', 'DESC')
@@ -266,7 +271,7 @@ class GeneralController extends InitializableController
             );
             $headers = implode("\r\n", $headers);
 
-            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) $success = true;
+            if (mail('master-em@list.ru', 'Заявка с сайта!', $text, $headers)) $success = true;
 
             require_once __DIR__ . '/../../../../web/smsc_api.php';
             $text = 'Заявка с сайта: '

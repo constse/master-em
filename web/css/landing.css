@@ -286,6 +286,7 @@ a, a:active, a:hover, a:visited, a:focus {
 #tours .caption.left-top-first {
     left: 17px;
     top: 10px;
+    width: 175px;
 }
 
 #tours .caption.left-top-second {
@@ -299,8 +300,8 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #tours .days.left-top-second {
-    left: 17px;
-    top: 44px;
+    /*left: 17px;*/
+    /*top: 44px;*/
 }
 
 #tours .days.left-bottom {
@@ -332,6 +333,10 @@ a, a:active, a:hover, a:visited, a:focus {
     position: absolute;
 }
 
+#tours .price span.glyphicon {
+    font-size: 15px;
+}
+
 #tours .price.right {
     right: 8px;
     top: 9px;
@@ -342,7 +347,7 @@ a, a:active, a:hover, a:visited, a:focus {
     border-radius: 3px;
     bottom: 9px;
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     height: 31px;
     padding-top: 5px;
     position: absolute;
@@ -408,6 +413,80 @@ a, a:active, a:hover, a:visited, a:focus {
     position: relative;
 }
 
+.reviews ul {
+    line-height: 1;
+    margin: 0 auto 0;
+    width: 960px;
+}
+
+.reviews ul li {
+    height: 350px;
+    width: 414px;
+}
+
+.reviews ul li.review-1 {
+    margin-right: 128px;
+}
+
+.reviews li .text {
+    background: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    font-style: italic;
+    height: 243px;
+    line-height: 24px;
+    padding: 25px;
+    width: 100%;
+}
+
+.reviews li .desc {
+    padding-top: 33px;
+    padding-left: 94px;
+    position: relative;
+}
+
+.reviews li .desc .photo {
+    background-position: center center;
+    background-size: auto 100%;
+    position: absolute;
+    top: 22px;
+    left: 14px;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    overflow: hidden;
+}
+
+.reviews li .desc .name {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.reviews li .desc .to {
+    font-size: 13px;
+    margin-top: 11px;
+}
+
+.reviews .prev {
+    background: url('../img/prev.png') left top transparent;
+    cursor: pointer;
+    height: 37px;
+    left: 27px;
+    position: absolute;
+    top: 222px;
+    width: 21px;
+}
+
+.reviews .next {
+    background: url('../img/next.png') left top transparent;
+    cursor: pointer;
+    height: 37px;
+    position: absolute;
+    right: 27px;
+    top: 222px;
+    width: 21px;
+}
+
 .reviews .order {
     color: #fff;
     font-size: 19px;
@@ -450,7 +529,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 .certificates .prev {
-    background: url('../img/land-cert-prev.jpg') left top transparent;
+    background: url('../img/prev.png') left top transparent;
     cursor: pointer;
     height: 37px;
     left: 27px;
@@ -460,7 +539,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 .certificates .next {
-    background: url('../img/land-cert-next.jpg') left top transparent;
+    background: url('../img/next.png') left top transparent;
     cursor: pointer;
     height: 37px;
     position: absolute;

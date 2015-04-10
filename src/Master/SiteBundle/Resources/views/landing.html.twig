@@ -50,11 +50,13 @@
                         <li>
                             <img src="{{ asset(tour.image.path|e) }}" alt="{{ tour.caption|e }}" width="284" height="183">
                             {% if tour.template == 1 %}
-                                <div class="caption left-top-first">{{ tour.caption|e }}</div>
-                                <div class="days left-top-second">{{ tour.days|e }}</div>
+                                <div class="caption left-top-first">
+                                    {{ tour.caption|e }}
+                                    <div class="days left-top-second">{{ tour.days|e }}</div>
+                                </div>
                                 <div class="city left-bottom">{{ tour.from|e }}</div>
                                 <div class="price right">{{ tour.price|e }} ₽</div>
-                                <a href="javascript:void(0);" class="text-center button">Купить</a>
+                                <a href="javascript:void(0);" class="text-center button">Подробнее</a>
                             {% elseif tour.template == 2 %}
                                 <div class="caption left-top-first">{{ tour.caption|e }}</div>
                                 <div class="days left-top-second">{{ tour.days|e }}</div>
@@ -114,6 +116,26 @@
         </div>
         <div class="reviews">
             <h2>Отзывы</h2>
+            <ul class="list-inline">
+                <li class="review-1">
+                    <div class="text"></div>
+                    <div class="desc">
+                        <div class="photo"></div>
+                        <div class="name"></div>
+                        <div class="to"></div>
+                    </div>
+                </li>
+                <li class="review-2">
+                    <div class="text"></div>
+                    <div class="desc">
+                        <div class="photo"></div>
+                        <div class="name"></div>
+                        <div class="to"></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="prev"></div>
+            <div class="next"></div>
             <a href="javascript:void(0);"
                data-modal-caption="Подобрать тур"
                data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами и подробно проконсультируем по интересующему Вас  туру в ближайшее время с 10 до 19 часов"
@@ -191,6 +213,10 @@
         {{ form_end(form) }}
     </div>
     <script>
+        var reviews = [
+            {% for review in reviews %}{text: '{{ review.full|e }}', photo: '{{ review.image.path|e }}', name: '{{ review.name|e }}', to: '{{ review.to|e }}'}{% if loop.index != reviews|length %},{% endif %}{% endfor %}
+        ];
+        var reviewPage = 0;
         var certs = [
             {% for cert in certificates %}{src: '{{ cert.image.path|e }}', desc: '{{ cert.caption|e }}'}{% if loop.index != certificates|length %},{% endif %}{% endfor %}
         ];
@@ -223,14 +249,48 @@
             });
         }
 
+        function initReviews()
+        {
+            $('.reviews li').hide();
+            for (var i = 0; i < 2; ++i) {
+                var review = reviews[reviewPage * 2 + i];
+                if (review) {
+                    var li = $('.reviews .review-' + (i + 1));
+                    li.find('.text').html(review.text);
+                    li.find('.photo').css({'background-image': 'url("' + review.photo + '")'});
+                    li.find('.name').html(review.name);
+                    li.find('.to').html(review.to);
+                    li.show();
+                }
+            }
+        }
+
+        function prevReview() {
+            var pages = (reviews.length / 2).toFixed();
+            if (reviews.length - pages * 2 > 0) pages = eval(pages) + 1;
+            --reviewPage;
+            if (reviewPage < 0) reviewPage = pages - 1;
+            initReviews();
+        }
+
+        function nextReview() {
+            var pages = (reviews.length / 2).toFixed();
+            if (reviews.length - pages * 2 > 0) pages = eval(pages) + 1;
+            ++reviewPage;
+            if (reviewPage >= pages) reviewPage = 0;
+            initReviews();
+        }
+
         function initCertificates() {
             $('.certificates li').hide();
             for (var i = 0; i < 5; ++i) {
                 var cert = certs[certPage * 5 + i];
-                var li = $('.certificates .cert-' + (i + 1));
-                li.children('img').attr('src', cert.src);
-                li.children('.desc').html(cert.desc);
-                li.show();
+                if (cert) {
+                    var li = $('.certificates .cert-' + (i + 1));
+                    li.children('img').attr('src', cert.src);
+                    li.children('.desc').html(cert.desc);
+                    li.show();
+                }
             }
         }
 
@@ -255,6 +315,9 @@
             $('#fade').click(closeModal);
             $('#modal-form .close').click(closeModal);
             $('.show-modal').click(function() { showModal($(this)); });
+            initReviews();
+            $('.reviews .prev').click(prevReview);
+            $('.reviews .next').click(nextReview);
             initCertificates();
             $('.certificates .prev').click(prevCertificates);
             $('.certificates .next').click(nextCertificates);
