@@ -32,20 +32,20 @@ class Tour extends AbstractEntity
 
     /**
      * @var string
-     * @ORM\Column(name = "days", type = "string")
+     * @ORM\Column(name = "days", type = "string", nullable = true)
      */
     protected $days;
 
     /**
      * @var string
-     * @ORM\COlumn(name = "tourfrom", type = "string")
+     * @ORM\COlumn(name = "tourfrom", type = "string", nullable = true)
      */
     protected $from;
 
     /**
      * @var Image
      * @ORM\ManyToOne(targetEntity = "Master\SystemBundle\Entity\Image")
-     * @ORM\JoinColumn(name = "imageid", referencedColumnName = "id")
+     * @ORM\JoinColumn(name = "imageid", referencedColumnName = "id", nullable = true)
      */
     protected $image;
 
