@@ -9,3 +9,4 @@
 /vendor
 /app/bootstrap.php.cache
 /web/uploads
+/web/test
