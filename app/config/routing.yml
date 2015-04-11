@@ -121,23 +121,23 @@ site_general_flights:
   defaults: { _controller: "MasterSiteBundle:General:flights" }
 
 site_general_landing1:
-  path: /landing1
+  path: /bel
   defaults: { _controller: "MasterSiteBundle:General:landing1" }
 
 site_general_landing2:
-  path: /landing2
+  path: /active
   defaults: { _controller: "MasterSiteBundle:General:landing2" }
 
 site_general_landing3:
-  path: /landing3
+  path: /altai
   defaults: { _controller: "MasterSiteBundle:General:landing3" }
 
 site_general_landing4:
-  path: /landing4
+  path: /rf
   defaults: { _controller: "MasterSiteBundle:General:landing4" }
 
 site_general_landing5:
-  path: /landing5
+  path: /zar
   defaults: { _controller: "MasterSiteBundle:General:landing5" }
 
 site_general_loyalty:

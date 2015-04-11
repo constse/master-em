@@ -244,12 +244,12 @@
                 method: 'post',
                 cache: false,
                 error: function() { alert('Извините, не удалось отправить заявку. Пожалуйста, повторите попытку позже.'); },
-                success: function(data) { alert('Благодарим за заявку! Мы свяжемся с Вами в ближайшее время.'); form.find('input[type=text], input[type=email').val(''); }
+                success: function(data) { alert('Благодарим за заявку! Мы свяжемся с Вами в ближайшее время.'); form.find('input[type=text], input[type=email]').val(''); }
             });
         }
 
         $(document).ready(function() {
-            $('#index-page .tours .tour-mail form input.hidden-from').val('Главная страница, форма в плашках туров');
+            $('#index-page .tours .tour-mail form input.hidden-from').val('Главная страница, форма в плашках туров (рассылка туров)');
             $('#index-page .tours .tour-mail form input.hidden-query').val(window.location.search.substring(1));
             $('#index-page .tours .tour-mail form').submit(function(e) {
                 handleMailForm($(this)); e.preventDefault(); return false;

@@ -15,6 +15,7 @@
     {% block head_additions %}{% endblock %}
 </head>
 <body>
+{% set lands = {'1': 'Белокуриха', '2': 'Активный', '3': 'Алтай', '4': 'РФ', '5': 'Зарубежный'} %}
     <div class="container">
         <div id="header" class="header{{ landing|e }}" style="background-image: url('{{ land.forLanding.path|e }}');">
             <a href="{{ url('site_general_index') }}" class="logo">Туристическое агентство</a>
@@ -28,7 +29,7 @@
                     <a href="javascript:void(0);"
                        data-modal-caption="Заказать обратный звонок"
                        data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами в ближайшее время с 10 до 19 часов"
-                       data-modal-from="Заказ звонка в шапке лэндинга {{ landing|e }}"
+                       data-modal-from="Заказ звонка в шапке лэндинга {{ lands[landing] }}"
                        class="show-modal">
                         Заказать обратный звонок
                     </a>
@@ -37,7 +38,7 @@
             <a href="javascript:void(0);"
                data-modal-caption="Заказать расчёт тура"
                data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами и подробно проконсультируем по интересующему Вас  туру в ближайшее время с 10 до 19 часов"
-               data-modal-from="Заказ расчёта тура в шапке лэндинга"
+               data-modal-from="Заказ расчёта тура в шапке лэндинга {{ lands[landing] }}"
                class="button text-shadow show-modal">
                 Заказать расчёт тура
             </a>
@@ -61,7 +62,7 @@
                                 <a href="javascript:void(0);"
                                    data-modal-caption="Узнать подробнее о туре"
                                    data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами и подробно проконсультируем по данному туру в ближайшее время с 10 до 19 часов"
-                                   data-modal-from="Лэндинг №{{ landing|e }}, тур {{ tour.caption }}"
+                                   data-modal-from="Лэндинг {{ lands[landing] }}, тур {{ tour.caption }}"
                                    class="text-center button show-modal">
                                     Подробнее
                                 </a>
@@ -147,7 +148,7 @@
             <a href="javascript:void(0);"
                data-modal-caption="Подобрать тур"
                data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами и подробно проконсультируем по интересующему Вас  туру в ближайшее время с 10 до 19 часов"
-               data-modal-from="Заказ подбора тура (Отзывы на лэндинге)"
+               data-modal-from="Заказ подбора тура (Отзывы на лэндинге {{ lands[landing] }})"
                class="order text-shadow show-modal">
                 Оставить заявку на подбор тура
             </a>
@@ -188,7 +189,7 @@
             <a href="javascript:void(0);"
                data-modal-caption="Подписка на e-mail рассылку"
                data-modal-subcaption="Пожалуйста, оставьте свои контактные данные. В ближайшее время мы вышлем Вам полезный подарок :)"
-               data-modal-from="Кнопка Получить подарок в подвале лэндинга"
+               data-modal-from="Кнопка Получить подарок в подвале лэндинга {{ lands[landing] }}"
                class="get-present show-modal">
                 Получить подарок
             </a>
