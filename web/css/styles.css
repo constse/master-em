@@ -19,7 +19,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 .text-shadow {
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
 }
 
 .container {
@@ -71,7 +71,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #menu li.active {
-    border-color: #0e7f60;
+    border-color: #097d5e;
     padding: 8px 16px 0;
 }
 
@@ -81,7 +81,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #menu div.active {
-    border: 2px solid #0bba8b;
+    border: 2px solid #0bb184;
     border-radius: 3px;
     bottom: -1px;
     left: -3px;
@@ -169,7 +169,7 @@ a, a:active, a:hover, a:visited, a:focus {
     border-radius: 50%;
     height: 7px;
     margin: 0 5px 0 0;
-    opacity: 0.5;
+    opacity: 1;
     width: 7px;
 }
 
@@ -196,7 +196,7 @@ a, a:active, a:hover, a:visited, a:focus {
 #slider .carousel-inner .caption {
     color: #fff;
     font-size: 44px;
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
 }
 
 #slider .carousel-inner .details {
@@ -310,7 +310,7 @@ a, a:active, a:hover, a:visited, a:focus {
     margin: 0 11px 19px 11px;
     overflow: hidden;
     position: relative;
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
     width: 314px;
 }
 
@@ -383,12 +383,12 @@ a, a:active, a:hover, a:visited, a:focus {
     border-radius: 3px;
     bottom: 9px;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     height: 31px;
-    padding-top: 7px;
+    padding-top: 9px;
     position: absolute;
     right: 9px;
-    width: 100px;
+    width: 120px;
 }
 
 #index-page .shadow {
@@ -456,7 +456,7 @@ a, a:active, a:hover, a:visited, a:focus {
 #index-page .order-tour {
     font-size: 27px;
     font-weight: bold;
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
 }
 
 #index-page .order-by-phone {
@@ -613,7 +613,7 @@ a, a:active, a:hover, a:visited, a:focus {
     /*position: absolute;*/
     /*right: 0;*/
     text-align: center;
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
     /*top: 17px;*/
     width: 230px;
 }
@@ -670,7 +670,7 @@ a, a:active, a:hover, a:visited, a:focus {
     position: absolute;
     right: 0;
     text-align: center;
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
     top: 17px;
     width: 189px;
 }
@@ -756,7 +756,7 @@ a, a:active, a:hover, a:visited, a:focus {
     position: absolute;
     right: 0;
     text-align: center;
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
     top: 17px;
     width: 197px;
 }
@@ -1110,7 +1110,7 @@ a, a:active, a:hover, a:visited, a:focus {
     position: absolute;
     right: 0;
     text-align: center;
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
     top: 17px;
     width: 189px;
 }
@@ -1211,7 +1211,7 @@ a, a:active, a:hover, a:visited, a:focus {
     margin-left: 128px;
     padding: 0 35px;
     text-align: center;
-    text-shadow: 1px 1px 1px #666;
+    text-shadow: 1px 1px 1px #333;
 }
 
 #modal-form .close {
@@ -1310,10 +1310,10 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li.tour-mail .caption {
-    color: #333;
+    color: #2d2d2d;
     font-size: 24px;
-    font-weight: bold;
     left: 20px;
+    line-heigth: 26px;
     position: absolute;
     text-shadow: none;
     top: 20px;
@@ -1326,10 +1326,10 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li.tour-gift .caption {
-    color: #333;
+    color: #2d2d2d;
     font-size: 24px;
-    font-weight: bold;
     left: 20px;
+    line-height: 26px;
     position: absolute;
     text-shadow: none;
     top: 20px;
@@ -1351,10 +1351,10 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li.tour-visa .caption {
-    color: #333;
+    color: #2d2d2d;
     font-size: 24px;
-    font-weight: bold;
     left: 20px;
+    line-height: 26px;
     position: absolute;
     text-shadow: none;
     top: 20px;
@@ -1376,10 +1376,10 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li.tour-note .caption {
-    color: #333;
+    color: #2d2d2d;
     font-size: 24px;
-    font-weight: bold;
     left: 20px;
+    line-height: 26px;
     position: absolute;
     text-shadow: none;
     top: 30px;

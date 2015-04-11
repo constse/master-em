@@ -8,8 +8,8 @@
         .tours .tour-mail fieldset { height: 47px; width: 100%; }
         .tours .tour-mail input { color: #000; }
         .tours .tour-mail input[type=text] { border: 1px #e8e8e8; border-radius: 4px; box-shadow: inset 0 1px 4px 1px #999; font-size: 14px; height: 30px; left: 128px; padding: 7px; width: 275px; }
-        .tours .tour-mail input[type=email] { border: 1px #e8e8e8; border-radius: 4px 0 0 4px; box-shadow: inset 0 1px 4px 1px #999; font-size: 14px; height: 30px; left: 128px; padding: 7px; width: 220px; }
-        .tours .tour-mail button { height: 30px; color: #000; width: 55px; }
+        .tours .tour-mail input[type=email] { border: 1px #e8e8e8; border-radius: 4px 0 0 4px; box-shadow: inset 0 1px 4px 1px #999; font-size: 14px; height: 30px; left: 128px; padding: 7px; width: 195px; }
+        .tours .tour-mail button { height: 30px; color: #000; width: 80px; margin-top: -1px; }
     </style>
 {% endblock %}
 
@@ -92,7 +92,7 @@
         <ul class="tours">
             {% spaceless %}
                 {% for tour in tours %}
-                    {% if loop.index == 8 %}
+                    {% if loop.index == 8 %}{#8#}
                         <li class="tour-mail">
                             <img src="/img/tour-mail.jpg">
                             <div class="caption">Узнайте первыми о<br>лучших турах</div>
@@ -106,21 +106,21 @@
                             {{ form_end(tour_form) }}
                         </li>
                     {% endif %}
-                    {% if loop.index == 12 %}
+                    {% if loop.index == 12 %}{#12#}
                         <li class="tour-gift">
                             <img src="/img/tour-gift.png">
                             <div class="caption">Идеальный подарок<br>близким</div>
                             <a href="{{ url('site_general_certificate') }}">Подарочный сертификат</a>
                         </li>
                     {% endif %}
-                    {% if loop.index == 16 %}
+                    {% if loop.index == 16 %}{#16#}
                         <li class="tour-gift">
                             <img src="/img/tour-visa.png">
                             <div class="caption">Путешествие в кредит<br>или в рассрочку</div>
                             <a href="{{ url('site_general_credit') }}">Узнать подробнее</a>
                         </li>
                     {% endif %}
-                    {% if loop.index == 20 %}
+                    {% if loop.index == 20 %}{#20#}
                         <li class="tour-note">
                             <img src="/img/tour-note.jpg">
                             <div class="caption">Не забудьте заказать<br>горящий тур!</div>
