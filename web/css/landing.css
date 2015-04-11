@@ -646,7 +646,7 @@ a, a:active, a:hover, a:visited, a:focus {
     border-radius: 8px;
     box-shadow: 0 0 10px 1px #666;
     display: none;
-    height: 437px;
+    /*height: 437px;*/
     left: 50%;
     margin-left: -264px;
     margin-top: -218px;
