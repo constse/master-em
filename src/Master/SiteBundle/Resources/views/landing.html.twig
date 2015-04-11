@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>{% block head_title %}Page{% endblock %} | Мастер эмоций</title>
+    <title>Мастер эмоций</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="const-se.ru">
@@ -18,9 +18,9 @@
     <div class="container">
         <div id="header" class="header{{ landing|e }}" style="background-image: url('{{ land.forLanding.path|e }}');">
             <a href="{{ url('site_general_index') }}" class="logo">Туристическое агентство</a>
-            <h1>{% block body_h1 %}{% endblock %}</h1>
-            <h2>{% block body_h2 %}{% endblock %}</h2>
-            <h3>{% block body_h3 %}{% endblock %}</h3>
+            <h1>{{ land.landH1|raw }}</h1>
+            <h2>{{ land.landH2|raw }}</h2>
+            <h3>{{ land.landH3|raw }}</h3>
             <div class="contacts">
                 <div class="phone"><a href="tel:+78007751257">8 800 775-12-57</a></div>
                 <div class="timetable">пн-пт, с 10:00 до 19:00</div>
