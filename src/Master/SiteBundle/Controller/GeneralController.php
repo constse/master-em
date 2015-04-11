@@ -2,6 +2,7 @@
 
 namespace Master\SiteBundle\Controller;
 
+use Master\SiteBundle\Form\Type\Request2FormType;
 use Master\SiteBundle\Form\Type\RequestFormType;
 use Master\SystemBundle\Controller\InitializableController;
 use Symfony\Component\Form\Form;
@@ -98,9 +99,11 @@ class GeneralController extends InitializableController
             ->orderBy('t.created', 'DESC')
             ->getQuery()->getResult();
         shuffle($tours);
+        $form = $this->createForm(new Request2FormType());
 
         return $this->render('MasterSiteBundle:General:index.html.twig', array(
-            'tours' => $tours
+            'tours' => $tours,
+            'tour_form' => $form->createView()
         ));
     }
 
@@ -277,6 +280,43 @@ class GeneralController extends InitializableController
             $text = 'Заявка с сайта: '
                 . $this->form->get('name')->getData() . ', '
                 . $this->form->get('phone')->getData() . ', '
+                . $this->form->get('email')->getData();
+
+            $count = 0;
+            list($id, $count, $cost, $balance) = send_sms('+79836010014', $text, 0, 0, 0, 0, false);
+
+            if ($count > 0) $success = true;
+
+            if ($success) return new JsonResponse('ok');
+        }
+
+        throw $this->createNotFoundException();
+    }
+
+    public function request2Action()
+    {
+        $this->form->handleRequest($this->request);
+
+        if ($this->form->isSubmitted() && $this->form->isValid()) {
+            $success = false;
+            $text = $this->renderView('MasterSiteBundle:General:mail2.html.twig', array(
+                'name' => $this->form->get('name')->getData(),
+                'email' => $this->form->get('email')->getData(),
+                'from' => $this->form->get('from')->getData(),
+                'query' => $this->form->get('query')->getData()
+            ));
+            $headers = array(
+                'From: <noreply@master-em.com>',
+                'MIME-Version: 1.0',
+                "Content-Type: text/html; charset=utf-8\r\n"
+            );
+            $headers = implode("\r\n", $headers);
+
+            if (mail('master-em@list.ru', 'Заявка с сайта!', $text, $headers)) $success = true;
+
+            require_once __DIR__ . '/../../../../web/smsc_api.php';
+            $text = 'Заявка с сайта: '
+                . $this->form->get('name')->getData() . ', '
                 . $this->form->get('email')->getData();
 
             $count = 0;

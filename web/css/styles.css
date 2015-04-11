@@ -1301,7 +1301,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li.tour-mail .caption {
-    color: #000;
+    color: #333;
     font-size: 24px;
     font-weight: bold;
     left: 20px;
@@ -1317,7 +1317,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li.tour-gift .caption {
-    color: #000;
+    color: #333;
     font-size: 24px;
     font-weight: bold;
     left: 20px;
@@ -1342,7 +1342,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li.tour-visa .caption {
-    color: #000;
+    color: #333;
     font-size: 24px;
     font-weight: bold;
     left: 20px;
@@ -1367,7 +1367,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #index-page .tours li.tour-note .caption {
-    color: #000;
+    color: #333;
     font-size: 24px;
     font-weight: bold;
     left: 20px;

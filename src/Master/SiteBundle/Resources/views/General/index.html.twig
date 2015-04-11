@@ -2,6 +2,17 @@
 
 {% block head_title %}Главная{% endblock %}
 
+{% block head_additions %}
+    <style>
+        .tours .tour-mail form { position: absolute; top: 95px; left: 20px; }
+        .tours .tour-mail fieldset { height: 47px; width: 100%; }
+        .tours .tour-mail input { color: #000; }
+        .tours .tour-mail input[type=text] { border: 1px #e8e8e8; border-radius: 4px; box-shadow: inset 0 1px 4px 1px #999; font-size: 14px; height: 30px; left: 128px; padding: 7px; width: 275px; }
+        .tours .tour-mail input[type=email] { border: 1px #e8e8e8; border-radius: 4px 0 0 4px; box-shadow: inset 0 1px 4px 1px #999; font-size: 14px; height: 30px; left: 128px; padding: 7px; width: 220px; }
+        .tours .tour-mail button { height: 30px; color: #000; width: 55px; }
+    </style>
+{% endblock %}
+
 {% block body_content %}
     {% set menu_active = 'index' %}
     {% include 'MasterSiteBundle::header.html.twig' %}
@@ -81,10 +92,18 @@
         <ul class="tours">
             {% spaceless %}
                 {% for tour in tours %}
-                    {% if loop.index == 8 %}
+                    {% if loop.index == 1 %}
                         <li class="tour-mail">
                             <img src="/img/tour-mail.jpg">
                             <div class="caption">Узнайте первыми о<br>лучших турах</div>
+                            {{ form_start(tour_form, {'action': url('site_general_request2')}) }}
+                                <fieldset>
+                                    {{ form_widget(tour_form.name, {'attr': {'placeholder': 'Ваше имя'}}) }}
+                                </fieldset>
+                                <fieldset>
+                                    {{ form_widget(tour_form.email, {'attr': {'placeholder': 'Эл. адрес'}}) }}{{ form_widget(tour_form.submit) }}
+                                </fieldset>
+                            {{ form_end(tour_form) }}
                         </li>
                     {% endif %}
                     {% if loop.index == 12 %}

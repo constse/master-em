@@ -124,6 +124,10 @@ site_general_request:
   path: /request
   defaults: { _controller: "MasterSiteBundle:General:request" }
 
+site_general_request2:
+  path: /request2
+  defaults: { _controller: "MasterSiteBundle:General:request2" }
+
 site_general_reviews:
   path: /reviews
   defaults: { _controller: "MasterSiteBundle:General:reviews" }
