@@ -133,6 +133,7 @@ a, a:active, a:hover, a:visited, a:focus {
 
 #slider .carousel-control {
     background: none;
+    opacity: 1;
 }
 
 #slider .carousel-control .icon-prev {
@@ -169,7 +170,7 @@ a, a:active, a:hover, a:visited, a:focus {
     border-radius: 50%;
     height: 7px;
     margin: 0 5px 0 0;
-    opacity: 1;
+    opacity: 0.5;
     width: 7px;
 }
 
