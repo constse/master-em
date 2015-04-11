@@ -249,6 +249,8 @@
         }
 
         $(document).ready(function() {
+            $('#index-page .tours .tour-mail form input.hidden-from').val('Главная страница, форма в плашках туров');
+            $('#index-page .tours .tour-mail form input.hidden-query').val(window.location.search.substring(1));
             $('#index-page .tours .tour-mail form').submit(function(e) {
                 handleMailForm($(this)); e.preventDefault(); return false;
             });
