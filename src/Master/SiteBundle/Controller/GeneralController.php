@@ -134,12 +134,14 @@ class GeneralController extends InitializableController
             ->leftJoin('c.image', 'i')
             ->orderBy('c.created', 'DESC')
             ->getQuery()->getResult();
+        $landing = $this->getRepository('Landing')->findOneByIndex(1);
 
         return $this->render('MasterSiteBundle:General:landing1.html.twig', array(
             'landing' => 1,
             'tours' => $tours,
             'reviews' => $reviews,
-            'certificates' => $certificates
+            'certificates' => $certificates,
+            'land' => $landing
         ));
     }
 
@@ -160,12 +162,14 @@ class GeneralController extends InitializableController
             ->leftJoin('c.image', 'i')
             ->orderBy('c.created', 'DESC')
             ->getQuery()->getResult();
+        $landing = $this->getRepository('Landing')->findOneByIndex(2);
 
         return $this->render('MasterSiteBundle:General:landing2.html.twig', array(
             'landing' => 2,
             'tours' => $tours,
             'reviews' => $reviews,
-            'certificates' => $certificates
+            'certificates' => $certificates,
+            'land' => $landing
         ));
     }
 
@@ -186,12 +190,14 @@ class GeneralController extends InitializableController
             ->leftJoin('c.image', 'i')
             ->orderBy('c.created', 'DESC')
             ->getQuery()->getResult();
+        $landing = $this->getRepository('Landing')->findOneByIndex(3);
 
         return $this->render('MasterSiteBundle:General:landing3.html.twig', array(
             'landing' => 3,
             'tours' => $tours,
             'reviews' => $reviews,
-            'certificates' => $certificates
+            'certificates' => $certificates,
+            'land' => $landing
         ));
     }
 
@@ -212,12 +218,14 @@ class GeneralController extends InitializableController
             ->leftJoin('c.image', 'i')
             ->orderBy('c.created', 'DESC')
             ->getQuery()->getResult();
+        $landing = $this->getRepository('Landing')->findOneByIndex(4);
 
         return $this->render('MasterSiteBundle:General:landing4.html.twig', array(
             'landing' => 4,
             'tours' => $tours,
             'reviews' => $reviews,
-            'certificates' => $certificates
+            'certificates' => $certificates,
+            'land' => $landing
         ));
     }
 
@@ -238,12 +246,14 @@ class GeneralController extends InitializableController
             ->leftJoin('c.image', 'i')
             ->orderBy('c.created', 'DESC')
             ->getQuery()->getResult();
+        $landing = $this->getRepository('Landing')->findOneByIndex(5);
 
         return $this->render('MasterSiteBundle:General:landing5.html.twig', array(
             'landing' => 5,
             'tours' => $tours,
             'reviews' => $reviews,
-            'certificates' => $certificates
+            'certificates' => $certificates,
+            'land' => $landing
         ));
     }
 

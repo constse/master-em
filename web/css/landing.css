@@ -25,28 +25,10 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #header {
+    background-position: center top;
+    background-repeat: no-repeat;
     height: 455px;
     position: relative;
-}
-
-#header.header1 {
-    background: url('../img/landing1.jpg') center top no-repeat;
-}
-
-#header.header2 {
-    background: url('../img/landing2.jpg') center top no-repeat;
-}
-
-#header.header3 {
-    background: url('../img/landing3.jpg') center top no-repeat;
-}
-
-#header.header4 {
-    background: url('../img/landing4.jpg') center top no-repeat;
-}
-
-#header.header5 {
-    background: url('../img/landing5.jpg') center top no-repeat;
 }
 
 #header .logo {
