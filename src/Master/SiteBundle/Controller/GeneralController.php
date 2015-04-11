@@ -58,7 +58,13 @@ class GeneralController extends InitializableController
 
     public function faqAction()
     {
-        return $this->render('MasterSiteBundle:General:faq.html.twig');
+        $questions = $this->getRepository('Question')->createQueryBuilder('q')
+            ->orderBy('q.created', 'ASC')
+            ->getQuery()->getResult();
+
+        return $this->render('MasterSiteBundle:General:faq.html.twig', array(
+            'questions' => $questions
+        ));
     }
 
     public function filesDocsAction()

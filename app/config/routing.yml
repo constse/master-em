@@ -8,6 +8,14 @@ admin_certificate_delete:
   path: /admin/cert/delete/{cert}
   defaults: { _controller: "MasterAdminBundle:Admin:deleteCertificate" }
 
+admin_question_edit:
+  path: /admin/question/edit/{question}
+  defaults: { _controller: "MasterAdminBundle:Admin:editQuestion" }
+
+admin_question_delete:
+  path: /admin/question/delete/{question}
+  defaults: { _controller: "MasterAdminBundle:Admin:deleteQuestion" }
+
 admin_review_edit:
   path: /admin/review/edit/{review}
   defaults: { _controller: "MasterAdminBundle:Admin:editReview" }
@@ -30,6 +38,10 @@ admin_certificate_add:
   path: /admin/cert/add
   defaults: { _controller: "MasterAdminBundle:Admin:addCertificate" }
 
+admin_question_add:
+  path: /admin/question/add
+  defaults: { _controller: "MasterAdminBundle:Admin:addQuestion" }
+
 admin_review_add:
   path: /admin/review/add
   defaults: { _controller: "MasterAdminBundle:Admin:addReview" }
@@ -41,6 +53,10 @@ admin_tour_add:
 admin_certificates:
   path: /admin/certificates
   defaults: { _controller: "MasterAdminBundle:Admin:certificates" }
+
+admin_questions:
+  path: /admin/questions
+  defaults: { _controller: "MasterAdminBundle:Admin:questions" }
 
 admin_reviews:
   path: /admin/reviews

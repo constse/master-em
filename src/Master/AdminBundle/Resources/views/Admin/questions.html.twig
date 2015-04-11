@@ -1,0 +1,15 @@
+{% extends 'MasterAdminBundle::layout.html.twig' %}
+
+{% block head_title %}Вопросы и ответы{% endblock %}
+
+{% block body_content %}
+    <div class="page-header"><h1>Вопросы и ответы</h1></div>
+    <a href="{{ url('admin_question_add') }}" class="btn btn-success">Добавить новый вопрос</a><br><br>
+    {% for q in questions %}
+        <p>
+            <a href="{{ url('admin_question_edit', {'question': q.id}) }}">{{ q.caption|e }}</a>
+        </p>
+    {% else %}
+        <p>Нет отзывов</p>
+    {% endfor %}
+{% endblock %}

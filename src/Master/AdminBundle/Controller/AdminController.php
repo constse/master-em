@@ -4,10 +4,12 @@ namespace Master\AdminBundle\Controller;
 
 use Master\AdminBundle\Form\Type\CertificateFormType;
 use Master\AdminBundle\Form\Type\LoginFormType;
+use Master\AdminBundle\Form\Type\QuestionFormType;
 use Master\AdminBundle\Form\Type\ReviewFormType;
 use Master\AdminBundle\Form\Type\TourFormType;
 use Master\SystemBundle\Controller\InitializableController;
 use Master\SystemBundle\Entity\Certificate;
+use Master\SystemBundle\Entity\Question;
 use Master\SystemBundle\Entity\Review;
 use Master\SystemBundle\Entity\Tour;
 use Master\SystemBundle\Entity\User;
@@ -33,6 +35,25 @@ class AdminController extends InitializableController
         return $this->render('MasterAdminBundle:Admin:certificate.html.twig', array(
             'form' => $form->createView(),
             'cert' => null
+        ));
+    }
+
+    public function addQuestionAction()
+    {
+        $review = new Question();
+        $form = $this->createForm(new QuestionFormType(), $review);
+        $form->handleRequest($this->request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->manager->persist($review);
+            $this->manager->flush();
+
+            return $this->redirectToRoute('admin_questions');
+        }
+
+        return $this->render('MasterAdminBundle:Admin:question.html.twig', array(
+            'form' => $form->createView(),
+            'question' => null
         ));
     }
 
@@ -104,6 +125,18 @@ class AdminController extends InitializableController
         return $this->redirectToRoute('admin_certificates');
     }
 
+    public function deleteQuestionAction($question)
+    {
+        $cert = $this->getRepository('Question')->find($question);
+
+        if (is_null($cert)) throw $this->createNotFoundException();
+
+        $this->manager->remove($cert);
+        $this->manager->flush();
+
+        return $this->redirectToRoute('admin_questions');
+    }
+
     public function deleteReviewAction($review)
     {
         $review = $this->getRepository('Review')->find($review);
@@ -153,6 +186,28 @@ class AdminController extends InitializableController
         return $this->render('MasterAdminBundle:Admin:certificate.html.twig', array(
             'form' => $form->createView(),
             'cert' => $cert
+        ));
+    }
+
+    public function editQuestionAction($question)
+    {
+        $cert = $this->getRepository('Question')->find($question);
+
+        if (is_null($cert)) throw $this->createNotFoundException();
+
+        $form = $this->createForm(new QuestionFormType(), $cert);
+        $form->handleRequest($this->request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->manager->persist($cert);
+            $this->manager->flush();
+
+            return $this->redirectToRoute('admin_questions');
+        }
+
+        return $this->render('MasterAdminBundle:Admin:question.html.twig', array(
+            'form' => $form->createView(),
+            'question' => $cert
         ));
     }
 
@@ -246,6 +301,17 @@ class AdminController extends InitializableController
 
         return $this->render('MasterAdminBundle:Admin:reviews.html.twig', array(
             'reviews' => $reviews
+        ));
+    }
+
+    public function questionsAction()
+    {
+        $reviews = $this->getRepository('Question')->createQueryBuilder('q')
+            ->orderBy('q.created', 'DESC')
+            ->getQuery()->getResult();
+
+        return $this->render('MasterAdminBundle:Admin:questions.html.twig', array(
+            'questions' => $reviews
         ));
     }
 } 

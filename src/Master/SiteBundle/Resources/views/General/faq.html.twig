@@ -20,6 +20,9 @@
                     <td class="left">
                         <div class="links">
                             <div class="line"></div>
+                            {% for q in questions %}
+                                <a href="#{{ loop.index }}">{{ q.caption|e }}</a>
+                            {% endfor %}
                             <a href="#1">Оформление загранпаспорта</a><br>
                             <a href="#2">Сроки действия загранпаспорта</a><br>
                             <a href="#3">Выгода Tax-Free</a><br>
@@ -34,6 +37,15 @@
                     </td>
                     <td class="right">
                         <div class="article">
+                            {% for q in questions %}
+                                {% if loop.index == 3 %}<div class="smile"></div>{% endif %}
+                                {% if loop.index == 10 %}<div class="plane"></div>{% endif %}
+                                <p>
+                                    <a name="{{ loop.index }}"></a>
+                                    <strong>{{ q.caption|e }}</strong><br>
+                                    {{ q.text|raw }}
+                                </p>
+                            {% endfor %}
                             <p>
                                 <a name="1"></a>
                                 <strong>Оформление загранпаспорта</strong><br>

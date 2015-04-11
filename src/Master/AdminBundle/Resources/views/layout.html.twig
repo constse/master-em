@@ -21,6 +21,7 @@
                     <li{% if app.request.get('_route') == 'admin_index' %} class="active"{% endif %}><a href="{{ url('admin_index') }}">Туры</a></li>
                     <li{% if app.request.get('_route') == 'admin_certificates' %} class="active"{% endif %}><a href="{{ url('admin_certificates') }}">Сертификаты</a></li>
                     <li{% if app.request.get('_route') == 'admin_reviews' %} class="active"{% endif %}><a href="{{ url('admin_reviews') }}">Отзывы</a></li>
+                    <li{% if app.request.get('_route') == 'admin_questions' %} class="active"{% endif %}><a href="{{ url('admin_questions') }}">Вопросы-ответы</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('admin_security_logout') }}">Выход</a></li>
