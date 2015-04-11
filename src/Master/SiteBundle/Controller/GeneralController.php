@@ -316,15 +316,16 @@ class GeneralController extends InitializableController
 
     public function request2Action()
     {
-        $this->form->handleRequest($this->request);
+        $form2 = $this->createForm(new Request2FormType());
+        $form2->handleRequest($this->request);
 
-        if ($this->form->isSubmitted() && $this->form->isValid()) {
+        if ($form2->isSubmitted() && $form2->isValid()) {
             $success = false;
             $text = $this->renderView('MasterSiteBundle:General:mail2.html.twig', array(
-                'name' => $this->form->get('name')->getData(),
-                'email' => $this->form->get('email')->getData(),
-                'from' => $this->form->get('from')->getData(),
-                'query' => $this->form->get('query')->getData()
+                'name' => $form2->get('name')->getData(),
+                'email' => $form2->get('email')->getData(),
+                'from' => $form2->get('from')->getData(),
+                'query' => $form2->get('query')->getData()
             ));
             $headers = array(
                 'From: <noreply@master-em.com>',
