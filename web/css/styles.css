@@ -180,6 +180,9 @@ a, a:active, a:hover, a:visited, a:focus {
 #slider .carousel-indicators li.active {
     opacity: 1;
 }
+#slider .carousel-inner {
+    height: 389px;
+}
 
 #slider .carousel-inner .content {
     padding: 0 80px 0;

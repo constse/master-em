@@ -3,6 +3,7 @@
 namespace Master\AdminBundle\Controller;
 
 use Master\AdminBundle\Form\Type\CertificateFormType;
+use Master\AdminBundle\Form\Type\LandingFormType;
 use Master\AdminBundle\Form\Type\LoginFormType;
 use Master\AdminBundle\Form\Type\QuestionFormType;
 use Master\AdminBundle\Form\Type\ReviewFormType;
@@ -312,6 +313,43 @@ class AdminController extends InitializableController
 
         return $this->render('MasterAdminBundle:Admin:questions.html.twig', array(
             'questions' => $reviews
+        ));
+    }
+
+    public function landingsAction()
+    {
+        $landings = $this->getRepository('Landing')->createQueryBuilder('l')
+            ->orderBy('l.index', 'ASC')
+            ->getQuery()->getResult();
+
+        return $this->render('MasterAdminBundle:Admin:landings.html.twig', array(
+            'landings' => $landings
+        ));
+    }
+
+    public function editLandingAction($landing)
+    {
+        $review = $this->getRepository('Landing')->find($landing);
+
+        if (is_null($review)) throw $this->createNotFoundException();
+
+        $form = $this->createForm(new LandingFormType(), $review);
+        $form->handleRequest($this->request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            if (!is_null($review->getForIndex())) $review->getForIndex()->upload();
+            if (!is_null($review->getForLanding())) $review->getForLanding()->upload();
+            if (!is_null($review->getForIndex())) $this->manager->persist($review->getForIndex());
+            if (!is_null($review->getForLanding())) $this->manager->persist($review->getForLanding());
+            $this->manager->persist($review);
+            $this->manager->flush();
+
+            return $this->redirectToRoute('admin_landings');
+        }
+
+        return $this->render('MasterAdminBundle:Admin:landing.html.twig', array(
+            'form' => $form->createView(),
+            'landing' => $review
         ));
     }
 } 

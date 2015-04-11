@@ -34,6 +34,10 @@ admin_tour_delete:
 
 # 3
 
+admin_landing_edit:
+  path: /admin/landing/{landing}
+  defaults: { _controller: "MasterAdminBundle:Admin:editLanding" }
+
 admin_certificate_add:
   path: /admin/cert/add
   defaults: { _controller: "MasterAdminBundle:Admin:addCertificate" }
@@ -49,6 +53,8 @@ admin_review_add:
 admin_tour_add:
   path: /admin/tour/add
   defaults: { _controller: "MasterAdminBundle:Admin:addTour" }
+
+# 2
 
 admin_certificates:
   path: /admin/certificates
@@ -72,7 +78,9 @@ admin_security_login_check:
 admin_security_logout:
   path: /admin/logout
 
-# 2
+admin_landings:
+  path: /admin/landings
+  defaults: { _controller: "MasterAdminBundle:Admin:landings" }
 
 site_general_files_docs:
   path: /files/docs

@@ -100,6 +100,9 @@ class GeneralController extends InitializableController
 
     public function indexAction()
     {
+        $landings = $this->getRepository('Landing')->createQueryBuilder('l')
+            ->orderBy('l.index', 'ASC')
+            ->getQuery()->getResult();
         $tours = $this->getRepository('Tour')->createQueryBuilder('t')
             ->leftJoin('t.image', 'i')
             ->orderBy('t.created', 'DESC')
@@ -108,6 +111,7 @@ class GeneralController extends InitializableController
         $form = $this->createForm(new Request2FormType());
 
         return $this->render('MasterSiteBundle:General:index.html.twig', array(
+            'landings' => $landings,
             'tours' => $tours,
             'tour_form' => $form->createView()
         ));
@@ -280,7 +284,8 @@ class GeneralController extends InitializableController
             );
             $headers = implode("\r\n", $headers);
 
-            if (mail('master-em@list.ru', 'Заявка с сайта!', $text, $headers)) $success = true;
+            if (mail('zayavki-master-em@mail.ru', 'Заявка с сайта!', $text, $headers)) $success = true;
+            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) $success = true;
 
             require_once __DIR__ . '/../../../../web/smsc_api.php';
             $text = 'Заявка с сайта: '
@@ -289,7 +294,7 @@ class GeneralController extends InitializableController
                 . $this->form->get('email')->getData();
 
             $count = 0;
-            list($id, $count, $cost, $balance) = send_sms('+79836010014', $text, 0, 0, 0, 0, false);
+            list($id, $count, $cost, $balance) = send_sms('+79836010014,+79132786139', $text, 0, 0, 0, 0, false);
 
             if ($count > 0) $success = true;
 
@@ -318,7 +323,8 @@ class GeneralController extends InitializableController
             );
             $headers = implode("\r\n", $headers);
 
-            if (mail('master-em@list.ru', 'Заявка с сайта!', $text, $headers)) $success = true;
+            if (mail('zayavki-master-em@mail.ru', 'Заявка с сайта!', $text, $headers)) $success = true;
+            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) $success = true;
 
             require_once __DIR__ . '/../../../../web/smsc_api.php';
             $text = 'Заявка с сайта: '
@@ -326,7 +332,7 @@ class GeneralController extends InitializableController
                 . $this->form->get('email')->getData();
 
             $count = 0;
-            list($id, $count, $cost, $balance) = send_sms('+79836010014', $text, 0, 0, 0, 0, false);
+            list($id, $count, $cost, $balance) = send_sms('+79836010014,+79132786139', $text, 0, 0, 0, 0, false);
 
             if ($count > 0) $success = true;
 

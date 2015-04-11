@@ -1,0 +1,14 @@
+{% extends 'MasterAdminBundle::layout.html.twig' %}
+
+{% block head_title %}Лэндинги{% endblock %}
+
+{% block body_content %}
+    <div class="page-header"><h1>Лэндинги</h1></div>
+    {% for landing in landings %}
+        <p>
+            <a href="{{ url('admin_landing_edit', {'landing': landing.id}) }}">Лэндинг №{{ landing.index }}, {{ landing.indexCaption|raw }}</a>
+        </p>
+    {% else %}
+        <p>Нет отзывов</p>
+    {% endfor %}
+{% endblock %}

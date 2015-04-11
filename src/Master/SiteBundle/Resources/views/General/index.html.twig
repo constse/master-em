@@ -26,37 +26,37 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="{{ asset('/img/slider0.jpg') }}" alt="Санаторно-курортный отдых в Белокурихе">
+                <img src="{{ asset(landings[0].forIndex.path|e) }}" alt="Санаторно-курортный отдых в Белокурихе">
                 <div class="content slider0">
-                    <div class="caption">Санаторно-курортный отдых<br>в Белокурихе</div>
+                    <div class="caption">{{ landings[0].indexCaption|raw }}</div>
                     <span class="details"><a href="{{ url('site_general_landing1') }}">Посмотреть</a></span>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('/img/slider1.jpg') }}" alt="Активныe и экстримальныe туры на Алтае">
+                <img src="{{ asset(landings[1].forIndex.path|e) }}" alt="Активныe и экстримальныe туры на Алтае">
                 <div class="content">
-                    <div class="caption">Активные и экстремальные<br>туры на Алтае</div>
+                    <div class="caption">{{ landings[1].indexCaption|raw }}</div>
                     <span class="details"><a href="{{ url('site_general_landing2') }}">Посмотреть</a></span>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('/img/slider2.jpg') }}" alt="Отдых на Алтае">
+                <img src="{{ asset(landings[2].forIndex.path|e) }}" alt="Отдых на Алтае">
                 <div class="content">
-                    <div class="caption">Отдых на Алтае</div>
+                    <div class="caption">{{ landings[2].indexCaption|raw }}</div>
                     <span class="details"><a href="{{ url('site_general_landing3') }}">Посмотреть</a></span>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('/img/slider3.jpg') }}" alt="Туры по России">
+                <img src="{{ asset(landings[3].forIndex.path|e) }}" alt="Туры по России">
                 <div class="content">
-                    <div class="caption">Туры по России</div>
+                    <div class="caption">{{ landings[3].indexCaption|raw }}</div>
                     <span class="details"><a href="{{ url('site_general_landing4') }}">Посмотреть</a></span>
                 </div>
             </div>
             <div class="item">
-                <img src="{{ asset('/img/slider4.jpg') }}" alt="Зарубежные туры">
+                <img src="{{ asset(landings[4].forIndex.path|e) }}" alt="Зарубежные туры">
                 <div class="content">
-                    <div class="caption">Зарубежные туры</div>
+                    <div class="caption">{{ landings[4].indexCaption|raw }}</div>
                     <span class="details"><a href="{{ url('site_general_landing5') }}">Посмотреть</a></span>
                 </div>
             </div>
