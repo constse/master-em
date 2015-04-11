@@ -267,19 +267,39 @@
             });
         }
 
-        function initReviews(next)
-        {
-            $('.reviews li').removeClass('slideInRight').removeClass('slideInLeft').hide();
-            for (var i = 0; i < 2; ++i) {
-                var review = reviews[reviewPage * 2 + i];
-                if (review) {
-                    var li = $('.reviews .review-' + (i + 1));
-                    li.find('.text').html(review.text);
-                    li.find('.photo').css({'background-image': 'url("' + review.photo + '")'});
-                    li.find('.name').html(review.name);
-                    li.find('.to').html(review.to);
-                    if (next) li.stop(true, true).show().addClass('slideInRight');
-                    else li.stop(true, true).show().addClass('slideInLeft');
+        function initReviews(next) {
+            var old = $('.reviews ul li');
+            old.each(function() { if ($(this).css('width') == '0px') $(this).remove(); });
+            old.animate({width: 0, padding: 0, margin: 0}, 250);
+            if (next) {
+                for (var i = 0; i < 2; ++i) {
+                    var review = reviews[reviewPage * 2 + i];
+                    if (review) {
+                        var li = $('<li class="review-' + (i+1) + '"><div class="text"></div><div class="desc"><div class="photo"></div>' +
+                            '<div class="name"></div><div class="to"></div></div></li>');
+                        li.find('.text').html(review.text);
+                        li.find('.photo').css({'background-image': 'url("' + review.photo + '")'});
+                        li.find('.name').html(review.name);
+                        li.find('.to').html(review.to);
+                        $('.reviews ul').append(li);
+                    }
+                }
+            }
+            else {
+                for (var i = 1; i >= 0; --i) {
+                    var review = reviews[reviewPage * 2 + i];
+                    if (review) {
+                        var li = $('<li class="review-' + (i+1) + '"><div class="text"></div><div class="desc"><div class="photo"></div>' +
+                        '<div class="name"></div><div class="to"></div></div></li>');
+                        li.find('.text').html(review.text);
+                        li.find('.photo').css({'background-image': 'url("' + review.photo + '")'});
+                        li.find('.name').html(review.name);
+                        li.find('.to').html(review.to);
+                        li.css({width: 0, padding: 0, margin: 0});
+                        $('.reviews ul').prepend(li);
+                        if (i == 0) li.animate({width: '414px', 'padding-left': '5px', 'padding-right': '5px', 'margin-right': '128px'}, 250);
+                        else li.animate({width: '414px', 'padding-left': '5px', 'padding-right': '5px'}, 250);
+                    }
                 }
             }
         }
@@ -301,8 +321,8 @@
         }
 
         function initCertificates(next) {
-            $('.certificates ul li').each(function() { if ($(this).css('width') == 0 ) $(this).remove(); });
             var old = $('.certificates ul li');
+            old.each(function() { if ($(this).css('width') == '0px') $(this).remove(); });
             old.animate({width: 0, padding: 0, margin: 0}, 250);
             if (next) {
                 for (var i = 0; i < 5; ++i) {

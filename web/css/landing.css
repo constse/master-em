@@ -398,13 +398,16 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 .reviews ul {
+    height: 340px;
     line-height: 1;
     margin: 0 auto 0;
-    width: 960px;
+    width: 970px;
+    overflow: hidden;
 }
 
 .reviews ul li {
     height: 350px;
+    overflow: hidden;
     width: 414px;
 }
 
@@ -421,7 +424,7 @@ a, a:active, a:hover, a:visited, a:focus {
     line-height: 24px;
     overflow: hidden;
     padding: 25px;
-    width: 100%;
+    width: 402px;
 }
 
 .reviews li .desc {
@@ -495,6 +498,7 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 .certificates ul {
+    height: 265px;
     margin: 75px auto 0;
     width: 1080px;
     text-align: left;
