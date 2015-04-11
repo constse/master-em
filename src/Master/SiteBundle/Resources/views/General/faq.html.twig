@@ -19,6 +19,7 @@
                 <tr>
                     <td class="left">
                         <div class="links">
+                            <div class="line"></div>
                             <a href="#1">Оформление загранпаспорта</a><br>
                             <a href="#2">Сроки действия загранпаспорта</a><br>
                             <a href="#3">Выгода Tax-Free</a><br>
@@ -281,7 +282,12 @@
 {% block body_additions %}
     <script>
         $(document).ready(function() {
+            var pageHeight = $('.container').height();
+            var linksHeight = $('#faq-page .main .left .links').height() - 20;
             $(window).scroll(function() {
+                var a = 1.0 * $(this).scrollTop() / pageHeight;
+                var b = 1.0 * linksHeight * a;
+                $('#faq-page .main .left .links .line').css({top: b.toFixed(2) + 'px'});
                 if ($(this).scrollTop() >= 227) {
                     $('#faq-page .main .left .links').css({'margin-top': $(this).scrollTop() - 220});
                 }
@@ -289,16 +295,16 @@
                     $('#faq-page .main .left .links').css({'margin-top': 0});
                 }
             });
-            $('#faq-page .main .right .article p').viewportChecker({
-                classToAdd: 'unknown',
-                offset: 600,
-                repeat: true,
-                callbackFunction: function(elem, index) {
-                    var href = elem.find('a[name]').attr('name');
-                    $('#faq-page .main .left .links a').removeClass('active');
-                    $('#faq-page .main .left .links a[href="#' + href + '"]').addClass('active');
-                }
-            });
+//            $('#faq-page .main .right .article p').viewportChecker({
+//                classToAdd: 'unknown',
+//                offset: 600,
+//                repeat: true,
+//                callbackFunction: function(elem, index) {
+//                    var href = elem.find('a[name]').attr('name');
+//                    $('#faq-page .main .left .links a').removeClass('active');
+//                    $('#faq-page .main .left .links a[href="#' + href + '"]').addClass('active');
+//                }
+//            });
             $('#faq-page .main .left .links a').click(function() {
                 var href = $(this).attr('href').substring(1);
                 $('body, html').animate({scrollTop: $('#faq-page .main .right a[name="' + href + '"]').offset().top - 200}, 500);

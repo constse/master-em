@@ -1027,17 +1027,23 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 #faq-page .main .left a {
-    border-left: 5px solid #fff;
     display: inline-block;
     color: #000;
     text-decoration: none;
-    margin-left: -10px;
     margin-top: 10px;
-    padding-left: 8px;
 }
 
-#faq-page .main .left a.active {
-    border-left: 5px solid #0BB789;
+#faq-page .main .left .links {
+    position: relative;
+}
+
+#faq-page .main .left .line {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    background: url('../img/line.png') left bottom no-repeat;
+    height: 63px;
+    width: 6px;
 }
 
 #faq-page .main .right {
