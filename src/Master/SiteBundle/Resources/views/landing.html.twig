@@ -125,7 +125,7 @@
         <div class="reviews">
             <h2>Отзывы</h2>
             <ul class="list-inline">
-                <li class="review-1">
+                <li class="review-1 animated">
                     <div class="text"></div>
                     <div class="desc">
                         <div class="photo"></div>
@@ -133,7 +133,7 @@
                         <div class="to"></div>
                     </div>
                 </li>
-                <li class="review-2">
+                <li class="review-2 animated">
                     <div class="text"></div>
                     <div class="desc">
                         <div class="photo"></div>
@@ -155,23 +155,23 @@
         <div class="certificates">
             <h2>Дипломы и сертификаты</h2>
             <ul class="list-inline">
-                <li class="cert-1">
+                <li class="cert-1 animated">
                     <img src=""><br>
                     <div class="desc"></div>
                 </li>
-                <li class="cert-2">
+                <li class="cert-2 animated">
                     <img src=""><br>
                     <div class="desc"></div>
                 </li>
-                <li class="cert-3">
+                <li class="cert-3 animated">
                     <img src=""><br>
                     <div class="desc"></div>
                 </li>
-                <li class="cert-4">
+                <li class="cert-4 animated">
                     <img src=""><br>
                     <div class="desc"></div>
                 </li>
-                <li class="cert-5">
+                <li class="cert-5 animated">
                     <img src=""><br>
                     <div class="desc"></div>
                 </li>
@@ -287,9 +287,9 @@
             });
         }
 
-        function initReviews()
+        function initReviews(next)
         {
-            $('.reviews li').addClass('animated slideOutLeft').fadeOut(250);
+            $('.reviews li').removeClass('slideInRight').removeClass('slideInLeft').hide();
             for (var i = 0; i < 2; ++i) {
                 var review = reviews[reviewPage * 2 + i];
                 if (review) {
@@ -298,7 +298,8 @@
                     li.find('.photo').css({'background-image': 'url("' + review.photo + '")'});
                     li.find('.name').html(review.name);
                     li.find('.to').html(review.to);
-                    li.removeClass('slideOutLeft').stop(true, true).show().addClass('slideInRight');
+                    if (next) li.stop(true, true).show().addClass('slideInRight');
+                    else li.stop(true, true).show().addClass('slideInLeft');
                 }
             }
         }
@@ -308,7 +309,7 @@
             if (reviews.length - pages * 2 > 0) pages = eval(pages) + 1;
             --reviewPage;
             if (reviewPage < 0) reviewPage = pages - 1;
-            initReviews();
+            initReviews(false);
         }
 
         function nextReview() {
@@ -316,18 +317,19 @@
             if (reviews.length - pages * 2 > 0) pages = eval(pages) + 1;
             ++reviewPage;
             if (reviewPage >= pages) reviewPage = 0;
-            initReviews();
+            initReviews(true);
         }
 
-        function initCertificates() {
-            $('.certificates li').addClass('animated slideOutLeft').fadeOut(250);
+        function initCertificates(next) {
+            $('.certificates li').removeClass('slideInRight').removeClass('slideInLeft').hide();
             for (var i = 0; i < 5; ++i) {
                 var cert = certs[certPage * 5 + i];
                 if (cert) {
                     var li = $('.certificates .cert-' + (i + 1));
                     li.children('img').attr('src', cert.src);
                     li.children('.desc').html(cert.desc);
-                    li.removeClass('slideOutLeft').stop(true, true).show().addClass('slideInRight');
+                    if (next) li.stop(true, true).show().addClass('slideInRight');
+                    else li.stop(true, true).show().addClass('slideInLeft');
                 }
             }
         }
@@ -337,7 +339,7 @@
             if (certs.length - pages * 5 > 0) pages = eval(pages) + 1;
             --certPage;
             if (certPage < 0) certPage = pages - 1;
-            initCertificates();
+            initCertificates(false);
         }
 
         function nextCertificates() {
@@ -345,7 +347,7 @@
             if (certs.length - pages * 5 > 0) pages = eval(pages) + 1;
             ++certPage;
             if (certPage >= pages) certPage = 0;
-            initCertificates();
+            initCertificates(true);
         }
 
         function showCertificate(src) {
@@ -359,10 +361,10 @@
             $('#fade').click(closeModal);
             $('#modal-form .close').click(closeModal);
             $('.show-modal').click(function() { showModal($(this)); });
-            initReviews();
+            initReviews(true);
             $('.reviews .prev').click(prevReview);
             $('.reviews .next').click(nextReview);
-            initCertificates();
+            initCertificates(true);
             $('.certificates .prev').click(prevCertificates);
             $('.certificates .next').click(nextCertificates);
             $('.show-privacy').click(function() {
