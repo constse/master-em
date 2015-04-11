@@ -348,6 +348,7 @@
                     }
                 }
             }
+            $('.certificates img').click(function() { showCertificate($(this).attr('src')); });
         }
 
         function prevCertificates() {
@@ -389,7 +390,6 @@
             });
             $('#modal-privacy .close').click(closeModal);
             $('#modal-certificate .close').click(closeModal);
-            $('.certificates img').click(function() { showCertificate($(this).attr('src')); });
         });
     </script>
     <!-- BEGIN JIVOSITE CODE {literal} -->
