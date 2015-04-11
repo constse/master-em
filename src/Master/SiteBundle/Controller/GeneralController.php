@@ -295,7 +295,7 @@ class GeneralController extends InitializableController
             $headers = implode("\r\n", $headers);
 
             if (mail('zayavki-master-em@mail.ru', 'Заявка с сайта!', $text, $headers)) $success = true;
-            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) $success = true;
+//            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) $success = true;
 
             require_once __DIR__ . '/../../../../web/smsc_api.php';
             $text = 'Заявка с сайта: '
@@ -304,7 +304,7 @@ class GeneralController extends InitializableController
                 . $this->form->get('email')->getData();
 
             $count = 0;
-            list($id, $count, $cost, $balance) = send_sms('+79836010014,+79132786139', $text, 0, 0, 0, 0, false);
+            list($id, $count, $cost, $balance) = send_sms('+79836010014', $text, 0, 0, 0, 0, false);
 
             if ($count > 0) $success = true;
 
@@ -334,7 +334,7 @@ class GeneralController extends InitializableController
             $headers = implode("\r\n", $headers);
 
             if (mail('zayavki-master-em@mail.ru', 'Заявка с сайта!', $text, $headers)) $success = true;
-            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) $success = true;
+//            if (mail('const.seoff@gmail.com', 'Заявка с сайта!', $text, $headers)) $success = true;
 
             require_once __DIR__ . '/../../../../web/smsc_api.php';
             $text = 'Заявка с сайта: '
@@ -342,7 +342,7 @@ class GeneralController extends InitializableController
                 . $this->form->get('email')->getData();
 
             $count = 0;
-            list($id, $count, $cost, $balance) = send_sms('+79836010014,+79132786139', $text, 0, 0, 0, 0, false);
+            list($id, $count, $cost, $balance) = send_sms('+79836010014', $text, 0, 0, 0, 0, false);
 
             if ($count > 0) $success = true;
 
