@@ -155,28 +155,7 @@
         </div>
         <div class="certificates">
             <h2>Дипломы и сертификаты</h2>
-            <ul class="list-inline">
-                <li class="cert-1 animated">
-                    <img src=""><br>
-                    <div class="desc"></div>
-                </li>
-                <li class="cert-2 animated">
-                    <img src=""><br>
-                    <div class="desc"></div>
-                </li>
-                <li class="cert-3 animated">
-                    <img src=""><br>
-                    <div class="desc"></div>
-                </li>
-                <li class="cert-4 animated">
-                    <img src=""><br>
-                    <div class="desc"></div>
-                </li>
-                <li class="cert-5 animated">
-                    <img src=""><br>
-                    <div class="desc"></div>
-                </li>
-            </ul>
+            <ul class="list-inline"></ul>
             <div class="prev"></div>
             <div class="next"></div>
         </div>
@@ -322,15 +301,31 @@
         }
 
         function initCertificates(next) {
-            $('.certificates li').removeClass('slideInRight').removeClass('slideInLeft').hide();
-            for (var i = 0; i < 5; ++i) {
-                var cert = certs[certPage * 5 + i];
-                if (cert) {
-                    var li = $('.certificates .cert-' + (i + 1));
-                    li.children('img').attr('src', cert.src);
-                    li.children('.desc').html(cert.desc);
-                    if (next) li.stop(true, true).show().addClass('slideInRight');
-                    else li.stop(true, true).show().addClass('slideInLeft');
+            $('.certificates ul li').each(function() { if ($(this).css('width') == 0 ) $(this).remove(); });
+            var old = $('.certificates ul li');
+            old.animate({width: 0, padding: 0, margin: 0}, 250);
+            if (next) {
+                for (var i = 0; i < 5; ++i) {
+                    var cert = certs[certPage * 5 + i];
+                    if (cert) {
+                        var li = $('<li class="cert-' + (i + 1) + '"><img src=""><br><div class="desc"></div></li>');
+                        li.children('img').attr('src', cert.src);
+                        li.children('.desc').html(cert.desc);
+                        $('.certificates ul').append(li);
+                    }
+                }
+            }
+            else {
+                for (var i = 4; i >= 0; --i) {
+                    var cert = certs[certPage * 5 + i];
+                    if (cert) {
+                        var li = $('<li class="cert-' + (i + 1) + '"><img src=""><br><div class="desc"></div></li>');
+                        li.children('img').attr('src', cert.src);
+                        li.children('.desc').html(cert.desc);
+                        li.css({width: 0, padding: 0, margin: 0});
+                        $('.certificates ul').prepend(li);
+                        li.animate({width: '190px', 'padding-left': '5px', 'padding-right': '5px', 'margin-left': '10px', 'margin-right': '10px'}, 250);
+                    }
                 }
             }
         }
