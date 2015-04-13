@@ -270,18 +270,19 @@
         function initReviews(next) {
             var old = $('.reviews ul li');
             old.each(function() { if ($(this).css('width') == '0px') $(this).remove(); });
+            old.find('.photo').fadeOut(250);
             old.animate({width: 0, padding: 0, margin: 0}, 250);
             if (next) {
                 for (var i = 0; i < 2; ++i) {
                     var review = reviews[reviewPage * 2 + i];
                     if (review) {
-                        var li = $('<li class="review-' + (i+1) + '"><div class="text"></div><div class="desc"><div class="photo"></div>' +
-                            '<div class="name"></div><div class="to"></div></div></li>');
+                        var li = $('<li class="review-' + (i+1) + '"><div class="text"></div><div class="desc"><img src="' + review.photo +
+                            '" class="photo"><div class="name"></div><div class="to"></div></div></li>');
                         li.find('.text').html(review.text);
-                        li.find('.photo').css({'background-image': 'url("' + review.photo + '")'});
                         li.find('.name').html(review.name);
                         li.find('.to').html(review.to);
                         $('.reviews ul').append(li);
+                        li.find('.photo').hide().fadeIn(250);
                     }
                 }
             }
@@ -289,16 +290,17 @@
                 for (var i = 1; i >= 0; --i) {
                     var review = reviews[reviewPage * 2 + i];
                     if (review) {
-                        var li = $('<li class="review-' + (i+1) + '"><div class="text"></div><div class="desc"><div class="photo"></div>' +
-                        '<div class="name"></div><div class="to"></div></div></li>');
+                        var li = $('<li class="review-' + (i+1) + '"><div class="text"></div><div class="desc"><img src="' + review.photo +
+                            '" class="photo"><div class="name"></div><div class="to"></div></div></li>');
                         li.find('.text').html(review.text);
-                        li.find('.photo').css({'background-image': 'url("' + review.photo + '")'});
+                        li.find('.photo img').attr('src', review.photo);
                         li.find('.name').html(review.name);
                         li.find('.to').html(review.to);
                         li.css({width: 0, padding: 0, margin: 0});
                         $('.reviews ul').prepend(li);
                         if (i == 0) li.animate({width: '414px', 'padding-left': '5px', 'padding-right': '5px', 'margin-right': '128px'}, 250);
                         else li.animate({width: '414px', 'padding-left': '5px', 'padding-right': '5px'}, 250);
+                        li.find('.photo').hide().fadeIn(250);
                     }
                 }
             }

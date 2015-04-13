@@ -315,6 +315,11 @@ a, a:active, a:hover, a:visited, a:focus {
     width: 314px;
 }
 
+#index-page .tours li img {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
 #index-page .tours .caption {
     font-size: 24px;
     position: absolute;
@@ -1302,12 +1307,14 @@ a, a:active, a:hover, a:visited, a:focus {
 }
 
 .img-bg {
+    border-radius: 4px;
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 }
 
 #index-page .tours li.tour-mail .caption {
