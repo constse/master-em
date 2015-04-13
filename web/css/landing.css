@@ -401,6 +401,7 @@ a, a:active, a:hover, a:visited, a:focus {
     height: 340px;
     line-height: 1;
     margin: 0 auto 0;
+    vertical-align: top;
     width: 970px;
     overflow: hidden;
 }
@@ -408,6 +409,7 @@ a, a:active, a:hover, a:visited, a:focus {
 .reviews ul li {
     height: 350px;
     overflow: hidden;
+    vertical-align: top;
     width: 414px;
 }
 
@@ -501,8 +503,9 @@ a, a:active, a:hover, a:visited, a:focus {
     height: 265px;
     margin: 75px auto 0;
     width: 1080px;
-    text-align: left;
     overflow: hidden;
+    text-align: left;
+    vertical-align: top;
 }
 
 .certificates ul li {
@@ -511,6 +514,7 @@ a, a:active, a:hover, a:visited, a:focus {
     overflow: hidden;
     width: 190px;
     text-align: center;
+    vertical-align: top;
 }
 
 .certificates ul li img {
