@@ -58,7 +58,10 @@
                                     <div class="days left-top-second">{{ tour.days|e }}</div>
                                 </div>
                                 <div class="city left-bottom">{{ tour.from|e }}</div>
-                                <div class="price right">от {{ tour.price|e }} ₽</div>
+                                <div class="price right">
+                                    от {{ tour.price|e }}
+                                    <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span>
+                                </div>
                                 <a href="javascript:void(0);"
                                    data-modal-caption="Узнать подробнее о туре"
                                    data-modal-subcaption="Пожалуйста, оставьте свои контактные данные: мы свяжемся с Вами и подробно проконсультируем по данному туру в ближайшее время с 10 до 19 часов"
