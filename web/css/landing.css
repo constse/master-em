@@ -1,6 +1,5 @@
 html {
-    -webkit-font-smoothing: subpixel-antialiased;
-    -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: visible;
 }
 
 body {
